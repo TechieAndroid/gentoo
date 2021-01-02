@@ -1,0 +1,49 @@
+# These settings were set by the catalyst build script that automatically
+# built this stage.
+# Please consult /usr/share/portage/config/make.conf.example for a more
+# detailed example.
+COMMON_FLAGS="-march=znver1 -O2 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+
+CPU_FLAGS_x86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3"
+
+MAKEOPTS="-j9"
+
+ACCEPT_LICENSE="*"
+
+RUBY_TARGETS="ruby26"
+PYTHON_TARGETS="python3_7 python3_8 python3_9"
+LLVM_TARGETS="AMDGPU"
+
+ABI_X86="64 32"
+
+USE="10bit 12bit 7z 7zip aacs aio alsa bash-completion bdplus bluetooth bluray
+     caps cjk clang conntrack corefonts cryptsetup curl cxx dbus device-mapper
+     dhclient elogind ffmpeg gold gtk gtk3 idn iproute2 jpeg jpeg2 lm-sensors
+     lrz lzma lzo matroska netlink networkmanager nftables opencl osmesa pgo
+     pic pie png postproc pulseaudio python secure-delete speex suid tahoma
+     theora threads user-session vkd3d vpx vulkan webp wifi x256 zip zstd -gpm"
+
+FEATURES="candy fixlafiles unmerge-orphans"
+
+EMERGE_DEFAULT_OPTS="--with-bdeps y --complete-graph y"
+
+INPUT_DEVICES="libinput wacom"
+
+VIDEO_CARDS="amdgpu radeon radeonsi"
+
+GRUB_PLATFORMS="efi-64"
+
+# NOTE: This stage was built with the bindist Use flag enabled
+PORTDIR="/var/db/repos/gentoo"
+DISTDIR="/var/cache/distfiles"
+PKGDIR="/var/cache/binpkgs"
+
+# This sets the language of build output to English.
+# Please keep this setting intact when reporting bugs.
+LC_MESSAGES=C
+
+GENTOO_MIRRORS="http://mirror.leaseweb.com/gentoo/ https://mirror.leaseweb.com/gentoo/ http://gentoo.mirrors.ovh.net/gentoo-distfiles/"

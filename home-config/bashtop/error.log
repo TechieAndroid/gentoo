@@ -1,0 +1,394 @@
+ 
+New instance of bashtop version: 0.9.25 Pid: 22813
+/usr/bin/bashtop: line 2411: /proc/30955/stat: No such file or directory
+/usr/bin/bashtop: line 2411: /proc/22443/stat: No such file or directory
+ 
+New instance of bashtop version: 0.9.25 Pid: 7825
+ 
+New instance of bashtop version: 0.9.25 Pid: 9339
+ 
+New instance of bashtop version: 0.9.25 Pid: 15523
+ 
+New instance of bashtop version: 0.9.25 Pid: 23345
+ 
+New instance of bashtop version: 0.9.25 Pid: 23912
+ 
+New instance of bashtop version: 0.9.25 Pid: 1180
+ 
+New instance of bashtop version: 0.9.25 Pid: 19597
+ 
+New instance of bashtop version: 0.9.25 Pid: 6313
+ 
+New instance of bashtop version: 0.9.25 Pid: 633
+ 
+New instance of bashtop version: 0.9.25 Pid: 14398
+ 
+New instance of bashtop version: 0.9.25 Pid: 15182
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 19: `theme[hi_fg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 19: 1: command not found
+01:13:59 AM ERROR: On line 19 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 21: `theme[selected_bg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 21: 2: command not found
+01:13:59 AM ERROR: On line 21 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 23: `theme[selected_fg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 23: 3: command not found
+01:13:59 AM ERROR: On line 23 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 25: `theme[inactive_fg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 25: 2: command not found
+01:13:59 AM ERROR: On line 25 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 27: `theme[proc_misc]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 27: 1: command not found
+01:13:59 AM ERROR: On line 27 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 29: `theme[cpu_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 29: 2: command not found
+01:13:59 AM ERROR: On line 29 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 31: `theme[mem_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 31: 2: command not found
+01:13:59 AM ERROR: On line 31 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 33: `theme[net_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 33: 2: command not found
+01:13:59 AM ERROR: On line 33 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 35: `theme[proc_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 35: 2: command not found
+01:13:59 AM ERROR: On line 35 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 37: `theme[div_line]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 37: 2: command not found
+01:13:59 AM ERROR: On line 37 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 39: `theme[temp_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 39: 4: command not found
+01:13:59 AM ERROR: On line 39 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 40: `theme[temp_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 40: 5: command not found
+01:13:59 AM ERROR: On line 40 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 41: `theme[temp_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 41: 3: command not found
+01:13:59 AM ERROR: On line 41 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 43: `theme[cpu_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 43: 4: command not found
+01:13:59 AM ERROR: On line 43 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 44: `theme[cpu_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 44: 5: command not found
+01:13:59 AM ERROR: On line 44 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 45: `theme[cpu_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 45: 3: command not found
+01:13:59 AM ERROR: On line 45 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 47: `theme[free_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 47: 4: command not found
+01:13:59 AM ERROR: On line 47 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 48: `theme[free_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 48: 5: command not found
+01:13:59 AM ERROR: On line 48 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 49: `theme[free_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 49: 3: command not found
+01:13:59 AM ERROR: On line 49 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 51: `theme[cached_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 51: 4: command not found
+01:13:59 AM ERROR: On line 51 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 52: `theme[cached_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 52: 5: command not found
+01:13:59 AM ERROR: On line 52 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 53: `theme[cached_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 53: 3: command not found
+01:13:59 AM ERROR: On line 53 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 55: `theme[available_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 55: 4: command not found
+01:13:59 AM ERROR: On line 55 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 57: `theme[available_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 57: 3: command not found
+01:13:59 AM ERROR: On line 57 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 59: `theme[used_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 59: 4: command not found
+01:13:59 AM ERROR: On line 59 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 60: `theme[used_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 60: 5: command not found
+01:13:59 AM ERROR: On line 60 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 61: `theme[used_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 61: 3: command not found
+01:13:59 AM ERROR: On line 61 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 63: `theme[download_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 63: 4: command not found
+01:13:59 AM ERROR: On line 63 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 64: `theme[download_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 64: 5: command not found
+01:13:59 AM ERROR: On line 64 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 65: `theme[download_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 65: 3: command not found
+01:13:59 AM ERROR: On line 65 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 67: `theme[upload_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 67: 4: command not found
+01:13:59 AM ERROR: On line 67 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 68: `theme[upload_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 68: 5: command not found
+01:13:59 AM ERROR: On line 68 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 69: `theme[upload_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 69: 3: command not found
+01:13:59 AM ERROR: On line 69 
+01:13:59 AM ERROR: On line 498 
+01:13:59 AM ERROR: On line 1887 
+01:13:59 AM ERROR: On line 1887 (MUTED!)
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 19: `theme[hi_fg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 19: 1: command not found
+01:14:04 AM ERROR: On line 19 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 21: `theme[selected_bg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 21: 2: command not found
+01:14:04 AM ERROR: On line 21 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 23: `theme[selected_fg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 23: 3: command not found
+01:14:04 AM ERROR: On line 23 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 25: `theme[inactive_fg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 25: 2: command not found
+01:14:04 AM ERROR: On line 25 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 27: `theme[proc_misc]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 27: 1: command not found
+01:14:04 AM ERROR: On line 27 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 29: `theme[cpu_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 29: 2: command not found
+01:14:04 AM ERROR: On line 29 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 31: `theme[mem_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 31: 2: command not found
+01:14:04 AM ERROR: On line 31 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 33: `theme[net_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 33: 2: command not found
+01:14:04 AM ERROR: On line 33 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 35: `theme[proc_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 35: 2: command not found
+01:14:04 AM ERROR: On line 35 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 37: `theme[div_line]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 37: 2: command not found
+01:14:04 AM ERROR: On line 37 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 39: `theme[temp_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 39: 4: command not found
+01:14:04 AM ERROR: On line 39 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 40: `theme[temp_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 40: 5: command not found
+01:14:04 AM ERROR: On line 40 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 41: `theme[temp_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 41: 3: command not found
+01:14:04 AM ERROR: On line 41 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 43: `theme[cpu_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 43: 4: command not found
+01:14:04 AM ERROR: On line 43 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 44: `theme[cpu_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 44: 5: command not found
+01:14:04 AM ERROR: On line 44 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 45: `theme[cpu_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 45: 3: command not found
+01:14:04 AM ERROR: On line 45 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 47: `theme[free_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 47: 4: command not found
+01:14:04 AM ERROR: On line 47 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 48: `theme[free_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 48: 5: command not found
+01:14:04 AM ERROR: On line 48 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 49: `theme[free_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 49: 3: command not found
+01:14:04 AM ERROR: On line 49 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 51: `theme[cached_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 51: 4: command not found
+01:14:04 AM ERROR: On line 51 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 52: `theme[cached_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 52: 5: command not found
+01:14:04 AM ERROR: On line 52 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 53: `theme[cached_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 53: 3: command not found
+01:14:04 AM ERROR: On line 53 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 55: `theme[available_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 55: 4: command not found
+01:14:04 AM ERROR: On line 55 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 57: `theme[available_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 57: 3: command not found
+01:14:04 AM ERROR: On line 57 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 59: `theme[used_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 59: 4: command not found
+01:14:04 AM ERROR: On line 59 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 60: `theme[used_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 60: 5: command not found
+01:14:04 AM ERROR: On line 60 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 61: `theme[used_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 61: 3: command not found
+01:14:04 AM ERROR: On line 61 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 63: `theme[download_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 63: 4: command not found
+01:14:04 AM ERROR: On line 63 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 64: `theme[download_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 64: 5: command not found
+01:14:04 AM ERROR: On line 64 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 65: `theme[download_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 65: 3: command not found
+01:14:04 AM ERROR: On line 65 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 67: `theme[upload_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 67: 4: command not found
+01:14:04 AM ERROR: On line 67 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 68: `theme[upload_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 68: 5: command not found
+01:14:04 AM ERROR: On line 68 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 69: `theme[upload_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 69: 3: command not found
+01:14:04 AM ERROR: On line 69 
+01:14:04 AM ERROR: On line 498 
+01:14:04 AM ERROR: On line 1887 
+01:14:04 AM ERROR: On line 1887 (MUTED!)
+ 
+New instance of bashtop version: 0.9.25 Pid: 18117
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 19: `theme[hi_fg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 19: 1: command not found
+01:15:08 AM ERROR: On line 19 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 21: `theme[selected_bg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 21: 2: command not found
+01:15:08 AM ERROR: On line 21 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 23: `theme[selected_fg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 23: 3: command not found
+01:15:08 AM ERROR: On line 23 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 25: `theme[inactive_fg]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 25: 2: command not found
+01:15:08 AM ERROR: On line 25 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 27: `theme[proc_misc]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 27: 1: command not found
+01:15:08 AM ERROR: On line 27 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 29: `theme[cpu_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 29: 2: command not found
+01:15:08 AM ERROR: On line 29 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 31: `theme[mem_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 31: 2: command not found
+01:15:08 AM ERROR: On line 31 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 33: `theme[net_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 33: 2: command not found
+01:15:08 AM ERROR: On line 33 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 35: `theme[proc_box]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 35: 2: command not found
+01:15:08 AM ERROR: On line 35 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 37: `theme[div_line]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 37: 2: command not found
+01:15:08 AM ERROR: On line 37 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 39: `theme[temp_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 39: 4: command not found
+01:15:08 AM ERROR: On line 39 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 40: `theme[temp_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 40: 5: command not found
+01:15:08 AM ERROR: On line 40 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 41: `theme[temp_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 41: 3: command not found
+01:15:08 AM ERROR: On line 41 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 43: `theme[cpu_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 43: 4: command not found
+01:15:08 AM ERROR: On line 43 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 44: `theme[cpu_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 44: 5: command not found
+01:15:08 AM ERROR: On line 44 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 45: `theme[cpu_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 45: 3: command not found
+01:15:08 AM ERROR: On line 45 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 47: `theme[free_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 47: 4: command not found
+01:15:08 AM ERROR: On line 47 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 48: `theme[free_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 48: 5: command not found
+01:15:08 AM ERROR: On line 48 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 49: `theme[free_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 49: 3: command not found
+01:15:08 AM ERROR: On line 49 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 51: `theme[cached_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 51: 4: command not found
+01:15:08 AM ERROR: On line 51 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 52: `theme[cached_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 52: 5: command not found
+01:15:08 AM ERROR: On line 52 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 53: `theme[cached_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 53: 3: command not found
+01:15:08 AM ERROR: On line 53 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 55: `theme[available_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 55: 4: command not found
+01:15:08 AM ERROR: On line 55 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 57: `theme[available_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 57: 3: command not found
+01:15:08 AM ERROR: On line 57 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 59: `theme[used_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 59: 4: command not found
+01:15:08 AM ERROR: On line 59 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 60: `theme[used_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 60: 5: command not found
+01:15:08 AM ERROR: On line 60 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 61: `theme[used_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 61: 3: command not found
+01:15:08 AM ERROR: On line 61 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 63: `theme[download_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 63: 4: command not found
+01:15:08 AM ERROR: On line 63 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 64: `theme[download_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 64: 5: command not found
+01:15:08 AM ERROR: On line 64 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 65: `theme[download_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 65: 3: command not found
+01:15:08 AM ERROR: On line 65 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 67: `theme[upload_start]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 67: 4: command not found
+01:15:08 AM ERROR: On line 67 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 68: `theme[upload_mid]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 68: 5: command not found
+01:15:08 AM ERROR: On line 68 
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 69: `theme[upload_end]': not a valid identifier
+/home/recompiler/.config/bashtop/user_themes/dracula.theme: line 69: 3: command not found
+01:15:08 AM ERROR: On line 69 
+01:15:08 AM ERROR: On line 498 
+01:15:08 AM ERROR: On line 1887 
+01:15:08 AM ERROR: On line 1887 (MUTED!)
+ 
+New instance of bashtop version: 0.9.25 Pid: 19201
+ 
+New instance of bashtop version: 0.9.25 Pid: 20501
+ 
+New instance of bashtop version: 0.9.25 Pid: 20824
+ 
+New instance of bashtop version: 0.9.25 Pid: 22486
+ 
+New instance of bashtop version: 0.9.25 Pid: 30679
+ 
+New instance of bashtop version: 0.9.25 Pid: 2873
+ 
+New instance of bashtop version: 0.9.25 Pid: 3728
+ 
+New instance of bashtop version: 0.9.25 Pid: 4202
+ 
+New instance of bashtop version: 0.9.25 Pid: 5743
+ 
+New instance of bashtop version: 0.9.25 Pid: 7721
+ 
+New instance of bashtop version: 0.9.25 Pid: 9998
+ 
+New instance of bashtop version: 0.9.25 Pid: 11869
+ 
+New instance of bashtop version: 0.9.25 Pid: 16387
+ 
+New instance of bashtop version: 0.9.25 Pid: 9986
+ 
+New instance of bashtop version: 0.9.25 Pid: 4863
+ 
+New instance of bashtop version: 0.9.25 Pid: 5176
+ 
+New instance of bashtop version: 0.9.25 Pid: 2329
+03:21:26 PM ERROR: On line 4032 
+03:21:26 PM ERROR: On line 4032 
+ 
+New instance of bashtop version: 0.9.25 Pid: 2440
+ 
+New instance of bashtop version: 0.9.25 Pid: 3912
+ 
+New instance of bashtop version: 0.9.25 Pid: 2299
+ 
+New instance of bashtop version: 0.9.25 Pid: 4926
+ 
+New instance of bashtop version: 0.9.25 Pid: 2419
+ 
+New instance of bashtop version: 0.9.25 Pid: 17743
+ 
+New instance of bashtop version: 0.9.25 Pid: 12851
+ 
+New instance of bashtop version: 0.9.25 Pid: 2385
+ 
+New instance of bashtop version: 0.9.25 Pid: 22071
+ 
+New instance of bashtop version: 0.9.25 Pid: 3241
+ 
+New instance of bashtop version: 0.9.25 Pid: 21551
+ 
+New instance of bashtop version: 0.9.25 Pid: 2382

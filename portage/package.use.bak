@@ -1,0 +1,21 @@
+#package.use
+# required by media-libs/mesa-20.1.10::gentoo[-video_cards_r600,-video_cards_radeon,-video_cards_r200,video_cards_radeonsi,-video_cards_r100,-video_cards_r300]
+# required by media-libs/libepoxy-1.5.4::gentoo[egl]
+# required by x11-libs/gtk+-3.24.22::gentoo
+# required by gnome-extra/polkit-gnome-0.105-r2::gentoo
+# required by sys-auth/polkit-0.118::gentoo[gtk]
+# required by sys-auth/elogind-243.7::gentoo[policykit]
+# required by sys-process/procps-3.3.16-r2::gentoo[elogind]
+# required by @system
+# required by @world (argument)
+>=x11-libs/libdrm-2.4.102 video_cards_radeon
+>=sys-libs/pam-1.4.0_p20200829-r1 -filecaps
+>=media-libs/tiff-4.1.0 -webp
+>=media-libs/libwebp-1.1.0 -tiff
+>=dev-lang/python-3.8.6 -sqlite
+>=dev-db/sqlite-3.33.0 -icu
+>=dev-lang/python-3.8.6 -bluetooth
+>=sys-apps/util-linux-2.35.2 -udev
+>=virtual/libudev-232-r3 systemd
+>=sys-fs/eudev-3.2.9 -introspection
+>=sys-apps/dbus-1.12.20 X elogind user-session -debug -doc -static-libs -systemd -test

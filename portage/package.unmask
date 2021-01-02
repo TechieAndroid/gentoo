@@ -1,0 +1,5 @@
+dev-python/ply
+dev-python/six
+#sys-kernel/gentoo-sources-5.9.10
+#sys-kernel/gentoo-sources-5.9.13
+dev-python/pycparser
