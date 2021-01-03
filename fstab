@@ -1,45 +1,50 @@
-# /etc/fstab: static file system information.
-#
-# noatime turns off atimes for increased performance (atimes normally aren't 
-# needed); notail increases performance of ReiserFS (at the expense of storage 
-# efficiency).  It's safe to drop the noatime options if you want and to 
-# switch between notail / tail freely.
-#
-# The root filesystem should have a pass number of either 0 or 1.
-# All other filesystems should have a pass number of 0 or greater than 1.
-#
-# See the manpage fstab(5) for more information.
-#
+# <file system> <dir> <type> <options> <dump> <pass>
 
-# <fs>			<mountpoint>	<type>		<opts>		<dump/pass>
+#---------------------------------------------------------------------------#
 
-# NOTE: If your BOOT partition is ReiserFS, add the notail option to opts.
-#
-# NOTE: Even though we list ext4 as the type here, it will work with ext2/ext3
-#       filesystems.  This just tells the kernel to use the ext4 driver.
-#
-# NOTE: You can use full paths to devices like /dev/sda3, but it is often
-#       more reliable to use filesystem labels or UUIDs. See your filesystem
-#       documentation for details on setting a label. To obtain the UUID, use
-#       the blkid(8) command.
+#/dev/nvme0n1p1Windows EFI
+#UUID=4651-4D25 vfat
 
-# /dev/nvme0n1p5 gentoo efi
-UUID=40D4-43D4 /boot/efi vfat defaults 0 2
+#/dev/nvme0n1p2 Microsoft reserved partition
+#PARTUUID=ce0ec152-bb20-4edb-b552-b89f8ba4c13a
 
-# /dev/nvme0n1p6 swap
-UUID=0a6c51b8-9876-4f7c-8edc-ac814f9de279 none swap sw 0 0
+#/dev/nvme0n1p3 Windows Basic data partition
+UUID=6C4E5F474E5F08EA /mnt/windows ntfs-3g defaults 0 0
 
-# /dev/nvme0n1p7 gentoo rootfs
-UUID=07749f02-70ee-426c-8b17-763c00e3dcf3 / ext4 defaults 0 1
+#/dev/nvme0n1p4 Windows Recovery
+#UUID=E0B60D7EB60D5686 ntfs
 
-# tmpfs ram compiling
+#---------------------------------------------------------------------------#
+
+#/dev/nvme0n1p5 Arch EFI
+UUID=C6CA-9B44 /mnt/arch/efi vfat defaults 0 2
+
+#/dev/nvme0n1p6 Arch
+UUID=56def7d9-86b2-4766-9946-651131fe5b06 /mnt/arch ext4 defaults 0 2
+
+#---------------------------------------------------------------------------#
+
+#/dev/nvme0n1p7 Gentoo EFI
+UUID=C6F0-E318 /boot/efi vfat defaults 0 2
+
+#/dev/nvme0n1p8 Gentoo
+UUID=3d8e62ff-8d30-4b11-a83f-eca3ca1ecfd6 / ext4 defaults 0 1
+
+#tmpfs
 tmpfs /var/tmp/portage tmpfs size=15G,uid=portage,gid=portage,mode=755,noatime,rw,nosuid,nodev,x-mount.mkdir=755 0 0
 
-# /dev/nvme0n1p3 windows
-UUID=96D2D573D2D55857 /mnt/windows ntfs-3g defaults 0 0
+#---------------------------------------------------------------------------#
 
-# /dev/nvme0n1p8 arch
-UUID=dc69ba5e-5139-4850-8359-147537e9ee30 /mnt/arch ext4 defaults 0 2
+#/dev/nvme0n1p9 Void EFI
+UUID=C71C-F8EA /mnt/void/efi vfat defaults 0 2
 
-# /dev/nvme0n1p9 arch efi
-UUID=EC89-46AF /mnt/archefi vfat defaults 0 2
+#/dev/nvme0n1p10 Void
+UUID=1d78d9d1-3d9c-40ac-a2f3-5f75bfd9a8fd /mnt/void ext4 defaults 0 2
+
+#---------------------------------------------------------------------------#
+
+#/dev/nvme0n1p11 Kali EFI
+UUID=C749-9996 /mnt/kali/efi vfat defaults 0 2
+
+#/dev/nvme0n1p12 Kali
+UUID=c1b2013b-4dd7-4668-8a94-90e76be438f6 /mnt/kali ext4 defaults 0 2
