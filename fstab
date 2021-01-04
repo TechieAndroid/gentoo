@@ -17,7 +17,7 @@ UUID=6C4E5F474E5F08EA /mnt/windows ntfs-3g defaults 0 0
 #---------------------------------------------------------------------------#
 
 #/dev/nvme0n1p5 Arch EFI
-UUID=C6CA-9B44 /mnt/arch/efi vfat defaults 0 2
+UUID=C6CA-9B44 /mnt/arch/boot/efi vfat defaults 0 2
 
 #/dev/nvme0n1p6 Arch
 UUID=56def7d9-86b2-4766-9946-651131fe5b06 /mnt/arch ext4 defaults 0 2
@@ -36,7 +36,7 @@ tmpfs /var/tmp/portage tmpfs size=15G,uid=portage,gid=portage,mode=755,noatime,r
 #---------------------------------------------------------------------------#
 
 #/dev/nvme0n1p9 Void EFI
-UUID=C71C-F8EA /mnt/void/efi vfat defaults 0 2
+UUID=C71C-F8EA /mnt/void/boot/efi vfat defaults 0 2
 
 #/dev/nvme0n1p10 Void
 UUID=1d78d9d1-3d9c-40ac-a2f3-5f75bfd9a8fd /mnt/void ext4 defaults 0 2
@@ -44,7 +44,7 @@ UUID=1d78d9d1-3d9c-40ac-a2f3-5f75bfd9a8fd /mnt/void ext4 defaults 0 2
 #---------------------------------------------------------------------------#
 
 #/dev/nvme0n1p11 Kali EFI
-UUID=C749-9996 /mnt/kali/efi vfat defaults 0 2
+UUID=C749-9996 /mnt/kali/boot/efi vfat defaults 0 2
 
 #/dev/nvme0n1p12 Kali
 UUID=c1b2013b-4dd7-4668-8a94-90e76be438f6 /mnt/kali ext4 defaults 0 2
