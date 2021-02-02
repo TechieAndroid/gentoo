@@ -28,25 +28,38 @@
 #dev-python/certifi python_targets_python3_9
 #dev-python/setuptools python_targets_python3_9
 #dev-python/ply python_targets_python3_9
+
 sys-libs/pam -filecaps
+sys-apps/dbus elogind
+sys-apps/util-linux -udev
+sys-kernel/gentoo-sources experimental
+sys-fs/eudev -introspection
+sys-libs/zlib minizip static-libs
+sys-boot/grub mount
+
 media-libs/tiff -webp
 media-libs/libwebp -tiff
-dev-lang/python -sqlite
+
+dev-lang/python -sqlite -bluetooth
 dev-db/sqlite -icu
-dev-lang/python -bluetooth
-sys-apps/util-linux -udev
+dev-qt/qtmultimedia widgets
+dev-libs/rocr-runtime -nonfree
+dev-util/astyle java
+
 virtual/libudev elogind
-sys-fs/eudev -introspection
-sys-apps/dbus elogind
-sys-kernel/gentoo-sources experimental
+
 www-client/w3m imlib
-media-gfx/blender -opencl cycles openimageio python3_7
+
+media-gfx/blender opencl cycles openimageio python3_7
 media-libs/opencolorio -opengl
 media-libs/libaom -cpu_flags_x86_sse2
-sys-libs/zlib minizip
-dev-qt/qtmultimedia widgets
-sys-boot/grub mount
 media-libs/mesa -opencl wayland
+media-libs/libsdl2 haptic
+
 kde-frameworks/kitemmodels qml
+
 x11-misc/polybar i3wm ipc mpd network
-dev-libs/rocr-runtime -nonfree
+
+app-arch/xz-utils static-libs
+
+#>=x11-libs/gtk+-2.24.32-r666 -abi_x86_32

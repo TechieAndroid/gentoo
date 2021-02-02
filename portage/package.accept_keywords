@@ -1,6 +1,8 @@
 sys-kernel/gentoo-sources
 sys-fs/exfatprogs
+
 net-im/discord-bin
+
 dev-util/clinfo
 #dev-libs/amdgpu-pro-opencl
 dev-libs/rocm-opencl-runtime
@@ -13,13 +15,33 @@ dev-ml/findlib
 dev-util/cmake
 dev-util/ninja
 dev-util/rocm-cmake
+
 media-libs/mesa
+
 virtual/opencl
+
 sys-devel/llvm-roc
+
 dev-libs/roct-thunk-interface
 dev-util/rocminfo #?
 dev-libs/libclc #?
+
 sys-process/bashtop
+
 media-sound/spotify
 media-gfx/blender
+
 app-benchmarks/unigine-superposition-bin
+
+app-editors/atom
+
+gnome-base/libgnome-keyring
+
+app-emulation/wine-staging
+app-emulation/vkd3d
+app-emulation/wine-mono
+app-emulation/wine-gecko
+
+sys-devel/crossdev
+
+dev-embedded/arduino
