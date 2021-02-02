@@ -1,47 +1,78 @@
+# ██████╗  █████╗  ██████╗██╗  ██╗ █████╗  ██████╗ ███████╗           
+# ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔════╝ ██╔════╝           
+# ██████╔╝███████║██║     █████╔╝ ███████║██║  ███╗█████╗             
+# ██╔═══╝ ██╔══██║██║     ██╔═██╗ ██╔══██║██║   ██║██╔══╝             
+# ██║     ██║  ██║╚██████╗██║  ██╗██║  ██║╚██████╔╝███████╗██╗        
+# ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝        
+#                                                                     
+#  █████╗  ██████╗ ██████╗███████╗██████╗ ████████╗                   
+# ██╔══██╗██╔════╝██╔════╝██╔════╝██╔══██╗╚══██╔══╝                   
+# ███████║██║     ██║     █████╗  ██████╔╝   ██║                      
+# ██╔══██║██║     ██║     ██╔══╝  ██╔═══╝    ██║                      
+# ██║  ██║╚██████╗╚██████╗███████╗██║        ██║███████╗              
+# ╚═╝  ╚═╝ ╚═════╝ ╚═════╝╚══════╝╚═╝        ╚═╝╚══════╝              
+#                                                                     
+# ██╗  ██╗███████╗██╗   ██╗██╗    ██╗ ██████╗ ██████╗ ██████╗ ███████╗
+# ██║ ██╔╝██╔════╝╚██╗ ██╔╝██║    ██║██╔═══██╗██╔══██╗██╔══██╗██╔════╝
+# █████╔╝ █████╗   ╚████╔╝ ██║ █╗ ██║██║   ██║██████╔╝██║  ██║███████╗
+# ██╔═██╗ ██╔══╝    ╚██╔╝  ██║███╗██║██║   ██║██╔══██╗██║  ██║╚════██║
+# ██║  ██╗███████╗   ██║   ╚███╔███╔╝╚██████╔╝██║  ██║██████╔╝███████║
+# ╚═╝  ╚═╝╚══════╝   ╚═╝    ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝
+
+#<<==Kernel==>>
 sys-kernel/gentoo-sources
+
+#<<==ExFAT==>>
 sys-fs/exfatprogs
 
+#<<==Discord==>>
 net-im/discord-bin
 
-dev-util/clinfo
-#dev-libs/amdgpu-pro-opencl
-dev-libs/rocm-opencl-runtime
+#<<==ROCm==>>
 dev-lang/ocaml
+dev-libs/libclc
 dev-libs/rocclr
 dev-libs/rocm-comgr
-dev-libs/rocm-device-libs
 dev-libs/rocr-runtime
+dev-libs/rocm-device-libs
+dev-libs/rocm-opencl-runtime
+dev-libs/roct-thunk-interface
 dev-ml/findlib
 dev-util/cmake
 dev-util/ninja
+dev-util/rocminfo
 dev-util/rocm-cmake
-
-media-libs/mesa
-
-virtual/opencl
-
 sys-devel/llvm-roc
 
-dev-libs/roct-thunk-interface
-dev-util/rocminfo #?
-dev-libs/libclc #?
+#<<==Mesa==>>
+media-libs/mesa
 
+#<<==OpenCL==>>
+virtual/opencl
+dev-util/clinfo
+
+#<<==Bashtop==>>
 sys-process/bashtop
 
+#<<==Spotify==>>
 media-sound/spotify
+
+#<<==Blender==>>
 media-gfx/blender
 
+#<<==Unigine Superposition==>>
 app-benchmarks/unigine-superposition-bin
 
+#<<==Atom==>>
 app-editors/atom
-
 gnome-base/libgnome-keyring
 
-app-emulation/wine-staging
+#<<==Wine Staging==>>
 app-emulation/vkd3d
 app-emulation/wine-mono
 app-emulation/wine-gecko
+app-emulation/wine-staging
 
+#<<==Arduino==>>
 sys-devel/crossdev
-
 dev-embedded/arduino

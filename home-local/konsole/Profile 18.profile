@@ -1,9 +1,9 @@
 [Appearance]
 ColorScheme=Dracula
-Font=Hack,10,-1,5,50,0,0,0,0,0
+Font=FiraCode Nerd Font Mono,10,-1,5,53,0,0,0,0,0,Retina
 
 [General]
-Name=Profile 16
+Name=Profile 18
 Parent=FALLBACK/
 TerminalCenter=true
 TerminalMargin=0

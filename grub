@@ -18,7 +18,7 @@ GRUB_DISTRIBUTOR="Gentoo"
 #GRUB_TIMEOUT_STYLE=menu
 
 # Append parameters to the linux kernel command line
-#GRUB_CMDLINE_LINUX=""
+GRUB_CMDLINE_LINUX="acpi_backlight=video i8042.noloop i8042.nomux i8042.nopnp i8042.reset"
 #
 # Examples:
 #
@@ -29,7 +29,7 @@ GRUB_DISTRIBUTOR="Gentoo"
 # GRUB_CMDLINE_LINUX="init=/usr/lib/systemd/systemd"
 
 # Append parameters to the linux kernel command line for non-recovery entries
-GRUB_CMDLINE_LINUX_DEFAULT="acpi_backlight=video"
+#GRUB_CMDLINE_LINUX_DEFAULT=""
 
 # Uncomment to disable graphical terminal (grub-pc only)
 #GRUB_TERMINAL=console
