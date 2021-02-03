@@ -5,26 +5,104 @@
 # ██║     ██║  ██║╚██████╗██║  ██╗██║  ██║╚██████╔╝███████╗██╗╚██████╔╝███████║███████╗
 # ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝ ╚═════╝ ╚══════╝╚══════╝
 
-# required by media-libs/mesa-20.1.10::gentoo[-video_cards_r600,-video_cards_radeon,-video_cards_r200,video_cards_radeonsi,-video_cards_r100,-video_cards_r300]
-# required by media-libs/libepoxy-1.5.4::gentoo[egl]
-# required by x11-libs/gtk+-3.24.22::gentoo
-# required by gnome-extra/polkit-gnome-0.105-r2::gentoo
-# required by sys-auth/polkit-0.118::gentoo[gtk]
-# required by sys-auth/elogind-243.7::gentoo[policykit]
-# required by sys-process/procps-3.3.16-r2::gentoo[elogind]
-# required by @system
-# required by @world (argument)
+	###<<==SYSTEM==>>###
+
+#<<==Kernel==>>
+sys-kernel/gentoo-sources experimental
+
+#<<==GRUB==>>
+sys-boot/grub mount
+
+#<<==PAM==>>
+sys-libs/pam -filecaps
+
+#<<==DBUS==>>
+sys-apps/dbus elogind
+
+sys-apps/util-linux -udev
+sys-fs/eudev -introspection
+sys-libs/zlib minizip static-libs
+dev-lang/python -sqlite -bluetooth
+dev-db/sqlite -icu
+dev-qt/qtmultimedia widgets
+dev-util/astyle java
+virtual/libudev elogind
+
+www-client/w3m imlib
+
+#<<==Bashtop==>>
+sys-process/bashtop
+
+#<<==Polybar==>>
+x11-misc/polybar i3wm ipc mpd network
+
+#<<==i3-gaps==>>
+x11-wm/i3-gaps
+
+#<<==Picom==>>
+x11-misc/picom config-file doc drm opengl
+
+#<<==Dmenu==>>
+x11-misc/dmenu -xinerama -savedconfig
+
+
+	###<<==MEDIA==>>###
+
+
+
+#<<==Spotify==>>
+media-sound/spotify -systray -pax_kernel pulseaudio
+
+#<<==VLC==>>
+media-video/vlc aom archive aribsub bluray chromaprint chromecast dav1d dc1394 -directx dvbpsi encode faad fdk fluidsynth gcrypt gme gstreamer kate kms libplacebo libtar libtiger linsys live loudness lua -macosx-notifications matroska mpeg nfs omxil -optimisememory projectm -run-as-root sdl-image sftp shout sid skins soxr srt tremor twolame upnp vpx X x265 zeroconf zvbi
+
+#<<==FFmpeg==>>
+media-video/ffmpeg -chromium -pic cpudetection gcrypt gpl hardcoded-tables libxml2 network opencl openssl postproc vulkan cdio -iec61883 libv4l libdrm amr codec2 dav1d fdk bluray gme libaribb24 -mmal libilbc librtmp ssh srt vpx zvbi -appkit bs2b chromaprint -cuda flite frei0r fribidi libtesseract lv2 vidstab rubberband zeromq zimg libsoxr amrenc kvazaar libaom openh264 rav1e snappy twolame x265 mipsdspr1 mipsdspr2 mipsfpu
+
+
+	###<<==GRAPHICS==>>###
+
+
+#<<==ROCm==>>
+dev-libs/rocr-runtime -nonfree
+
+#<<==Blender==>>
+media-gfx/blender opencl cycles openimageio python3_7
+
+#<<==Inkscape==>>
+
+#<<==Krita==>>
+
+#<<==GIMP==>>
+
+#<<==OBS Studio==>>
+media-video/obs-studio fdk imagemagick python speex ssl vlc -nvenc
+
+media-libs/opencolorio -opengl
+media-libs/libaom -cpu_flags_x86_sse2
+media-libs/mesa -opencl wayland
+media-libs/libsdl2 haptic
+media-libs/opencv qt5 -gtk3
+media-libs/tiff -webp
+media-libs/libwebp -tiff
+
+kde-frameworks/kitemmodels qml
+
+app-arch/xz-utils static-libs
+
+
+	###<<==UTILS==>>###
+
+
+
+
+
+	###<<==UNUSED==>>###
+
+
+#>=x11-libs/gtk+-2.24.32-r666 -abi_x86_32
 #x11-libs/libdrm video_cards_radeon
 #>=sys-apps/dbus-1.12.20 X elogind user-session -debug -doc -static-libs -systemd -test
-# required by sys-apps/systemd-246.6::gentoo
-# required by virtual/libudev-232-r3::gentoo[systemd]
-# required by sys-fs/lvm2-2.02.187-r2::gentoo
-# required by sys-fs/cryptsetup-2.3.2::gentoo
-# required by sys-apps/util-linux-2.35.2::gentoo[cryptsetup]
-# required by dev-libs/glib-2.64.5::gentoo
-# required by gnome-base/dconf-0.36.0::gentoo
-# required by app-misc/neofetch-6.0.0::gentoo[X]
-# required by app-misc/neofetch (argument)
 #dev-python/setuptools python_targets_python3_7
 #dev-python/setuptools_scm -python_targets_python3_7
 #dev-python/cython python_targets_python3_7
@@ -34,38 +112,3 @@
 #dev-python/certifi python_targets_python3_9
 #dev-python/setuptools python_targets_python3_9
 #dev-python/ply python_targets_python3_9
-
-sys-libs/pam -filecaps
-sys-apps/dbus elogind
-sys-apps/util-linux -udev
-sys-kernel/gentoo-sources experimental
-sys-fs/eudev -introspection
-sys-libs/zlib minizip static-libs
-sys-boot/grub mount
-
-media-libs/tiff -webp
-media-libs/libwebp -tiff
-
-dev-lang/python -sqlite -bluetooth
-dev-db/sqlite -icu
-dev-qt/qtmultimedia widgets
-dev-libs/rocr-runtime -nonfree
-dev-util/astyle java
-
-virtual/libudev elogind
-
-www-client/w3m imlib
-
-media-gfx/blender opencl cycles openimageio python3_7
-media-libs/opencolorio -opengl
-media-libs/libaom -cpu_flags_x86_sse2
-media-libs/mesa -opencl wayland
-media-libs/libsdl2 haptic
-
-kde-frameworks/kitemmodels qml
-
-x11-misc/polybar i3wm ipc mpd network
-
-app-arch/xz-utils static-libs
-
-#>=x11-libs/gtk+-2.24.32-r666 -abi_x86_32
