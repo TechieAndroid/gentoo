@@ -67,13 +67,16 @@ media-video/ffmpeg -chromium -pic cpudetection gcrypt gpl hardcoded-tables libxm
 dev-libs/rocr-runtime -nonfree
 
 #<<==Blender==>>
-media-gfx/blender opencl cycles openimageio python3_7
+media-gfx/blender bullet dds elbeem -system-python -system-numpy tbb -abi6-compat abi7-compat alembic collada color-management -cuda cycles -doc -headless llvm man ndof opencl openimageio opensubdiv -openvdb osl -standalone -test -valgrind python3_8
 
 #<<==Inkscape==>>
+media-gfk/inkscape svg2 -cdr -dia -inkjar -visio -wpg python3_8
 
 #<<==Krita==>>
+media-gfx/krita color-management heif qtmedia vc python3_9
 
 #<<==GIMP==>>
+media-gfx/gimp heif vector-icons python3_9
 
 #<<==OBS Studio==>>
 media-video/obs-studio fdk imagemagick python speex ssl vlc -nvenc
@@ -90,6 +93,21 @@ kde-frameworks/kitemmodels qml
 
 app-arch/xz-utils static-libs
 
+#<<==PipeWire==>>
+media-video/pipewire -jack pulseaudio vulkan
+
+
+	###<<==GAMING==>>###
+
+
+#<<==Dolphin Emulator==>>
+games-emulation/dolphin -discord-presence evdev log lto vulkan
+
+#<<==Wine Staging==>>
+app-emulation/wine-staging capi -custom-cflags dos faudio gcrypt gecko gssapi gstreamer -mingw mono netapi opencl osmesa perl pcap pipelight prelink realtime run-exes samba sdl staging themes udev unwind usb vkd3d vulkan
+
+#<<==SAMBA==>>
+net-fs/samba winbind
 
 	###<<==UTILS==>>###
 

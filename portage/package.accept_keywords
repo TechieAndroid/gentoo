@@ -46,6 +46,13 @@ x11-misc/dmenu
 #<<==Cursor Themes==>
 x11-themes/chameleon-xcursors
 
+#<<==GEGL==>>
+media-libs/gegl
+
+#<<==Anbox==>>
+app-emulation/anbox
+dev-cpp/properties-cpp
+dev-cpp/sdbus-cpp
 
 	###<<==INPUTS==>>###
 
@@ -87,11 +94,23 @@ dev-util/clinfo
 #<<==Blender==>>
 media-gfx/blender
 
+#<<==Inkscape==>>
+media-gfx/inkscape
+
+#<<==Krita==>>
+media-gfx/krita
+
+#<<==GIMP==>>
+media-gfx/gimp
+
 #<<==OBS Studio==>>
 media-video/obs-studio
 
 #<<==FFmpeg==>>
 media-video/ffmpeg
+
+#<<==PipeWire==>>
+media-video/pipewire
 
 #<<==Unigine Superposition==>>
 app-benchmarks/unigine-superposition-bin
@@ -100,12 +119,20 @@ app-benchmarks/unigine-superposition-bin
 	###<<==GAMING==>>###
 
 
+#<<==Dolphin Emulator==>>
+games-emulation/dolphin
+
 #<<==Wine Staging==>>
 app-emulation/vkd3d
 app-emulation/wine-mono
 app-emulation/wine-gecko
 app-emulation/wine-staging
 
+#<<==SAMBA==>>
+net-fs/samba
+
+#<<==LDP==>>
+sys-libs/ldb
 
 	###<<==UTILS==>>###
 
