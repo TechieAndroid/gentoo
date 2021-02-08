@@ -22,8 +22,10 @@
 	###<<==SYSTEM==>>###
 
 
-#<<==Kernel==>>
+#<<==Kernels==>>
 sys-kernel/gentoo-sources
+sys-kernel/zen-sources
+sys-kernel/genkernel
 
 #<<==ExFAT==>>
 sys-fs/exfatprogs
@@ -86,6 +88,10 @@ sys-devel/llvm-roc
 
 #<<==Mesa==>>
 media-libs/mesa
+
+#<<==Vulkan==>>
+media-video/libva-utils
+x11-libs/libva
 
 #<<==OpenCL==>>
 virtual/opencl
