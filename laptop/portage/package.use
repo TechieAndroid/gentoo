@@ -45,6 +45,8 @@ x11-misc/picom config-file dbus doc drm opengl pcre -test
 #<<==Dmenu==>>
 x11-misc/dmenu xinerama -savedconfig
 
+#<<==Bluez==>>
+net-wireless/bluez btpclient deprecated extra-tools experimental mesh -midi obex -test-programs user-session
 	
 	###<<==HACKING==>>###
 	
@@ -55,6 +57,16 @@ net-wireless/aircrack-ng airdrop-ng airgraph-ng netlink -python_targets_python3_
 
 	###<<==MEDIA==>>###
 
+
+#<<==Deluge==>>
+net-p2p/deluge -console -webinterface
+
+#<<==PulseAudio Bluetooth==>>
+media-sound/pulseaudio-modules-bt fdk ffmpeg ldac native-headset ofono-headset
+media-sound/pulseaudio -bluetooth
+
+#<<==ALSA Bluetooth==>>
+media-sound/bluez-alsa hcitop ldac man mpg123 ofono
 
 #<<==CMUS==>>
 media-sound/cmus aac alsa -ao cddb -cdio -discid elogind ffmpeg flac libsamplerate mad mp4 opus pulseaudio -pidgin -systemd tremor
@@ -91,6 +103,9 @@ media-gfx/blender bullet dds elbeem -system-python -system-numpy tbb -abi6-compa
 
 #<<==Inkscape==>>
 media-gfx/inkscape svg2 -cdr dbus -dia exif -graphicsmagick imagemagick -inkjar jpeg lcms openmp postscript -visio -wpg python3_9
+
+#<<==FontForge==>>
+media-gfx/fontforge -truetype-debugger woff2 python3_9
 
 #<<==Krita==>>
 media-gfx/krita color-management heif qtmedia vc python3_9
