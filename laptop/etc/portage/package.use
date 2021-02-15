@@ -22,16 +22,32 @@ sys-apps/dbus elogind
 sys-apps/util-linux caps ncurses nls pam python -python_targets_python3_7 python_targets_python3_8 -slang -systemd -udev
 sys-fs/eudev -introspection
 sys-libs/zlib minizip static-libs
-dev-lang/python gbdm ipv6 ncurses readline ssl xml -sqlite -bluetooth
+dev-lang/python gbdm ipv6 ncurses readline ssl xml sqlite -lto -bluetooth
 dev-db/sqlite -icu
 dev-qt/qtmultimedia gstreamer openal pulseaudio qml widgets
 dev-util/astyle java
 virtual/libudev -systemd
 app-arch/xz-utils threads nls extra-filters static-libs
 
+#<<==Rust==>>
+dev-lang/rust clippy miri nightly parallel-compiler -rls -rustfmt -system-bootstrap -wasm
+
+#<<==Firefox==>>
+www-client/firefox clang -eme-free geckodriver gmp-autoupdate -hwaccel -lto openh264 pgo -screencast system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp
+
+#<<==Chromium==>>
+www-client/chromium -component-build -hangouts -headless js-type-check -official -pic proprietary-codecs -screencast -suid system-ffmpeg system-icu tcmalloc widevine
+
+    
 www-client/w3m X fbcon -gdk-pixbuf gpm imlib -l10n_de l10n_ja nls -nntp ssl unicode -xface
 
 sci-libs/lapack lapacke
+
+#<<==Node.js==>>
+net-libs/nodejs inspector
+
+#<<==X11==>>
+x11-base/xorg-server xvfb
 
 #<<==Polybar==>>
 x11-misc/polybar i3wm ipc mpd network python3_9
@@ -47,7 +63,15 @@ x11-misc/dmenu xinerama -savedconfig
 
 #<<==Bluez==>>
 net-wireless/bluez btpclient deprecated extra-tools experimental mesh -midi obex -test-programs user-session
+
+
+	###<<==CRYPTO==>>###
 	
+
+#<<==xmr stak==>>
+net-p2p/xmr-stak -cuda -devfee hwloc opencl webserver
+
+
 	###<<==HACKING==>>###
 	
 
@@ -77,15 +101,24 @@ media-sound/spotify -systray -pax_kernel pulseaudio
 #<<==VLC==>>
 media-video/vlc aom archive aribsub bluray chromaprint chromecast dav1d dc1394 -directx dvbpsi encode faad fdk fluidsynth gcrypt gme gstreamer kate kms libplacebo libtar libtiger linsys live loudness lua -macosx-notifications matroska mpeg nfs omxil -optimisememory projectm -run-as-root sdl-image sftp shout sid skins soxr srt tremor twolame upnp vpx X x265 zeroconf zvbi
 
+#<<==KdenLive==>>
+kde-apps/kdenlive share -webengine
+
+kde-frameworks/prison qml
+media-libs/mlt ffmpeg frei0r
+
+#<<==KDE Addons==>>
+kde-plasma/kdeplasma-addons -comic share -webengine
+
 #<<==FFmpeg==>>
-media-video/ffmpeg -chromium -pic cpudetection gcrypt gpl gmp hardcoded-tables libxml2 network opencl openssl postproc vulkan cdio -iec61883 ladspa libv4l libdrm amr codec2 dav1d fdk bluray gme libaribb24 -mmal libilbc librtmp ssh srt vpx zvbi -appkit bs2b chromaprint -cuda flite frei0r fribidi libtesseract lv2 vidstab rubberband zeromq zimg libsoxr amrenc kvazaar libaom openh264 rav1e snappy twolame x265 mipsdspr1 mipsdspr2 mipsfpu
+media-video/ffmpeg -chromium -pic cpudetection gcrypt gpl gmp hardcoded-tables libxml2 network opencl openssl postproc vulkan cdio -iec61883 ladspa libv4l libdrm amr codec2 dav1d fdk bluray gme libaribb24 -mmal libilbc librtmp ssh srt vpx zvbi -appkit bs2b chromaprint -cuda -flite frei0r fribidi libtesseract lv2 vidstab rubberband zeromq zimg libsoxr amrenc kvazaar libaom openh264 rav1e snappy twolame x265 mipsdspr1 mipsdspr2 mipsfpu
 
 
 	###<<==GRAPHICS==>>###
 
 
 #<<==Mesa==>>
-media-libs/mesa -classic d3d9 dri3 egl gallium gbm -gles1 gles2 llvm lm-sensors -opencl omesa unwind vaapi vdpau vulkan vulkan-overlay -wayland xa xvmc zink zstd
+media-libs/mesa -classic d3d9 dri3 egl gallium gbm -gles1 gles2 llvm lm-sensors -opencl omesa unwind vaapi vdpau vulkan vulkan-overlay wayland xa xvmc zink zstd
 
 #<<==Vulkan==>>
 media-video/libva-utils drm

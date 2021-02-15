@@ -60,6 +60,16 @@ dev-cpp/sdbus-cpp
 #<<==Bluez-Tools==>>
 net-wireless/bluez-tools
 
+#<<==Rust==>>
+dev-lang/rust
+
+#<<==Firefox==>>
+#www-client/firefox
+
+#<<==Chromium==>>
+www-client/chromium
+
+dev-libs/nss
 	###<<==INPUTS==>>###
 
 
@@ -119,6 +129,9 @@ media-gfx/gimp
 #<<==OBS Studio==>>
 media-video/obs-studio
 
+#<<==KdenLive==>>
+kde-apps/kdenlive
+
 #<<==FFmpeg==>>
 media-video/ffmpeg
 
@@ -127,6 +140,13 @@ media-video/pipewire
 
 #<<==Unigine Superposition==>>
 app-benchmarks/unigine-superposition-bin
+
+
+	###<<==CRYPTO==>>###
+        
+
+#<<==xmr stak==>>
+net-p2p/xmr-stak
 
 
 	###<<==GAMING==>>###

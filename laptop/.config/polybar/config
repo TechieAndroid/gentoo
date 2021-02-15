@@ -58,6 +58,7 @@ font-1 = Iosevka:style=Medium:size=24;5
 font-2 = Roboto:style=Black:size=12;3
 font-3 = Iosevka:style=Medium:size=14;3
 font-4 = Iosevka:style=Medium:size=22;6
+#font-5 = mm:style=Regular:size=12;3
 
 modules-left = left-blank i3 left spotify left-end
 modules-right = right-end alsa right backlight right filesystem right memory right cpu right temperature right bluetooth right wlan right network right date right battery right powermenu

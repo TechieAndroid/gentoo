@@ -24,5 +24,11 @@ PS1='\e[0;34m╔══<=\e[m\e[0;32m\u\e[m\e[0;34m>=\e[m \e[0;34m[\e[m\e[0;35m\w
 \e[0;34m╚══>>> $\e[m'
 #PS2='==>>'
 
+PATH=$PATH:/home/recompiler/.local/bin
+
+alias vimuse="sudo vim /etc/portage/package.use"
+alias vimaccept="sudo vim /etc/portage/package.accept_keywords"
+alias vimmake="sudo vim /etc/portage/make.conf"
+alias vimunmask="sudo vim /etc/portage/package.unmask"
 alias ls="ls -lahS"
-alias gup="mirrorselect -D -H -c 'United States' -R 'North America' && emerge --sync && emerge-webrsync && emerge -au1 sys-apps/portage && emerge -uDNpv world"
+alias gup="mirrorselect -D -H -c 'United States' -R 'North America' && emerge-webrsync && emerge --sync && emerge -au1 sys-apps/portage && emerge -uDNpv world"
