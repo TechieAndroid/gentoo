@@ -230,6 +230,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 exec --no-startup-id picom -b --config ~/.config/picom.conf
 exec_always --no-startup-id feh --bg-scale ~/bg.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+#exec --no-startup-id barrier
 # exec systemctl start httpd
 # exec systemctl start systemd-timesyncd
 # bluetoothctl script

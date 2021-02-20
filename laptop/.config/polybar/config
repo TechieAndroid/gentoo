@@ -316,7 +316,9 @@ interval = 1
 
 thermal-zone = 0
 
-hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input
+
+;for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
 
 ;hwmon-path = /sys/devices/pci0000:00/0000:00:08.1/0000:04:00.0/hwmon/hwmon3/temp1_input
 

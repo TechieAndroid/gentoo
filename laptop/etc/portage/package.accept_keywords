@@ -64,12 +64,18 @@ net-wireless/bluez-tools
 dev-lang/rust
 
 #<<==Firefox==>>
-#www-client/firefox
+www-client/firefox
 
 #<<==Chromium==>>
 www-client/chromium
 
 dev-libs/nss
+
+#<<==Barrier==>>
+x11-misc/barrier
+
+~media-fonts/fontawesome-9999 **
+
 	###<<==INPUTS==>>###
 
 
@@ -153,7 +159,21 @@ net-p2p/xmr-stak
 
 
 #<<==Dolphin Emulator==>>
-games-emulation/dolphin
+~games-emulation/dolphin-9999 **
+#<<Dolphin Emu Dep==>>
+dev-libs/libfmt
+
+#<<==Mupen64Plus==>>
+games-emulation/mupen64plus
+games-emulation/mupen64plus-core
+games-emulation/mupen64plus-audio-sdl
+games-emulation/mupen64plus-rsp-hle
+games-emulation/mupen64plus-input-sdl
+games-emulation/mupen64plus-ui-console
+games-emulation/mupen64plus-video-rice
+games-emulation/mupen64plus-video-glide64mk2
+games-emulation/m64py
+dev-python/PySDL2
 
 #<<==Wine Staging==>>
 app-emulation/vkd3d

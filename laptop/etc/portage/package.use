@@ -33,7 +33,7 @@ app-arch/xz-utils threads nls extra-filters static-libs
 dev-lang/rust clippy miri nightly parallel-compiler -rls -rustfmt -system-bootstrap -wasm
 
 #<<==Firefox==>>
-www-client/firefox clang -eme-free geckodriver gmp-autoupdate -hwaccel -lto openh264 pgo -screencast system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp
+www-client/firefox clang -eme-free -geckodriver gmp-autoupdate -hwaccel -lto openh264 pgo -screencast system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp
 
 #<<==Chromium==>>
 www-client/chromium -component-build -hangouts -headless js-type-check -official -pic proprietary-codecs -screencast -suid system-ffmpeg system-icu tcmalloc widevine
@@ -44,10 +44,10 @@ www-client/w3m X fbcon -gdk-pixbuf gpm imlib -l10n_de l10n_ja nls -nntp ssl unic
 sci-libs/lapack lapacke
 
 #<<==Node.js==>>
-net-libs/nodejs inspector
+net-libs/nodejs -inspector
 
 #<<==X11==>>
-x11-base/xorg-server xvfb
+x11-base/xorg-server dmx -kdrive -xephyr -xnest xorg xvfb elogind unwind xcsecurity -suid
 
 #<<==Polybar==>>
 x11-misc/polybar i3wm ipc mpd network python3_9
@@ -64,6 +64,11 @@ x11-misc/dmenu xinerama -savedconfig
 #<<==Bluez==>>
 net-wireless/bluez btpclient deprecated extra-tools experimental mesh -midi obex -test-programs user-session
 
+#<<==Gparted==>>
+sys-block/gparted btrfs cryptsetup dmraid f2fs fat hfs jfs mdadm ntfs reiserfs reiser4 udf -wayland xfs
+
+#<<==Barrier Dep==>>
+net-dns/avahi mdnsresponder-compat
 
 	###<<==CRYPTO==>>###
 	
@@ -109,6 +114,9 @@ media-libs/mlt ffmpeg frei0r
 
 #<<==KDE Addons==>>
 kde-plasma/kdeplasma-addons -comic share -webengine
+
+#<<==Audacity==>>
+media-sound/audacity id3tag lv2 portmidi portmixer portsmf sbsms twolame vamp vst
 
 #<<==FFmpeg==>>
 media-video/ffmpeg -chromium -pic cpudetection gcrypt gpl gmp hardcoded-tables libxml2 network opencl openssl postproc vulkan cdio -iec61883 ladspa libv4l libdrm amr codec2 dav1d fdk bluray gme libaribb24 -mmal libilbc librtmp ssh srt vpx zvbi -appkit bs2b chromaprint -cuda -flite frei0r fribidi libtesseract lv2 vidstab rubberband zeromq zimg libsoxr amrenc kvazaar libaom openh264 rav1e snappy twolame x265 mipsdspr1 mipsdspr2 mipsfpu
@@ -168,6 +176,9 @@ media-video/pipewire ffmpeg gstreamer -jack pulseaudio vulkan
 
 #<<==Dolphin Emulator==>>
 games-emulation/dolphin -discord-presence evdev ffmpeg log lto vulkan
+
+#<<==Mupen64Plus==>>
+games-emulation/mupen64plus audio-sdl input-sdl rsp-hle ui-console ui-m64py video-glide64mk2 video-rice
 
 #<<==Wine Staging==>>
 app-emulation/wine-staging capi -custom-cflags dos faudio gcrypt gecko gssapi gstreamer -mingw mono netapi opencl osmesa perl pcap pipelight prelink realtime run-exes samba sdl staging themes udev unwind usb vkd3d vulkan
