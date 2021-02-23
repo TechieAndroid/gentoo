@@ -23,7 +23,7 @@ sys-apps/util-linux caps ncurses nls pam python -python_targets_python3_7 python
 sys-fs/eudev -introspection
 sys-libs/zlib minizip static-libs
 dev-lang/python gbdm ipv6 ncurses readline ssl xml sqlite -lto -bluetooth
-dev-db/sqlite -icu
+dev-db/sqlite -icu -secure-delete
 dev-qt/qtmultimedia gstreamer openal pulseaudio qml widgets
 dev-util/astyle java
 virtual/libudev -systemd
@@ -69,6 +69,11 @@ sys-block/gparted btrfs cryptsetup dmraid f2fs fat hfs jfs mdadm ntfs reiserfs r
 
 #<<==Barrier Dep==>>
 net-dns/avahi mdnsresponder-compat
+
+#<<==Suspend==>>
+dev-libs/libgcrypt static-libs
+dev-libs/libgpg-error static-libs
+dev-libs/lzo static-libs
 
 	###<<==CRYPTO==>>###
 	
