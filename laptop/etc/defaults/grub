@@ -14,12 +14,12 @@ GRUB_DISTRIBUTOR="Gentoo"
 #GRUB_DEFAULT=0
 
 # Boot the default entry this many seconds after the menu is displayed
-#GRUB_TIMEOUT=5
+GRUB_TIMEOUT=3
 #GRUB_TIMEOUT_STYLE=menu
 
 # Append parameters to the linux kernel command line
-GRUB_CMDLINE_LINUX="acpi_backlight=video i8042.noloop i8042.nomux i8042.nopnp i8042.reset"
-#
+GRUB_CMDLINE_LINUX="acpi_backlight=video"
+# i8042.noloop i8042.nomux i8042.nopnp i8042.reset Remove since I'm not sure I need them
 # Examples:
 #
 # Boot with network interface renaming disabled
@@ -49,11 +49,11 @@ GRUB_GFXPAYLOAD_LINUX=keep
 # Path to theme spec txt file.
 # The starfield is by default provided with use truetype.
 # NOTE: when enabling custom theme, ensure you have required font/etc.
-#GRUB_THEME="/boot/grub/themes/starfield/theme.txt"
+GRUB_THEME="/boot/grub/themes/dracula/theme.txt"
 
 # Background image used on graphical terminal.
 # Can be in various bitmap formats.
-#GRUB_BACKGROUND="/boot/grub/mybackground.png"
+GRUB_BACKGROUND="/boot/grub/themes/dracula/background.png"
 
 # Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to kernel
 #GRUB_DISABLE_LINUX_UUID=true
