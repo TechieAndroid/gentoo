@@ -86,15 +86,25 @@ sys-block/gparted btrfs cryptsetup dmraid f2fs fat hfs jfs mdadm ntfs reiserfs r
 net-dns/avahi mdnsresponder-compat
 
 #<<==Suspend==>>
-dev-libs/libgcrypt
-dev-libs/libgpg-error
-dev-libs/lzo
+dev-libs/libgcrypt static-libs
+dev-libs/libgpg-error static-libs
+dev-libs/lzo static-libs
+
+
+	###<<==PYTHON==>>###
+
+
+#dev-python/setuptools python3_7 python3_8 python3_9 pypy3
+#dev-python/certifi python3_7 python3_8 python3_9 pypy3
+#dev-python/setuptools_scm python3_7 python3_8 python3_9 pypy3
+#dev-python/markupsafe python3_7 python3_8 python3_9 pypy3
+
 
 	###<<==CRYPTO==>>###
 	
 
 #<<==xmr stak==>>
-net-p2p/xmr-stak -devfee hwloc webserver
+#net-p2p/xmr-stak -devfee hwloc webserver
 
 
 	###<<==HACKING==>>###
@@ -112,7 +122,7 @@ net-p2p/deluge -console -webinterface
 
 #<<==ALSA==>>
 media-sound/bluez-alsa hcitop ldac mpg123 ofono
-media-plugins/alsa-plugins
+media-plugins/alsa-plugins -pulseaudio
 
 #<<==Sway==>>
 gui-wm/sway wallpapers
@@ -124,7 +134,7 @@ media-sound/cmus -ao cddb -cdio -discid elogind flac libsamplerate mad mp4 opus 
 media-sound/spotify -systray -pax_kernel
 
 #<<==VLC==>>
-media-video/vlc aom archive aribsub bluray chromaprint chromecast dav1d dc1394 -directx dvbpsi faad fdk fluidsynth gcrypt gme gstreamer kate kms libplacebo libtar libtiger linsys live loudness lua -macosx-notifications mpeg nfs omxil -optimisememory projectm -run-as-root sdl-image sftp shout sid skins soxr srt tremor twolame zeroconf zvbi
+media-video/vlc aom archive aribsub bluray chromaprint chromecast dav1d dc1394 -directx dvbpsi faad fdk fluidsynth gcrypt gme gstreamer kate kms libplacebo libtar libtiger linsys live loudness lua -macosx-notifications mpeg nfs omxil -optimisememory -projectm -run-as-root sdl-image sftp shout sid skins soxr srt tremor twolame zeroconf zvbi
 
 #<<==KdenLive==>>
 kde-apps/kdenlive share -webengine
@@ -212,4 +222,4 @@ net-fs/samba winbind
 
 
 #<<==Pronterface==>>
-x11-libs/wxGTK gstreamer
+x11-libs/wxGTK gstreamer libnotify
