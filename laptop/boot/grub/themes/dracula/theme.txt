@@ -1,51 +1,46 @@
+# GRUB2 gfxmenu pop theme, based on Linux Vimix theme
+# Designed for any resolution
+
+# Global Property
 title-text: ""
 desktop-image: "background.png"
-desktop-color: "#000000"
-terminal-box: "box_terminal_*.png"
-terminal-font: "firacode 10"
+desktop-image-scale-method: "stretch"
+desktop-color: "#282a36"
+terminal-font: "Unifont Regular 16"
 terminal-left: "0"
 terminal-top: "0"
 terminal-width: "100%"
 terminal-height: "100%"
 terminal-border: "0"
 
+# Logo image
++ image {
+	left = 50%-50
+	top = 50%-50
+    file = "logo.png"
+}
 
+# Show the boot menu
 + boot_menu {
-  left = 35%
-  top = 35%
-  width = 30%
-  height = 60%
-  item_font = "firacode 10"
-  item_color = "#ffffff"
-  selected_item_color = "#ffffff"
-  item_height = 40
-  item_spacing = 0
-  item_padding = 0
-  item_pixmap_style = "box_*.png"
-  selected_item_pixmap_style = "box_selected_*.png"
+  left = 50%-240
+  top = 60%
+  width = 480
+  height = 30%
+  item_font = "Unifont Regular 16"
+  item_color = "#f6f6f6"
+  selected_item_color = "#f6f6f6"
+  item_height = 32
+  item_spacing = 24
+  selected_item_pixmap_style = "select_*.png"
 }
 
-
+# Show a countdown message using the label component
 + label {
-  left = 16
-  top = 100%-36
-  width = 100%-16
-  align = "left"
-  color = "#ffffff"
-  font = "firacode 10"
-  text = @KEYMAP_MIDDLE@
-}
-
-
-+ progress_bar {
+  top = 82%
+  left = 35%
+  width = 30%
+  align = "center"
   id = "__timeout__"
-  left = 0
-  top = 100%-16
-  height = 16
-  width = 100%
-  font = "firacode 10"
-  text_color = "#ffffff"
-  text = ""
-  bar_style = "box_*.png"
-  highlight_style = "box_selected_*.png"
+  text = "Booting in %d seconds"
+  color = "#f6f6f6"
 }

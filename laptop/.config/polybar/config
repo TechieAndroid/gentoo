@@ -316,7 +316,7 @@ interval = 1
 
 thermal-zone = 0
 
-hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input
 
 ;for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
 
@@ -388,7 +388,7 @@ accumulate-stats = true
 unknown-as-up = true
 
 format-connected = <label-connected>
-label-connected ="%{T0}%{T-} %local_ip%"
+label-connected ="%{T0}%{T-}"
 format-disconnected = %{T2}%{T-}
 
 label-connected-foreground = ${color.text}
@@ -471,10 +471,10 @@ menu-0-1-exec = menu-open-2
 menu-1-0 = %{T-}back
 menu-1-0-exec = menu-open-0
 menu-1-1 = %{T-}reboot
-menu-1-1-exec = openrc-shutdown --reboot now
+menu-1-1-exec = loginctl reboot
 
 menu-2-0 = %{T-}shutdown
-menu-2-0-exec = openrc-shutdown --poweroff now
+menu-2-0-exec = loginctl poweroff
 menu-2-1 = %{T-}back
 menu-2-1-exec = menu-open-0
 

@@ -15,20 +15,20 @@
 
 
 #<<==KErnel==>>
-sys-kernel/gentoo-sources
+#sys-kernel/gentoo-sources
 
 #<<==Python==>>
-dev-python/ply
-dev-python/six
-dev-python/pycparser
+#dev-python/ply
+#dev-python/six
+#dev-python/pycparser
 
 #<<==Cursor Themes==>>
-x11-themes/chameleon-xcursors
+#x11-themes/chameleon-xcursors
 
 
 	###<<==GAMING==>>###
 
 
 #<<==Wine Staging==>>
-app-emulation/wine-staging
-sys-devel/crossdev
+#app-emulation/wine-staging
+#sys-devel/crossdev

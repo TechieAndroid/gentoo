@@ -17,7 +17,7 @@ fi
 
 # Put your fun stuff here.
 # To generate a initramfs
-# dracut --hostonly -k /lib/modules/5.11.0/ --kver 5.11.0 -f /boot/initramfs-5.11.0.img
+# dracut --hostonly -k /lib/modules/5.11.1-gentoo/ --kver 5.11.1-gentoo -f /boot/initramfs-5.11.1-gentoo.img
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 PS1='\e[0;34m╔══<=\e[m\e[0;32m\u\e[m\e[0;34m>=\e[m \e[0;34m[\e[m\e[0;35m\w\e[m\e[0;34m]\e[m

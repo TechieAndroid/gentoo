@@ -5,41 +5,56 @@
 # ██║     ██║  ██║╚██████╗██║  ██╗██║  ██║╚██████╔╝███████╗██╗╚██████╔╝███████║███████╗
 # ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝ ╚═════╝ ╚══════╝╚══════╝
 
+
 	###<<==SYSTEM==>>###
+
 
 #<<==Kernel==>>
 sys-kernel/gentoo-sources experimental
+sys-kernel/gentoo-kernel-bin
+sys-kernel/gentoo-zen-kernel
 
 #<<==GRUB==>>
-sys-boot/grub -device-mapper efiemu fonts mount nls sdl themes truetype
+sys-boot/grub -device-mapper efiemu mount themes
 
 #<<==PAM==>>
 sys-libs/pam -filecaps
 
 #<<==DBUS==>>
-sys-apps/dbus elogind
+sys-apps/dbus
 
-sys-apps/util-linux caps ncurses nls pam python -python_targets_python3_7 python_targets_python3_8 -slang -systemd -udev
+sys-apps/util-linux pam -slang -udev
 sys-fs/eudev -introspection
-sys-libs/zlib minizip static-libs
-dev-lang/python gbdm ipv6 ncurses readline ssl xml sqlite -lto -bluetooth
+sys-libs/zlib minizip
+
+#<<==Python==>>
+dev-lang/python gbdm readline sqlite
+
+#<<==Sqlite==>>
 dev-db/sqlite -icu -secure-delete
-dev-qt/qtmultimedia gstreamer openal pulseaudio qml widgets
+
+#<<==Qt==>>
+dev-qt/qtmultimedia gstreamer qml widgets
+
 dev-util/astyle java
-virtual/libudev -systemd
-app-arch/xz-utils threads nls extra-filters static-libs
+
+#<<==udev==>>
+virtual/libudev
+
+#<<==XZ==>>
+app-arch/xz-utils extra-filters
 
 #<<==Rust==>>
 dev-lang/rust clippy miri nightly parallel-compiler -rls -rustfmt -system-bootstrap -wasm
 
 #<<==Firefox==>>
-www-client/firefox clang -eme-free -geckodriver gmp-autoupdate -hwaccel -lto openh264 pgo -screencast system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp
+www-client/firefox -eme-free -geckodriver gmp-autoupdate -hwaccel openh264 -screencast system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp
 
 #<<==Chromium==>>
 www-client/chromium -component-build -hangouts -headless js-type-check -official -pic proprietary-codecs -screencast -suid system-ffmpeg system-icu tcmalloc widevine
 
     
-www-client/w3m X fbcon -gdk-pixbuf gpm imlib -l10n_de l10n_ja nls -nntp ssl unicode -xface
+www-client/w3m fbcon -gdk-pixbuf gpm imlib -nntp -xface
 
 sci-libs/lapack lapacke
 
@@ -50,72 +65,72 @@ net-libs/nodejs -inspector
 x11-base/xorg-server dmx -kdrive -xephyr -xnest xorg xvfb elogind unwind xcsecurity -suid
 
 #<<==Polybar==>>
-x11-misc/polybar i3wm ipc mpd network python3_9
+x11-misc/polybar i3wm ipc mpd network
 
 #<<==i3-gaps==>>
-x11-wm/i3-gaps -doc -test
+x11-wm/i3-gaps
 
 #<<==Picom==>>
-x11-misc/picom config-file dbus doc drm opengl pcre -test
+x11-misc/picom config-file drm pcre
 
 #<<==Dmenu==>>
-x11-misc/dmenu xinerama -savedconfig
+x11-misc/dmenu -savedconfig
 
 #<<==Bluez==>>
-net-wireless/bluez btpclient deprecated extra-tools experimental mesh -midi obex -test-programs user-session
+net-wireless/bluez btpclient deprecated extra-tools experimental mesh obex -test-programs user-session
 
 #<<==Gparted==>>
-sys-block/gparted btrfs cryptsetup dmraid f2fs fat hfs jfs mdadm ntfs reiserfs reiser4 udf -wayland xfs
+sys-block/gparted btrfs cryptsetup dmraid f2fs fat hfs jfs mdadm ntfs reiserfs reiser4 udf xfs
 
 #<<==Barrier Dep==>>
 net-dns/avahi mdnsresponder-compat
 
 #<<==Suspend==>>
-dev-libs/libgcrypt static-libs
-dev-libs/libgpg-error static-libs
-dev-libs/lzo static-libs
+dev-libs/libgcrypt
+dev-libs/libgpg-error
+dev-libs/lzo
 
 	###<<==CRYPTO==>>###
 	
 
 #<<==xmr stak==>>
-net-p2p/xmr-stak -cuda -devfee hwloc opencl webserver
+net-p2p/xmr-stak -devfee hwloc webserver
 
 
 	###<<==HACKING==>>###
-	
+
 
 #<<==Aircrack-ng==>>
-net-wireless/aircrack-ng airdrop-ng airgraph-ng netlink -python_targets_python3_7 python_targets_python3_8
+net-wireless/aircrack-ng airdrop-ng airgraph-ng netlink
 
 
-	###<<==MEDIA==>>###
+	###<<==USERSPACE TOOLS==>>###
 
 
 #<<==Deluge==>>
 net-p2p/deluge -console -webinterface
 
-#<<==PulseAudio Bluetooth==>>
-media-sound/pulseaudio-modules-bt fdk ffmpeg ldac native-headset ofono-headset
-media-sound/pulseaudio -bluetooth
+#<<==ALSA==>>
+media-sound/bluez-alsa hcitop ldac mpg123 ofono
+media-plugins/alsa-plugins
 
-#<<==ALSA Bluetooth==>>
-media-sound/bluez-alsa hcitop ldac man mpg123 ofono
+#<<==Sway==>>
+gui-wm/sway wallpapers
 
 #<<==CMUS==>>
-media-sound/cmus aac alsa -ao cddb -cdio -discid elogind ffmpeg flac libsamplerate mad mp4 opus pulseaudio -pidgin -systemd tremor
+media-sound/cmus -ao cddb -cdio -discid elogind flac libsamplerate mad mp4 opus -pidgin -systemd tremor
 
 #<<==Spotify==>>
-media-sound/spotify -systray -pax_kernel pulseaudio
+media-sound/spotify -systray -pax_kernel
 
 #<<==VLC==>>
-media-video/vlc aom archive aribsub bluray chromaprint chromecast dav1d dc1394 -directx dvbpsi encode faad fdk fluidsynth gcrypt gme gstreamer kate kms libplacebo libtar libtiger linsys live loudness lua -macosx-notifications matroska mpeg nfs omxil -optimisememory projectm -run-as-root sdl-image sftp shout sid skins soxr srt tremor twolame upnp vpx X x265 zeroconf zvbi
+media-video/vlc aom archive aribsub bluray chromaprint chromecast dav1d dc1394 -directx dvbpsi faad fdk fluidsynth gcrypt gme gstreamer kate kms libplacebo libtar libtiger linsys live loudness lua -macosx-notifications mpeg nfs omxil -optimisememory projectm -run-as-root sdl-image sftp shout sid skins soxr srt tremor twolame zeroconf zvbi
 
 #<<==KdenLive==>>
 kde-apps/kdenlive share -webengine
 
 kde-frameworks/prison qml
-media-libs/mlt ffmpeg frei0r
+media-libs/mlt frei0r
 
 #<<==KDE Addons==>>
 kde-plasma/kdeplasma-addons -comic share -webengine
@@ -124,14 +139,14 @@ kde-plasma/kdeplasma-addons -comic share -webengine
 media-sound/audacity id3tag lv2 portmidi portmixer portsmf sbsms twolame vamp vst
 
 #<<==FFmpeg==>>
-media-video/ffmpeg -chromium -pic cpudetection gcrypt gpl gmp hardcoded-tables libxml2 network opencl openssl postproc vulkan cdio -iec61883 ladspa libv4l libdrm amr codec2 dav1d fdk bluray gme libaribb24 -mmal libilbc librtmp ssh srt vpx zvbi -appkit bs2b chromaprint -cuda -flite frei0r fribidi libtesseract lv2 vidstab rubberband zeromq zimg libsoxr amrenc kvazaar libaom openh264 rav1e snappy twolame x265 mipsdspr1 mipsdspr2 mipsfpu
+media-video/ffmpeg -chromium -pic cpudetection gcrypt gpl gmp hardcoded-tables libxml2 network openssli cdio -iec61883 ladspa libv4l libdrm amr codec2 dav1d fdk bluray gme libaribb24 -mmal libilbc librtmp ssh srt vpx zvbi -appkit bs2b chromaprint -flite frei0r fribidi libtesseract lv2 vidstab rubberband zeromq zimg libsoxr amrenc kvazaar libaom openh264 rav1e snappy twolame mipsdspr1 mipsdspr2 mipsfpu
 
 
-	###<<==GRAPHICS==>>###
+	###<<==GRAPHIC DRIVERS / APIS==>>###
 
 
 #<<==Mesa==>>
-media-libs/mesa -classic d3d9 dri3 egl gallium gbm -gles1 gles2 llvm lm-sensors -opencl omesa unwind vaapi vdpau vulkan vulkan-overlay wayland xa xvmc zink zstd
+media-libs/mesa -classic d3d9 dri3 egl gallium gbm -gles1 gles2 llvm lm-sensors -opencl omesa unwind vulkan-overlay -xa -xvmc zink
 
 #<<==Vulkan==>>
 media-video/libva-utils drm
@@ -141,75 +156,60 @@ media-libs/vulkan-loader layers
 #<<==ROCm==>>
 #dev-libs/rocr-runtime
 
-	###<<==Digital Art/Video==>>###
+
+	###<<==CONTENT CREATION==>>###
 
 
 #<<==Blender==>>
-media-gfx/blender bullet dds elbeem -system-python -system-numpy tbb -abi6-compat abi7-compat alembic collada color-management -cuda cycles ffmpeg -doc -headless llvm man ndof opencl openimageio opensubdiv -openvdb osl -standalone -test -valgrind python3_8
+media-gfx/blender bullet dds elbeem -system-python -system-numpy tbb -abi6-compat abi7-compat alembic collada color-management cycles -headless llvm ndof opencl openimageio opensubdiv -openvdb osl -standalone -valgrind
 
 #<<==Inkscape==>>
-media-gfx/inkscape svg2 -cdr dbus -dia exif -graphicsmagick imagemagick -inkjar jpeg lcms openmp postscript -visio -wpg python3_9
+media-gfx/inkscape svg2 -cdr dbus -dia exif -graphicsmagick imagemagick -inkjar jpeg lcms openmp postscript -visio -wpg
 
 #<<==FontForge==>>
-media-gfx/fontforge -truetype-debugger woff2 python3_9
+media-gfx/fontforge -truetype-debugger woff2
 
 #<<==Krita==>>
-media-gfx/krita color-management heif qtmedia vc python3_9
+media-gfx/krita color-management heif qtmedia vc
 
 #<<==GIMP==>>
-media-gfx/gimp aalib alsa heif jpeg2k mng openexr postscript udev unwind vector-icons webp xpm
+media-gfx/gimp aalib heif mng openexr unwind vector-icons webp xpm
 
 #<<==OBS Studio==>>
-media-video/obs-studio alsa fdk -imagemagick -jack -lua -lua_single_target_luajit -nvenc pulseaudio python python_single_target_python3_7 speex ssl truetype v4l vlc
+media-video/obs-studio fdk -imagemagick -lua -lua_single_target_luajit vlc
 
-media-libs/opencolorio opengl -doc python python_single_target_python3_8 -test
+media-libs/opencolorio
 media-libs/libaom -cpu_flags_x86_sse2
 
-media-libs/libsdl2 haptic xinerama
-media-libs/opencv ffmpeg gdal gstreamer lapack qt5 -gtk3
+media-libs/libsdl2 gles2 haptic
+media-libs/opencv gdal gstreamer lapack qt5 -gtk3
 media-libs/tiff jbig -webp
 media-libs/libwebp -tiff
 
 kde-frameworks/kitemmodels qml
 
 #<<==PipeWire==>>
-media-video/pipewire ffmpeg gstreamer -jack pulseaudio vulkan
+media-video/pipewire gstreamer
 
 
-	###<<==GAMING==>>###
+	###<<==GAMING / EMULATION==>>###
 
 
 #<<==Dolphin Emulator==>>
-games-emulation/dolphin -discord-presence evdev ffmpeg log lto vulkan
+games-emulation/dolphin evdev log lto
 
 #<<==Mupen64Plus==>>
 games-emulation/mupen64plus audio-sdl input-sdl rsp-hle ui-console ui-m64py video-glide64mk2 video-rice
 
 #<<==Wine Staging==>>
-app-emulation/wine-staging capi -custom-cflags dos faudio gcrypt gecko gssapi gstreamer -mingw mono netapi opencl osmesa perl pcap pipelight prelink realtime run-exes samba sdl staging themes udev unwind usb vkd3d vulkan
+app-emulation/wine-staging capi -custom-cflags dos faudio gcrypt gecko gssapi gstreamer -mingw mono netapi osmesa perl pcap pipelight prelink realtime run-exes samba staging themes udev unwind usb 
 
 #<<==SAMBA==>>
 net-fs/samba winbind
 
-	###<<==UTILS==>>###
+
+	###<<==3D PRINTING==>>###
 
 
 #<<==Pronterface==>>
 x11-libs/wxGTK gstreamer
-
-
-	###<<==UNUSED==>>###
-
-
-#>=x11-libs/gtk+-2.24.32-r666 -abi_x86_32
-#x11-libs/libdrm video_cards_radeon
-#>=sys-apps/dbus-1.12.20 X elogind user-session -debug -doc -static-libs -systemd -test
-#dev-python/setuptools python_targets_python3_7
-#dev-python/setuptools_scm -python_targets_python3_7
-#dev-python/cython python_targets_python3_7
-#dev-python/numpy -python_targets_python3_7
-#dev-python/cryptography python_targets_python3_9
-#dev-python/requests python_targets_python3_9
-#dev-python/certifi python_targets_python3_9
-#dev-python/setuptools python_targets_python3_9
-#dev-python/ply python_targets_python3_9

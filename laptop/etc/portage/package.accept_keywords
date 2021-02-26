@@ -76,6 +76,8 @@ x11-misc/barrier
 
 ~media-fonts/fontawesome-9999 **
 
+gui-libs/display-manager-init
+
 	###<<==INPUTS==>>###
 
 
@@ -86,6 +88,8 @@ x11-drivers/xf86-input-wacom
 #<<==LibInput==>>
 x11-drivers/xf86-input-libinput
 
+gui-apps/tuigreet
+gui-libs/greetd
 
 	###<<==GRAPHICS==>>###
 
@@ -347,7 +351,7 @@ dev-haskell/cabal-doctest
 
 
 #<<==PulseAudio Bluetooth==>>
-media-sound/pulseaudio-modules-bt
+#media-sound/pulseaudio-modules-bt
 
 #<<==ALSA Bluetooth==>>
 media-sound/bluez-alsa
@@ -365,3 +369,10 @@ media-sound/spotify
 #<<==Atom==>>
 #app-editors/atom
 #gnome-base/libgnome-keyring
+sys-fs/fuse-zip
+
+sys-apps/sysvinit
+x11-apps/xinit
+x11-base/xorg-server
+gui-libs/display-manager-init
+x11-misc/cdm
