@@ -91,6 +91,13 @@ dev-libs/libgpg-error static-libs
 dev-libs/lzo static-libs
 
 
+	###<<==Editors==>>###
+
+
+#<<==Sandy==>>
+app-editors/sandy
+
+
 	###<<==PYTHON==>>###
 
 
@@ -216,6 +223,9 @@ app-emulation/wine-staging capi -custom-cflags dos faudio gcrypt gecko gssapi gs
 
 #<<==SAMBA==>>
 net-fs/samba winbind
+
+#<<==XAOS==>>
+x11-misc/xaos svga
 
 
 	###<<==3D PRINTING==>>###

@@ -91,6 +91,22 @@ x11-drivers/xf86-input-libinput
 gui-apps/tuigreet
 gui-libs/greetd
 
+#<<==FUSE==>>
+app-emulation/fuse-utils
+
+	###<<==Editors==>>###
+
+
+#<<==EMACS==>>
+app-emacs/auto-complete
+app-emacs/multiple-cursors
+app-emacs/popup
+app-emulation/libspectrum
+
+#<<==Sandy==>>
+app-editors/sandy
+
+
 	###<<==GRAPHICS==>>###
 
 
