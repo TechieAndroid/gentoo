@@ -78,6 +78,13 @@ x11-misc/barrier
 
 gui-libs/display-manager-init
 
+	###<<===WMs==>>###
+
+
+#<<==Xmonad==>>
+x11-wm/xmonad
+
+
 	###<<==INPUTS==>>###
 
 
@@ -177,6 +184,10 @@ net-p2p/xmr-stak
 
 	###<<==GAMING==>>###
 
+
+#<<==Steam==>>
+games-util/steam-launcher
+games-util/game-device-udev-rules
 
 #<<==Dolphin Emulator==>>
 ~games-emulation/dolphin-9999 **
@@ -363,7 +374,9 @@ dev-haskell/comonad
 dev-haskell/distributive
 dev-haskell/indexed-traversable
 dev-haskell/cabal-doctest
-
+dev-haskell/extensible-exceptions
+dev-haskell/setlocale
+dev-haskell/x11
 
 
 #<<==PulseAudio Bluetooth==>>
