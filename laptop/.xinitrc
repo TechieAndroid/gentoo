@@ -1,2 +1,3 @@
 #!/bin/bash
-exec i3
+xrdb -merge ~/.Xresources
+eval $(dbus-launch --sh-syntax --exit-with-session i3)
