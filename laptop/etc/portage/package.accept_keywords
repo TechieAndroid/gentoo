@@ -53,7 +53,7 @@ x11-themes/chameleon-xcursors
 media-libs/gegl
 
 #<<==Anbox==>>
-app-emulation/anbox
+~app-emulation/anbox-9999 **
 dev-cpp/properties-cpp
 dev-cpp/sdbus-cpp
 
@@ -116,6 +116,8 @@ app-editors/sandy
 
 	###<<==GRAPHICS==>>###
 
+#<<==AMDGPU-PRO==>>
+dev-libs/amdgpu-pro-opencl
 
 #<<==ROCm==>>
 dev-lang/ocaml

@@ -17,7 +17,7 @@ fi
 
 # Put your fun stuff here.
 # To generate a initramfs
-# dracut --hostonly -k /lib/modules/5.11.1-gentoo/ --kver 5.11.1-gentoo -f /boot/initramfs-5.11.1-gentoo.img
+# dracut --hostonly -k /lib/modules/5.11.3-gentoo/ --kver 5.11.3-gentoo -f /boot/initramfs-5.11.3-gentoo.img
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 PS1='\e[0;34m╔══<=\e[m\e[0;32m\u\e[m\e[0;34m>=\e[m \e[0;34m[\e[m\e[0;35m\w\e[m\e[0;34m]\e[m
@@ -31,4 +31,4 @@ alias vimaccept="sudo vim /etc/portage/package.accept_keywords"
 alias vimmake="sudo vim /etc/portage/make.conf"
 alias vimunmask="sudo vim /etc/portage/package.unmask"
 alias ls="ls -lahS"
-alias gup="sudo mirrorselect -D -H -c 'United States' -R 'North America' && sudo emerge-webrsync && sudo emerge --sync && sudo emerge -au1 sys-apps/portage && sudo emerge -uDNpv world"
+alias gup="sudo emerge-webrsync && sudo eix-sync && sudo emerge -au1 sys-apps/portage && sudo emerge -uDNpv world"

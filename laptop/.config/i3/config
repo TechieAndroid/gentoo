@@ -228,7 +228,11 @@ bindsym XF86MonBrightnessDown exec xbacklight -fps 60 -dec 10 # decrease screen 
 
 # AUTOSTART
 exec --no-startup-id picom -b --config ~/.config/picom.conf
-exec_always --no-startup-id feh --bg-scale ~/bg.png
+
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wall.jpg
+#exec_always --no-startup-id killall back4.sh 
+#exec_always --no-startup-id ~/back4.sh 0.080 ~/Pictures/wall.gif &
+
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #exec --no-startup-id barrier
 # exec systemctl start httpd

@@ -8,14 +8,9 @@
 [color]
 
 ; Active Shade
-shade = #862cb0
-;color of the modules
-
-text = #000000
-;color for text and glyphs
-
+shade = #ff80ab
+text = #ffffff
 div = #00000000
-;color from dividers
 
 ; Active Colors
 ; bground = #00000000
@@ -58,21 +53,14 @@ padding = 0
 module-margin-left = 0
 module-margin-right = 0
 
+#font-0 = Iosevka:style=Medium:size=12;3
 font-1 = Iosevka:style=Medium:size=24;5
 font-2 = Roboto:style=Black:size=12;3
-
-;backlight, temp, bluetooth, glyphs
 font-3 = Iosevka:style=Medium:size=14;3
-
-;workspace glyphs
-font-6 = Iosevka:style=Medium:size=20;5
-
 font-4 = Iosevka:style=Medium:size=22;6
-;font-4 = Iosevka:style=Regular:size=24;3
 
 ;Text
-;font-0 = scientifica:style=Medium:size=14;3
-font-0 = Iosevka:style=Medium:size=12;3
+font-0 = scientifica:style=Medium:size=14;3
 
 ;Seperators
 font-5 = Iosevka:style=Medium:size=12;3
@@ -103,9 +91,9 @@ enable-ipc = true
 
 [settings]
 
-;throttle-output = 5
-;throttle-output-for = 10
-;throttle-input-for = 30
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
 
 screenchange-reload = false
 
@@ -131,9 +119,8 @@ content-padding = 0
 
 [module/left]
 type = custom/text
-content = "%{T6} %{T-}"
-content-background = ${color.div}
-;swap to change fg/bg colors
+content = "%{T6}%{T-}"
+content-background = ${color.div} ;swap to change fg/bg colors
 content-foreground = ${color.shade}
 content-padding = 0
 
@@ -141,7 +128,7 @@ content-padding = 0
 
 [module/right]
 type = custom/text
-content = "%{T6} %{T-}"
+content = "%{T6}%{T-}"
 content-background = ${color.div}
 content-foreground = ${color.shade}
 content-padding = 0
@@ -150,18 +137,18 @@ content-padding = 0
 
 [module/left-end]
 type = custom/text
-content = "%{T6}%{T-}"
-content-background = #00000000
-content-foreground = ${color.shade}
+content = "%{T6}%{T-}"
+content-background = ${color.shade}
+content-foreground = #00000000
 content-padding = 0
 
 ;
 
 [module/right-end]
 type = custom/text
-content = "%{T6}%{T-}"
-content-background = #00000000
-content-foreground = ${color.shade}
+content = "%{T6}%{T-}"
+content-background = ${color.shade}
+content-foreground = #00000000
 content-padding = 0
 
 ;
@@ -180,22 +167,22 @@ index-sort = true
 wrapping-scroll = false
 
 fuzzy-match = true
-ws-icon-0 = 1;%{T7}○ %{T-}
-ws-icon-1 = 2;%{T7}○ %{T-}
-ws-icon-2 = 3;%{T7}○ %{T-}
-ws-icon-3 = 4;%{T7}○ %{T-}
-ws-icon-4 = 5;%{T7}○ %{T-}
-ws-icon-5 = 6;%{T7}○ %{T-}
-ws-icon-6 = 7;%{T7}○ %{T-}
-ws-icon-7 = 8;%{T7}○ %{T-}
-ws-icon-8 = 9;%{T7}○ %{T-}
-ws-icon-9 = 0;%{T7}○ %{T-}
+ws-icon-0 = 1;%{T2} %{T-}
+ws-icon-1 = 2;%{T2} %{T-}
+ws-icon-2 = 3;%{T2} %{T-}
+ws-icon-3 = 4;%{T2} %{T-}
+ws-icon-4 = 5;%{T2} %{T-}
+ws-icon-5 = 6;%{T2} %{T-}
+ws-icon-6 = 7;%{T2} %{T-}
+ws-icon-7 = 8;%{T2} %{T-}
+ws-icon-8 = 9;%{T2} %{T-}
+ws-icon-9 = 0;%{T2} %{T-}
 ws-icon-default =
 ws-icon-font = 2
 
 ; focused = Active workspace on focused monitor
-label-focused = %{T7}● %{T-}
-;label-focused = %icon%
+;label-focused = 
+label-focused = %icon%
 label-focused-background = ${color.shade}
 label-focused-padding = 0
 
@@ -296,7 +283,7 @@ label-mounted-background = ${color.shade}
 label-mounted-foreground = ${color.text}
 format-padding = 0
 
-label-mounted = %{T2} %{T-}%percentage_used%%
+label-mounted = %{T2} %{T-}%percentage_used%%
 label-unmounted = not mounted
 label-unmounted-background = ${color.shade}
 label-unmounted-foreground = ${color.text}
@@ -336,7 +323,7 @@ interval = 1
 
 thermal-zone = 0
 
-hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input
 
 ;for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
 
