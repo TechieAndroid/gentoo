@@ -198,6 +198,9 @@ games-util/game-device-udev-rules
 #<<Dolphin Emu Dep==>>
 dev-libs/libfmt
 
+#<<==PCSX2==>>
+~games-emulation/pcsx2-9999 **
+
 #<<==Mupen64Plus==>>
 games-emulation/mupen64plus
 games-emulation/mupen64plus-core

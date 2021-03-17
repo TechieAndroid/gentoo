@@ -135,7 +135,7 @@ net-p2p/deluge -console -webinterface
 
 #<<==ALSA==>>
 media-sound/bluez-alsa hcitop ldac mpg123 ofono
-media-plugins/alsa-plugins -pulseaudio
+#media-plugins/alsa-plugins pulseaudio
 
 #<<==Sway==>>
 gui-wm/sway wallpapers
