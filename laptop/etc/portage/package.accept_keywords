@@ -80,6 +80,7 @@ gui-libs/display-manager-init
 
 sys-libs/talloc
 
+dev-python/pycairo
 	###<<===WMs==>>###
 
 

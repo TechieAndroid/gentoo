@@ -106,11 +106,11 @@ app-editors/sandy
 
 	###<<==PYTHON==>>###
 
-
-#dev-python/setuptools python3_7 python3_8 python3_9 pypy3
-#dev-python/certifi python3_7 python3_8 python3_9 pypy3
-#dev-python/setuptools_scm python3_7 python3_8 python3_9 pypy3
-#dev-python/markupsafe python3_7 python3_8 python3_9 pypy3
+#dev-python/pygobject python3_8 pypy3
+#dev-python/setuptools python3_8 pypy3
+#dev-python/certifi python3_8 pypy3
+#dev-python/setuptools_scm python3_8 pypy3
+#dev-python/markupsafe python3_8 pypy3
 
 
 	###<<==CRYPTO==>>###
