@@ -14,6 +14,9 @@ sys-kernel/gentoo-sources experimental
 sys-kernel/gentoo-kernel-bin
 sys-kernel/gentoo-zen-kernel
 
+#<<==Linux Firmware==>>
+=sys-kernel/linux-firmware-20210208
+
 #<<==GRUB==>>
 sys-boot/grub -device-mapper efiemu mount themes
 

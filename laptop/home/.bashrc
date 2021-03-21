@@ -14,15 +14,22 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-
-# Put your fun stuff here.
-# To generate a initramfs
-# dracut --hostonly -k /lib/modules/5.11.3-gentoo/ --kver 5.11.3-gentoo -f /boot/initramfs-5.11.3-gentoo.img
+# cpupower frequency-set -g performance
+# eselect kernel list
+# cd /usr/src/linux
+# make clean
+# make distclean
+# cp .config ../
+# cp ../.config .
+# cp -av /usr/src/linux-5.11.7-gentoo-r1 /tmp/
+# cd /tmp/linux-5.11.7-gentoo-r1/
+# make clean && make -j8 && make modules_install install
+# dracut --hostonly -k /lib/modules/5.11.7-gentoo-r1/ --kver 5.11.7-gentoo-r1 -f /boot/initramfs-5.11.7-gentoo-r1.img
+# rm /boot/*old
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 PS1='\e[0;34m╔══<=\e[m\e[0;32m\u\e[m\e[0;34m>=\e[m \e[0;34m[\e[m\e[0;35m\w\e[m\e[0;34m]\e[m
 \e[0;34m╚══>>> $\e[m'
-#PS2='==>>'
 
 PATH=$PATH:/home/recompiler/.local/bin
 
@@ -31,4 +38,5 @@ alias vimaccept="sudo vim /etc/portage/package.accept_keywords"
 alias vimmake="sudo vim /etc/portage/make.conf"
 alias vimunmask="sudo vim /etc/portage/package.unmask"
 alias ls="ls -lahS"
+alias ytdl="youtube-dl"
 alias gup="sudo emerge-webrsync && sudo eix-sync && sudo emerge -au1 sys-apps/portage && sudo emerge -uDNpv world"

@@ -27,6 +27,9 @@ sys-kernel/gentoo-sources
 sys-kernel/zen-sources
 sys-kernel/genkernel
 
+#<<==Linux Firmware==>>
+#=sys-kernel/linux-firmware-20210208
+
 #<<==ExFAT==>>
 sys-fs/exfatprogs
 
