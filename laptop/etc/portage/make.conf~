@@ -17,11 +17,9 @@ MAKEOPTS="-j12 -l8"
 EMERGE_DEFAULT_OPTS="-j12 -l8 --with-bdeps y --complete-graph y"
 FEATURES="distcc candy parallel-fetch fixlafiles unmerge-orphans"
 GENTOO_MIRRORS="https://gentoo.osuosl.org/ https://mirror.leaseweb.com/gentoo/"
+ACCEPT_KEYWORDS="~amd64"
 ACCEPT_LICENSE="*"
 
-#RUBY_TARGETS="ruby26 ruby27 ruby30"
-#PYTHON_TARGETS="python3_8 python3_9 pypy3"
-#LUA_TARGETS="lua5-1 lua5-2 lua5-3 lua5-4"
 LLVM_TARGETS="AMDGPU"
 INPUT_DEVICES="libinput wacom"
 VIDEO_CARDS="amdgpu radeonsi"
@@ -40,12 +38,12 @@ USE="10bit 12bit 7z 7zip 8bit X a52 aac aacplus aacs aalib acl acpi aio
      device-mapper dia dolphin dos dts dvbpsi dvd elogind emacs encode fat
      fbcon fbdev ffmpeg fftw fish-completion flac fontconfig fonts gif gphoto2
      gsl gsm gtk gtk3 gui i3wm icons id3tag idn image-backend imagemagick
-     imaging iproute2 ipv4 jemalloc jpeg jpeg2 jpeg2k kerberos lame lcms ldap
-     libass libcaca libsamplerate lm-sensors lrz lz4 lzma lzo mad man matroska
-     mp3 mp4 mpd mtp ncurses nethack netlink network networkmanager nftables
-     nls ntfs odbc ogg openal opencl openexr opengl openmp opus osmesa pcre
-     pdf pic pie png postproc postscript pulseaudio python qt5 raw sasl
-     scanner scrobbler sdl sdl2 sdl2-mixer sdlaudio secure-delete sndfile
+     imaging iproute2 ipv4 ipv6 jemalloc jpeg jpeg2 jpeg2k kerberos lame lcms
+     ldap libass libcaca libsamplerate lm-sensors lrz lz4 lzma lzo mad man
+     matroska mp3 mp4 mpd mtp ncurses nethack netlink network networkmanager
+     nftables nls ntfs odbc ogg openal opencl openexr opengl openmp opus
+     osmesa pcre pdf pic pie png postproc postscript pulseaudio python qt5 raw
+     sasl scanner scrobbler sdl sdl2 sdl2-mixer sdlaudio secure-delete sndfile
      speex spell ssl suid svg svg2 tahoma theora threads tiff truetype udev
      udisks unicode unwind upnp upower v4l vaapi vdpau vector-icons
      video-glide64mk2 video-rice visualizer vkd3d vorbis vpx vulkan
@@ -57,7 +55,6 @@ USE="10bit 12bit 7z 7zip 8bit X a52 aac aacplus aacs aalib acl acpi aio
      -midi -nvcontrol -nvdec -nvenc -nvidia -oss -pgo -static -static-libs
      -systemd -telemetry -test -user-session"
 
-# NOTE: This stage was built with the bindist Use flag enabled
 PORTDIR="/var/db/repos/gentoo"
 DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"

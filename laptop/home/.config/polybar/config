@@ -8,7 +8,8 @@
 [color]
 
 ; Active Shade
-shade = #862cb0
+shade = #e80769
+;shade = #862cb0
 ;color of the modules
 
 text = #000000

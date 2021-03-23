@@ -119,6 +119,9 @@ app-emulation/libspectrum
 #<<==Sandy==>>
 app-editors/sandy
 
+#<<==Atom==>>
+~app-editors/atom-9999 **
+~gnome-base/libgnome-keyring-9999 **
 
 	###<<==GRAPHICS==>>###
 

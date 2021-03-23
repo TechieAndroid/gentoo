@@ -18,8 +18,10 @@ GRUB_TIMEOUT=3
 #GRUB_TIMEOUT_STYLE=menu
 
 # Append parameters to the linux kernel command line
-GRUB_CMDLINE_LINUX="acpi_backlight=video"
+GRUB_CMDLINE_LINUX=""
+# GRUB_CMDLINE_LINUX="acpi_backlight=video"
 # i8042.noloop i8042.nomux i8042.nopnp i8042.reset Remove since I'm not sure I need them
+GRUB_EARLY_INITRD_LINUX_CUSTOM="amd-uc.img"
 # Examples:
 #
 # Boot with network interface renaming disabled

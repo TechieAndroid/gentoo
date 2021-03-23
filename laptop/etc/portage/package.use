@@ -129,6 +129,11 @@ app-editors/sandy
 #<<==Aircrack-ng==>>
 net-wireless/aircrack-ng airdrop-ng airgraph-ng netlink
 
+	###<<==Editors==>>###
+
+
+app-crypt/pinentry gnome-keyring
+
 
 	###<<==USERSPACE TOOLS==>>###
 
