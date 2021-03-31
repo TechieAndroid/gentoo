@@ -45,8 +45,8 @@ location = /var/db/repos/src_prepare-overlay
 sync-type = git
 sync-uri = https://github.com/gentoo-mirror/src_prepare-overlay.git
 
-
-[guru]
-location = /var/db/repos/guru
+[mva]
+location = /var/db/repos/mva
 sync-type = git
-sync-uri = https://github.com/gentoo-mirror/guru.git
+sync-uri = https://github.com/gentoo-mirror/mva.git
+

@@ -65,6 +65,7 @@ net-wireless/bluez-tools
 
 #<<==Rust==>>
 dev-lang/rust
+virtual/rust
 
 #<<==Firefox==>>
 www-client/firefox
@@ -107,6 +108,9 @@ gui-libs/greetd
 #<<==FUSE==>>
 app-emulation/fuse-utils
 
+#<<==dav1d==>>
+media-libs/dav1d
+
 	###<<==Editors==>>###
 
 
@@ -120,8 +124,8 @@ app-emulation/libspectrum
 app-editors/sandy
 
 #<<==Atom==>>
-~app-editors/atom-9999 **
-~gnome-base/libgnome-keyring-9999 **
+app-editors/atom
+#~gnome-base/libgnome-keyring-9999 **
 
 	###<<==GRAPHICS==>>###
 
