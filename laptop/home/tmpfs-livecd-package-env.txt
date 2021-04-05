@@ -1,11 +1,22 @@
-mount -t tmpfs portage-tmpfs /var/tmp/portage -o size=8G,uid=portage,gid=portage,mode=775,noatime
+mount -t tmpfs portage-tmpfs /var/tmp/portage -o size=6G,uid=portage,gid=portage,mode=775,noatime
+
+
+/etc/fstab
+#tmpfs /var/tmp/portage
+tmpfs /var/tmp/portage tmpfs size=6G,uid=portage,gid=portage,mode=755,rw,nosuid,nodev,x-mount.mkdir=755 0 0
+
+#tmpfs /tmp
+tmpfs /tmp tmpfs size=6G,nosuid,nodev 0 0
+
 
 /etc/portage/env/notmpfs.conf
 PORTAGE_TMPDIR="/var/tmp/notmpfs"
 
+
 root #mkdir /var/tmp/notmpfs
 root #chown portage:portage /var/tmp/notmpfs
 root #chmod 775 /var/tmp/notmpfs
+
 
 /etc/portage/package.env
 app-office/libreoffice        notmpfs.conf

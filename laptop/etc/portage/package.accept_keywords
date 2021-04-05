@@ -75,6 +75,9 @@ www-client/chromium
 
 dev-libs/nss
 
+#<<==Zoom==>>
+net-im/zoom
+
 #<<==Barrier==>>
 x11-misc/barrier
 
