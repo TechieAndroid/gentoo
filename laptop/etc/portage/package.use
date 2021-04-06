@@ -11,11 +11,11 @@
 
 #<<==Kernel==>>
 sys-kernel/gentoo-sources experimental
-sys-kernel/gentoo-kernel-bin
-sys-kernel/gentoo-zen-kernel
+#sys-kernel/gentoo-kernel-bin
+#sys-kernel/gentoo-zen-kernel
 
 #<<==Linux Firmware==>>
-=sys-kernel/linux-firmware-20210208
+#sys-kernel/linux-firmware-20210208
 
 #<<==GRUB==>>
 sys-boot/grub -device-mapper efiemu mount themes
@@ -24,7 +24,7 @@ sys-boot/grub -device-mapper efiemu mount themes
 sys-libs/pam -filecaps
 
 #<<==DBUS==>>
-sys-apps/dbus
+#sys-apps/dbus
 
 sys-apps/util-linux pam -slang -udev
 sys-fs/eudev -introspection
@@ -32,6 +32,8 @@ sys-libs/zlib minizip
 
 #<<==Python==>>
 dev-lang/python gbdm readline sqlite
+
+sys-libs/libseccomp static-libs
 
 #<<==Sqlite==>>
 dev-db/sqlite -icu -secure-delete
@@ -42,7 +44,7 @@ dev-qt/qtmultimedia gstreamer qml widgets
 dev-util/astyle java
 
 #<<==udev==>>
-virtual/libudev
+#virtual/libudev
 
 #<<==XZ==>>
 app-arch/xz-utils extra-filters
@@ -71,7 +73,7 @@ x11-base/xorg-server dmx -kdrive -xephyr -xnest xorg xvfb elogind unwind xcsecur
 x11-misc/polybar i3wm ipc mpd network
 
 #<<==i3-gaps==>>
-x11-wm/i3-gaps
+#x11-wm/i3-gaps
 
 #<<==Picom==>>
 x11-misc/picom config-file drm pcre
@@ -104,7 +106,7 @@ x11-wm/pekwm themes
 
 
 #<<==Sandy==>>
-app-editors/sandy
+#app-editors/sandy
 
 
 	###<<==PYTHON==>>###

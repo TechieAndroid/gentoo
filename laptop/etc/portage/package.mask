@@ -1,1 +1,2 @@
 #>=sys-kernel/linux-firmware-20210315
+=dev-lang/perl-5.30.3-r1

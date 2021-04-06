@@ -21,10 +21,10 @@ fi
 # make distclean
 # cp .config ../
 # cp ../.config .
-# cp -av /usr/src/linux-5.11.10-gentoo /tmp/
-# cd /tmp/linux-5.11.10-gentoo/
+# cp -av /usr/src/linux-5.11.11-gentoo /tmp/
+# cd /tmp/linux-5.11.11-gentoo/
 # make clean && make -j8 && make modules_install install
-# dracut --hostonly -k /lib/modules/5.11.10-gentoo/ --kver 5.11.10-gentoo -f /boot/initramfs-5.11.10-gentoo.img
+# dracut --hostonly -k /lib/modules/5.11.11-gentoo/ --kver 5.11.11-gentoo -f /boot/initramfs-5.11.11-gentoo.img
 # rm /boot/*old
 # grub-mkconfig -o /boot/grub/grub.cfg
 
