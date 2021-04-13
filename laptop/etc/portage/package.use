@@ -1,251 +1,181 @@
-# ██████╗  █████╗  ██████╗██╗  ██╗ █████╗  ██████╗ ███████╗   ██╗   ██╗███████╗███████╗
-# ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔════╝ ██╔════╝   ██║   ██║██╔════╝██╔════╝
-# ██████╔╝███████║██║     █████╔╝ ███████║██║  ███╗█████╗     ██║   ██║███████╗█████╗
-# ██╔═══╝ ██╔══██║██║     ██╔═██╗ ██╔══██║██║   ██║██╔══╝     ██║   ██║╚════██║██╔══╝
-# ██║     ██║  ██║╚██████╗██║  ██╗██║  ██║╚██████╔╝███████╗██╗╚██████╔╝███████║███████╗
-# ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝ ╚═════╝ ╚══════╝╚══════╝
-
-
-	###<<==SYSTEM==>>###
-
-
-#<<==Kernel==>>
 sys-kernel/gentoo-sources experimental
-#sys-kernel/gentoo-kernel-bin
-#sys-kernel/gentoo-zen-kernel
-
-#<<==Linux Firmware==>>
-#sys-kernel/linux-firmware-20210208
-
-#<<==GRUB==>>
-sys-boot/grub -device-mapper efiemu mount themes
-
-#<<==PAM==>>
-sys-libs/pam -filecaps
-
-#<<==DBUS==>>
-#sys-apps/dbus
-
-sys-apps/util-linux pam -slang -udev
-sys-fs/eudev -introspection
-sys-libs/zlib minizip
-
-#<<==Python==>>
-dev-lang/python gbdm readline sqlite
-
-sys-libs/libseccomp static-libs
-
-#<<==Sqlite==>>
-dev-db/sqlite -icu -secure-delete
-
-#<<==Qt==>>
-dev-qt/qtmultimedia gstreamer qml widgets
-
-dev-util/astyle java
-
-#<<==udev==>>
-#virtual/libudev
-
-#<<==XZ==>>
-app-arch/xz-utils extra-filters
-
-#<<==Rust==>>
-dev-lang/rust clippy miri nightly parallel-compiler -rls -rustfmt -system-bootstrap -wasm
-
-#<<==Firefox==>>
-www-client/firefox -eme-free -geckodriver gmp-autoupdate -hwaccel openh264 -screencast system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp
-
-#<<==Chromium==>>
-www-client/chromium -component-build -hangouts -headless js-type-check -official -pic proprietary-codecs -screencast -suid system-ffmpeg system-icu tcmalloc widevine
-
-    
-www-client/w3m fbcon -gdk-pixbuf gpm imlib -nntp -xface
-
-sci-libs/lapack lapacke
-
-#<<==Node.js==>>
-net-libs/nodejs -inspector
-
-#<<==X11==>>
-x11-base/xorg-server dmx -kdrive -xephyr -xnest xorg xvfb elogind unwind xcsecurity -suid
-
-#<<==Polybar==>>
-x11-misc/polybar i3wm ipc mpd network
-
-#<<==i3-gaps==>>
-#x11-wm/i3-gaps
-
-#<<==Picom==>>
-x11-misc/picom config-file drm pcre
-
-#<<==Dmenu==>>
-x11-misc/dmenu -savedconfig
-
-#<<==Bluez==>>
-net-wireless/bluez btpclient deprecated extra-tools experimental mesh obex -test-programs user-session
-
-#<<==Gparted==>>
-sys-block/gparted btrfs cryptsetup dmraid f2fs fat hfs jfs mdadm ntfs reiserfs reiser4 udf xfs
-
-#<<==Barrier Dep==>>
+sys-boot/grub mount
+www-client/w3m imlib
 net-dns/avahi mdnsresponder-compat
+media-plugins/alsa-plugins pulseaudio
 
-#<<==Suspend==>>
-dev-libs/libgcrypt static-libs
-dev-libs/libgpg-error static-libs
-dev-libs/lzo static-libs
+sys-libs/ncurses -gpm
 
-	###<<==WMs==>>
+#bluray
+media-libs/libbdplus abi_x86_32
 
-
-#<<==PekWM==>>
-x11-wm/pekwm themes
-
-
-	###<<==Editors==>>###
-
-
-#<<==Sandy==>>
-#app-editors/sandy
-
-
-	###<<==PYTHON==>>###
-
-#dev-python/pygobject python3_8 pypy3
-#dev-python/setuptools python3_8 pypy3
-#dev-python/certifi python3_8 pypy3
-#dev-python/setuptools_scm python3_8 pypy3
-#dev-python/markupsafe python3_8 pypy3
-
-
-	###<<==CRYPTO==>>###
-	
-
-#<<==xmr stak==>>
-#net-p2p/xmr-stak -devfee hwloc webserver
-
-
-	###<<==HACKING==>>###
-
-
-#<<==Aircrack-ng==>>
-net-wireless/aircrack-ng airdrop-ng airgraph-ng netlink
-
-	###<<==Editors==>>###
-
+#<<==ATOM==>>
 
 app-crypt/pinentry gnome-keyring
 
+# Circular depend from src prepare overlay
 
-	###<<==USERSPACE TOOLS==>>###
+media-libs/opencolorio -opengl
 
-
-#<<==Deluge==>>
-net-p2p/deluge -console -webinterface
-
-#<<==ALSA==>>
-media-sound/bluez-alsa hcitop ldac mpg123 ofono
-#media-plugins/alsa-plugins pulseaudio
-
-#<<==Sway==>>
-gui-wm/sway wallpapers
-
-#<<==CMUS==>>
-media-sound/cmus -ao cddb -cdio -discid elogind flac libsamplerate mad mp4 opus -pidgin -systemd tremor
-
-#<<==Spotify==>>
-media-sound/spotify -systray -pax_kernel
-
-#<<==VLC==>>
-media-video/vlc aom archive aribsub bluray chromaprint chromecast dav1d dc1394 -directx dvbpsi faad fdk fluidsynth gcrypt gme gstreamer kate kms libplacebo libtar libtiger linsys live loudness lua -macosx-notifications mpeg nfs omxil -optimisememory -projectm -run-as-root sdl-image sftp shout sid skins soxr srt tremor twolame zeroconf zvbi
-
-#<<==KdenLive==>>
-kde-apps/kdenlive share -webengine
-
-kde-frameworks/prison qml
-media-libs/mlt frei0r
-
-#<<==KDE Addons==>>
-kde-plasma/kdeplasma-addons -comic share -webengine
-
-#<<==Audacity==>>
-media-sound/audacity id3tag lv2 portmidi portmixer portsmf sbsms twolame vamp vst
-
-#<<==FFmpeg==>>
-media-video/ffmpeg -chromium -pic cpudetection gcrypt gpl gmp hardcoded-tables libxml2 network openssli cdio -iec61883 ladspa libv4l libdrm amr codec2 dav1d fdk bluray gme libaribb24 -mmal libilbc librtmp ssh srt vpx zvbi -appkit bs2b chromaprint -flite frei0r fribidi libtesseract lv2 vidstab rubberband zeromq zimg libsoxr amrenc kvazaar libaom openh264 rav1e snappy twolame mipsdspr1 mipsdspr2 mipsfpu
+# 32bit depends
+app-arch/xz-utils abi_x86_32
+sys-devel/clang abi_x86_32
+media-sound/pulseaudio abi_x86_32
+media-libs/libsndfile abi_x86_32
+x11-libs/libSM abi_x86_32
+x11-libs/libICE abi_x86_32
+x11-libs/libXtst abi_x86_32
+sys-libs/libcap abi_x86_32
+sys-apps/tcp-wrappers abi_x86_32
+net-libs/libasyncns abi_x86_32
+media-plugins/alsa-plugins abi_x86_32
+sys-libs/pam abi_x86_32
+sys-libs/db abi_x86_32
+media-libs/flac abi_x86_32
+media-libs/libogg abi_x86_32
+media-libs/libvorbis abi_x86_32
+media-libs/opus abi_x86_32
+media-video/ffmpeg theora abi_x86_32
+virtual/opencl abi_x86_32
+dev-libs/ocl-icd abi_x86_32
+virtual/libcrypt abi_x86_32
+media-libs/libbluray abi_x86_32
+media-libs/dav1d abi_x86_32
+media-sound/lame abi_x86_32
+media-libs/libtheora abi_x86_32
+media-libs/x264 abi_x86_32
+media-libs/x265 abi_x86_32
+media-libs/xvid abi_x86_32
+x11-libs/libXv abi_x86_32
+media-libs/libaacs abi_x86_32
 
 
-	###<<==GRAPHIC DRIVERS / APIS==>>###
+#<<==WINE==>>
 
+dev-libs/libgcrypt abi_x86_32
+media-libs/lcms abi_x86_32
+media-sound/mpg123 abi_x86_32
+media-libs/libsdl2 haptic
+sys-libs/libunwind abi_x86_32
+dev-libs/libxslt abi_x86_32
+app-emulation/wine-gecko abi_x86_32
+dev-libs/libgpg-error abi_x86_32
+virtual/libusb abi_x86_32
+dev-libs/libusb abi_x86_32
+x11-libs/libvdpau abi_x86_32
+media-libs/vulkan-loader abi_x86_32
 
-#<<==Mesa==>>
-media-libs/mesa -classic d3d9 dri3 egl gallium gbm -gles1 gles2 llvm lm-sensors -opencl omesa unwind vulkan-overlay -xa -xvmc zink
+#<<==STEAM==>>
+app-arch/bzip2 abi_x86_32
+dev-db/sqlite abi_x86_32
+dev-libs/atk abi_x86_32
+dev-libs/expat abi_x86_32
+dev-libs/fribidi abi_x86_32
+dev-libs/glib abi_x86_32
+dev-libs/gmp abi_x86_32
+dev-libs/icu abi_x86_32
+dev-libs/libcroco abi_x86_32
+dev-libs/libffi abi_x86_32
+dev-libs/libpcre abi_x86_32
+dev-libs/libpthread-stubs abi_x86_32
+dev-libs/libtasn1 abi_x86_32
+dev-libs/libunistring abi_x86_32
+dev-libs/libxml2 abi_x86_32
+dev-libs/lzo abi_x86_32
+dev-libs/nettle abi_x86_32
+dev-libs/nspr abi_x86_32
+dev-libs/nss abi_x86_32
+dev-libs/openssl abi_x86_32
+dev-libs/wayland abi_x86_32
+dev-util/pkgconfig abi_x86_32
+gnome-base/librsvg abi_x86_32
+media-gfx/graphite2 abi_x86_32
+media-libs/fontconfig abi_x86_32
+media-libs/freetype abi_x86_32
+media-libs/harfbuzz abi_x86_32
+media-libs/libpng abi_x86_32
+media-libs/mesa abi_x86_32
+media-libs/openal abi_x86_32
+media-libs/tiff abi_x86_32
+net-dns/libidn2 abi_x86_32
+net-libs/gnutls abi_x86_32
+net-misc/curl abi_x86_32
+net-nds/openldap abi_x86_32
+net-print/cups abi_x86_32
+sys-apps/attr abi_x86_32
+sys-apps/dbus abi_x86_32
+sys-apps/util-linux abi_x86_32
+sys-devel/gettext abi_x86_32
+sys-devel/llvm abi_x86_32
+sys-fs/udev abi_x86_32
+sys-libs/binutils-libs abi_x86_32
+sys-libs/gpm abi_x86_32
+sys-libs/ncurses abi_x86_32
+sys-libs/readline abi_x86_32
+sys-libs/zlib abi_x86_32
+virtual/libffi abi_x86_32
+virtual/libiconv abi_x86_32
+virtual/libudev abi_x86_32
+virtual/pkgconfig abi_x86_32
+x11-libs/cairo abi_x86_32
+x11-libs/gdk-pixbuf abi_x86_32
+x11-libs/gtk+:2 abi_x86_32
+x11-libs/libX11 abi_x86_32
+x11-libs/libXScrnSaver abi_x86_32
+x11-libs/libXau abi_x86_32
+x11-libs/libXcomposite abi_x86_32
+x11-libs/libXcursor abi_x86_32
+x11-libs/libXdamage abi_x86_32
+x11-libs/libXdmcp abi_x86_32
+x11-libs/libXext abi_x86_32
+x11-libs/libXfixes abi_x86_32
+x11-libs/libXft abi_x86_32
+x11-libs/libXi abi_x86_32
+x11-libs/libXinerama abi_x86_32
+x11-libs/libXrandr abi_x86_32
+x11-libs/libXrender abi_x86_32
+x11-libs/libXxf86vm abi_x86_32
+x11-libs/libdrm abi_x86_32
+x11-libs/libpciaccess abi_x86_32
+x11-libs/libxcb abi_x86_32
+x11-libs/libxshmfence abi_x86_32
+x11-libs/pango abi_x86_32
+x11-libs/pixman abi_x86_32
+x11-proto/damageproto abi_x86_32
+x11-proto/dri2proto abi_x86_32
+x11-proto/dri3proto abi_x86_32
+x11-proto/fixesproto abi_x86_32
+x11-proto/glproto abi_x86_32
+x11-proto/inputproto abi_x86_32
+x11-proto/kbproto abi_x86_32
+x11-proto/presentproto abi_x86_32
+x11-proto/xcb-proto abi_x86_32
+x11-proto/xextproto abi_x86_32
+x11-proto/xf86bigfontproto abi_x86_32
+x11-proto/xf86driproto abi_x86_32
+x11-proto/xf86vidmodeproto abi_x86_32
+x11-proto/xproto abi_x86_32
 
-#<<==Vulkan==>>
-media-video/libva-utils drm
-x11-libs/libva drm utils
-media-libs/vulkan-loader layers
+#NEW REQUIRMENTS
 
-#<<==ROCm==>>
-#dev-libs/rocr-runtime
+net-libs/nghttp2 abi_x86_32
+media-libs/libglvnd abi_x86_32
+app-arch/zstd abi_x86_32
+dev-util/wayland-scanner abi_x86_32
+x11-base/xcb-proto abi_x86_32
+media-libs/alsa-lib abi_x86_32
+media-libs/libsdl2 abi_x86_32
+virtual/libintl abi_x86_32
+virtual/opengl abi_x86_32
+virtual/glu abi_x86_32
+media-libs/glu abi_x86_32
+virtual/jpeg abi_x86_32
+media-libs/libjpeg-turbo abi_x86_32
+virtual/libelf abi_x86_32
+dev-libs/elfutils abi_x86_32
+virtual/rust abi_x86_32
+dev-lang/rust abi_x86_32
 
-
-	###<<==CONTENT CREATION==>>###
-
-
-#<<==Blender==>>
-media-gfx/blender bullet dds elbeem -system-python -system-numpy tbb -abi6-compat abi7-compat alembic collada color-management cycles -headless llvm ndof opencl openimageio opensubdiv -openvdb osl -standalone -valgrind
-
-#<<==Inkscape==>>
-media-gfx/inkscape svg2 -cdr dbus -dia exif -graphicsmagick imagemagick -inkjar jpeg lcms openmp postscript -visio -wpg
-
-#<<==FontForge==>>
-media-gfx/fontforge -truetype-debugger woff2
-
-#<<==Krita==>>
-media-gfx/krita color-management heif qtmedia vc
-
-#<<==GIMP==>>
-media-gfx/gimp aalib heif mng openexr unwind vector-icons webp xpm
-
-#<<==OBS Studio==>>
-media-video/obs-studio fdk -imagemagick -lua -lua_single_target_luajit vlc
-
-media-libs/opencolorio
-media-libs/libaom -cpu_flags_x86_sse2
-
-media-libs/libsdl2 gles2 haptic
-media-libs/opencv gdal gstreamer lapack qt5 -gtk3
-media-libs/tiff jbig -webp
-media-libs/libwebp -tiff
-
-kde-frameworks/kitemmodels qml
-
-#<<==PipeWire==>>
-media-video/pipewire gstreamer
-
-
-	###<<==GAMING / EMULATION==>>###
-
-
-#<<==Dolphin Emulator==>>
-games-emulation/dolphin evdev log lto
-
-#<<==Mupen64Plus==>>
-games-emulation/mupen64plus audio-sdl input-sdl rsp-hle ui-console ui-m64py video-glide64mk2 video-rice
-
-#<<==Wine Staging==>>
-app-emulation/wine-staging capi -custom-cflags dos faudio gcrypt gecko gssapi gstreamer -mingw mono netapi osmesa perl pcap pipelight prelink realtime run-exes samba staging themes udev unwind usb 
-
-#<<==SAMBA==>>
-net-fs/samba winbind
-
-#<<==XAOS==>>
-x11-misc/xaos svga
-
-
-	###<<==3D PRINTING==>>###
-
-
-#<<==Pronterface==>>
-x11-libs/wxGTK gstreamer libnotify
+# If not using systemd add this, otherwise chances are the libudev/udev will
+# be pulled as dependencies and eudev removed from your system.
+sys-fs/eudev abi_x86_32

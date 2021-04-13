@@ -5,56 +5,53 @@
 # ██║ ╚═╝ ██║██║  ██║██║  ██╗███████╗██╗╚██████╗╚██████╔╝██║ ╚████║██║     
 # ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝ 
 
-COMMON_FLAGS="-march=znver1 -O2 -pipe"
+COMMON_FLAGS="-march=znver1 -O3 -pipe"
 CFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 FCFLAGS="${COMMON_FLAGS}"
 FFLAGS="${COMMON_FLAGS}"
-
 CPU_FLAGS_x86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3"
 
-MAKEOPTS="-j12 -l8"
-EMERGE_DEFAULT_OPTS="-j12 -l8 --with-bdeps y --complete-graph y"
-FEATURES="distcc candy parallel-fetch fixlafiles unmerge-orphans"
-GENTOO_MIRRORS="https://gentoo.osuosl.org/ https://mirror.leaseweb.com/gentoo/"
-ACCEPT_KEYWORDS="~amd64"
-ACCEPT_LICENSE="*"
 
+#MAKEOPTS="-j25 -l8"
+#EMERGE_DEFAULT_OPTS="-j25 -l8 --with-bdeps y --complete-graph y"
+#FEATURES="distcc candy parallel-fetch fixlafiles unmerge-orphans"
+MAKEOPTS="-j8"
+EMERGE_DEFAULT_OPTS="-j8 --with-bdeps y --complete-graph y"
+FEATURES="candy parallel-fetch fixlafiles unmerge-orphans"
+
+ACCEPT_LICENSE="*"
+ACCEPT_KEYWORDS="~amd64"
+
+#L10N="en"
+#ABI_X86="64 32"
+GRUB_PLATFORMS="efi-64"
 LLVM_TARGETS="AMDGPU"
 INPUT_DEVICES="libinput wacom"
-VIDEO_CARDS="amdgpu radeonsi"
-GRUB_PLATFORMS="efi-64"
-ABI_X86="64 32"
+VIDEO_CARDS="amdgpu radeonsi radeon"
 LC_MESSAGES=C
-L10N="en"
 
-USE="10bit 12bit 7z 7zip 8bit X a52 aac aacplus aacs aalib acl acpi aio
-     airdrop-ng airgraph-ng airspy alsa amr amrenc anacron android androiddump
-     animation-rtl animgif annotate aom ap apng archive arcus argon2 arp
-     arping backend-X backend-fbcon backend-sdl bash-completion bdplus blkid
-     blksha1 bluetooth bluray brotli bullet bzip2 caps cddb chromecast cjk
-     clang color-management color-output colordiff compression config-file
-     conntrack corefonts cryptsetup cups curl cxx cycles dav1d dbus
-     device-mapper dia dolphin dos dts dvbpsi dvd elogind emacs encode fat
-     fbcon fbdev ffmpeg fftw fish-completion flac fontconfig fonts gif gphoto2
-     gsl gsm gtk gtk3 gui i3wm icons id3tag idn image-backend imagemagick
-     imaging iproute2 ipv4 ipv6 jemalloc jpeg jpeg2 jpeg2k kerberos lame lcms
-     ldap libass libcaca libsamplerate lm-sensors lrz lz4 lzma lzo mad man
-     matroska mp3 mp4 mpd mtp ncurses nethack netlink network networkmanager
-     nftables nls ntfs odbc ogg openal opencl openexr opengl openmp opus
-     osmesa pcre pdf pic pie png postproc postscript pulseaudio python qt5 raw
-     sasl scanner scrobbler sdl sdl2 sdl2-mixer sdlaudio secure-delete sndfile
-     speex spell ssl suid svg svg2 tahoma theora threads tiff truetype udev
-     udisks unicode unwind upnp upower v4l vaapi vdpau vector-icons
-     video-glide64mk2 video-rice visualizer vkd3d vorbis vpx vulkan
-     vulkan-overlay wallpapers wayland webp wifi x264 x265 xcomposite xinerama
-     xml xpm xrandr xvid xwayland zip zlib zsh-completion zstd -cuda -cuda10-2
-     -cuda11-1 -cudnn -debug -debug-frame -debug-freelist -debug-malloc
-     -debugger -deprecated -dhclient -dhcp -dhcp-tools -dhcpcd -dhcpd -discord
-     -discord-presence -doc -gnome -gold -gpm -jack -kaccounts -libnotify -lto
-     -midi -nvcontrol -nvdec -nvenc -nvidia -oss -pgo -static -static-libs
-     -systemd -telemetry -test -user-session"
+USE="lto pgo gold asm threads vulkan vdpau opengl aom flac ogg vorbis bluray 12bit 10bit 8bit 7z 7zip aacplus aacs alsa pulseaudio cycles openimageio rar networkmanager vlc ffmpeg svg2 -nvidia -cuda x265 v4l2 vv4l dav1d dri3 drm dvd lz4 lzma lzo lzo2 X elogind -discord-presence -telemetry -systemd"
+
+#opencl causes weird ruby version conflicts
+
+#USE="async dvb fonts man opencl -ppp"
+
+#USE="airdrop-ng airgraph-ng
+#     chromecast color-management
+#     ffmpegsource ffmpegthumbnailer fontforge gimp github
+#     highlight hires icons image-backend lame
+#     libsamplerate lm-sensors matroska mpd mpg123
+#     mpv network openh264 openssl 
+#     thumbnail v4lutils 
+#     vector-icons vkd3d wallpapers webp wifi wireless 
+#     -cuda10-2 -cuda11-1 -cudnn -nvcontrol
+#     -nvdec -nvenc"
 
 PORTDIR="/var/db/repos/gentoo"
 DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
+
+GENTOO_MIRRORS="https://gentoo.osuosl.org/ http://gentoo.osuosl.org/"
+
+#GENTOO_MIRRORS="http://www.gtlib.gatech.edu/pub/gentoo rsync://rsync.gtlib.gatech.edu/gentoo https://gentoo.osuosl.org/ http://gentoo.osuosl.org/ http://gentoo.mirrors.pair.com/ https://mirrors.rit.edu/gentoo/ http://mirrors.rit.edu/gentoo/ ftp://mirrors.rit.edu/gentoo/ rsync://mirrors.rit.edu/gentoo/ http://gentoo.mirrors.tds.net/gentoo http://gentoo.cs.utah.edu/"
