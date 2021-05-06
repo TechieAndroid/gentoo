@@ -1,0 +1,47 @@
+#---------------------------------------------------------------------------#
+
+#/dev/nvme0n1p1 old gentoo efi
+#UUID=4978-573B vfat
+
+#/dev/nvme0n1p2 old gentoo
+UUID=1616c217-c569-4c91-a6f7-937f333ecf37 /mnt/old-gentoo ext4 defaults 0 2
+
+#---------------------------------------------------------------------------#
+
+#/dev/sda1 gentoo efi
+UUID=7AF4-E848 /boot/efi vfat defaults 0 2
+
+#/dev/sda2 gentoo root
+UUID=dd29f964-9d01-4134-b5b2-6eb923c5ca04 / ext4 defaults 0 1
+
+#tmpfs /var/tmp/portage
+tmpfs /var/tmp/portage tmpfs size=16G,uid=portage,gid=portage,mode=755,rw,nosuid,nodev,x-mount.mkdir=755 0 0
+
+#tmpfs /tmp
+tmpfs /tmp tmpfs size=16G,nosuid,nodev 0 0
+
+#---------------------------------------------------------------------------#
+
+#/dev/sdb1 windows ssd
+#UUID=801F-18C2 BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI system partition"
+
+#/dev/sdb2 windows ssd
+#PARTLABEL="Microsoft reserved partition" PARTUUID="0021e483-6368-4d78-b7a1-6d2cbd9b7fc2"
+
+#/dev/sdb3 windows ssd Basic data partition
+UUID=DA5C3C375C3C112D /mnt/windows-ssd ntfs-3g defaults 0 0
+
+#/dev/sdb4 windows ssd
+#UUID=6C1A7E261A7DED88 ntfs-3g
+
+#---------------------------------------------------------------------------#
+
+#/dev/sdc2 linux 3tb
+UUID=fb48d279-a260-4b7a-8fda-3ca71a6e4518 /mnt/linux-3tb ext4 defaults 0 2
+
+#---------------------------------------------------------------------------#
+
+#/dev/sde4 windows 3tb
+UUID=4464BAC164BAB4D0 /mnt/windows-3tb ntfs-3g defaults 0 0
+
+#---------------------------------------------------------------------------#

@@ -1,0 +1,36 @@
+mount -t tmpfs portage-tmpfs /var/tmp/portage -o size=16G,uid=portage,gid=portage,mode=775,noatime
+
+-----------------------------------------
+
+nano -w /etc/fstab
+
+#tmpfs /var/tmp/portage
+tmpfs /var/tmp/portage tmpfs size=16G,uid=portage,gid=portage,mode=755,rw,nosuid,nodev,x-mount.mkdir=755 0 0
+
+#tmpfs /tmp
+tmpfs /tmp tmpfs size=16G,nosuid,nodev 0 0
+
+-----------------------------------------
+
+mkdir -p /etc/portage/env/
+nano -w /etc/portage/env/notmpfs.conf
+PORTAGE_TMPDIR="/var/tmp/notmpfs"
+
+mkdir /var/tmp/notmpfs
+chown portage:portage /var/tmp/notmpfs
+chmod 775 /var/tmp/notmpfs
+
+nano -w /etc/portage/package.env
+
+app-office/libreoffice       notmpfs.conf
+dev-lang/ghc                 notmpfs.conf
+dev-lang/mono                notmpfs.conf
+dev-lang/rust                notmpfs.conf
+dev-lang/spidermonkey        notmpfs.conf
+mail-client/thunderbird      notmpfs.conf
+sys-devel/gcc                notmpfs.conf
+www-client/chromium          notmpfs.conf
+www-client/firefox           notmpfs.conf
+sys-devel/llvm               notmpfs.conf
+sys-devel/clang              notmpfs.conf
+dev-qt/qtwebengine           notmpfs.conf

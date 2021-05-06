@@ -1,181 +1,178 @@
 sys-kernel/gentoo-sources experimental
+
+#net-wireless/wpa_supplicant dbus
+
+media-plugins/frei0r-plugins -facedetect
+
+sys-apps/xdg-desktop-portal screencast
+
+#www-client/w3m imlib
+
 sys-boot/grub mount
-www-client/w3m imlib
-net-dns/avahi mdnsresponder-compat
-media-plugins/alsa-plugins pulseaudio
 
-sys-libs/ncurses -gpm
+sys-apps/busybox -static
+net-misc/curl -adns
+app-arch/p7zip wxwidgets
+app-text/poppler cairo nss
+dev-lang/mono minimal
 
-#bluray
-media-libs/libbdplus abi_x86_32
-
-#<<==ATOM==>>
-
-app-crypt/pinentry gnome-keyring
-
-# Circular depend from src prepare overlay
-
+#blender
 media-libs/opencolorio -opengl
+media-video/ffmpeg theora
 
-# 32bit depends
-app-arch/xz-utils abi_x86_32
-sys-devel/clang abi_x86_32
-media-sound/pulseaudio abi_x86_32
-media-libs/libsndfile abi_x86_32
-x11-libs/libSM abi_x86_32
-x11-libs/libICE abi_x86_32
-x11-libs/libXtst abi_x86_32
-sys-libs/libcap abi_x86_32
-sys-apps/tcp-wrappers abi_x86_32
-net-libs/libasyncns abi_x86_32
-media-plugins/alsa-plugins abi_x86_32
-sys-libs/pam abi_x86_32
-sys-libs/db abi_x86_32
-media-libs/flac abi_x86_32
-media-libs/libogg abi_x86_32
-media-libs/libvorbis abi_x86_32
-media-libs/opus abi_x86_32
-media-video/ffmpeg theora abi_x86_32
-virtual/opencl abi_x86_32
-dev-libs/ocl-icd abi_x86_32
-virtual/libcrypt abi_x86_32
-media-libs/libbluray abi_x86_32
-media-libs/dav1d abi_x86_32
-media-sound/lame abi_x86_32
-media-libs/libtheora abi_x86_32
-media-libs/x264 abi_x86_32
-media-libs/x265 abi_x86_32
-media-libs/xvid abi_x86_32
-x11-libs/libXv abi_x86_32
-media-libs/libaacs abi_x86_32
+#KDE
 
+# Required by kde-apps/okular[pdf]
+app-text/poppler nss
 
-#<<==WINE==>>
+# Required by sys-apps/fwupd, a dependency of kde-plasma/discover
+dev-libs/libjcat gpg pkcs7
 
-dev-libs/libgcrypt abi_x86_32
-media-libs/lcms abi_x86_32
-media-sound/mpg123 abi_x86_32
-media-libs/libsdl2 haptic
-sys-libs/libunwind abi_x86_32
-dev-libs/libxslt abi_x86_32
-app-emulation/wine-gecko abi_x86_32
-dev-libs/libgpg-error abi_x86_32
-virtual/libusb abi_x86_32
-dev-libs/libusb abi_x86_32
-x11-libs/libvdpau abi_x86_32
-media-libs/vulkan-loader abi_x86_32
+# Required by sys-apps/flatpak, a dependency of kde-plasma/discover
+#dev-util/ostree curl
 
-#<<==STEAM==>>
-app-arch/bzip2 abi_x86_32
-dev-db/sqlite abi_x86_32
-dev-libs/atk abi_x86_32
-dev-libs/expat abi_x86_32
-dev-libs/fribidi abi_x86_32
-dev-libs/glib abi_x86_32
-dev-libs/gmp abi_x86_32
-dev-libs/icu abi_x86_32
-dev-libs/libcroco abi_x86_32
-dev-libs/libffi abi_x86_32
-dev-libs/libpcre abi_x86_32
-dev-libs/libpthread-stubs abi_x86_32
-dev-libs/libtasn1 abi_x86_32
-dev-libs/libunistring abi_x86_32
-dev-libs/libxml2 abi_x86_32
-dev-libs/lzo abi_x86_32
-dev-libs/nettle abi_x86_32
-dev-libs/nspr abi_x86_32
-dev-libs/nss abi_x86_32
-dev-libs/openssl abi_x86_32
-dev-libs/wayland abi_x86_32
-dev-util/pkgconfig abi_x86_32
-gnome-base/librsvg abi_x86_32
-media-gfx/graphite2 abi_x86_32
-media-libs/fontconfig abi_x86_32
-media-libs/freetype abi_x86_32
-media-libs/harfbuzz abi_x86_32
-media-libs/libpng abi_x86_32
-media-libs/mesa abi_x86_32
-media-libs/openal abi_x86_32
-media-libs/tiff abi_x86_32
-net-dns/libidn2 abi_x86_32
-net-libs/gnutls abi_x86_32
-net-misc/curl abi_x86_32
-net-nds/openldap abi_x86_32
-net-print/cups abi_x86_32
-sys-apps/attr abi_x86_32
-sys-apps/dbus abi_x86_32
-sys-apps/util-linux abi_x86_32
-sys-devel/gettext abi_x86_32
-sys-devel/llvm abi_x86_32
-sys-fs/udev abi_x86_32
-sys-libs/binutils-libs abi_x86_32
-sys-libs/gpm abi_x86_32
-sys-libs/ncurses abi_x86_32
-sys-libs/readline abi_x86_32
-sys-libs/zlib abi_x86_32
-virtual/libffi abi_x86_32
-virtual/libiconv abi_x86_32
-virtual/libudev abi_x86_32
-virtual/pkgconfig abi_x86_32
-x11-libs/cairo abi_x86_32
-x11-libs/gdk-pixbuf abi_x86_32
-x11-libs/gtk+:2 abi_x86_32
-x11-libs/libX11 abi_x86_32
-x11-libs/libXScrnSaver abi_x86_32
-x11-libs/libXau abi_x86_32
-x11-libs/libXcomposite abi_x86_32
-x11-libs/libXcursor abi_x86_32
-x11-libs/libXdamage abi_x86_32
-x11-libs/libXdmcp abi_x86_32
-x11-libs/libXext abi_x86_32
-x11-libs/libXfixes abi_x86_32
-x11-libs/libXft abi_x86_32
-x11-libs/libXi abi_x86_32
-x11-libs/libXinerama abi_x86_32
-x11-libs/libXrandr abi_x86_32
-x11-libs/libXrender abi_x86_32
-x11-libs/libXxf86vm abi_x86_32
-x11-libs/libdrm abi_x86_32
-x11-libs/libpciaccess abi_x86_32
-x11-libs/libxcb abi_x86_32
-x11-libs/libxshmfence abi_x86_32
-x11-libs/pango abi_x86_32
-x11-libs/pixman abi_x86_32
-x11-proto/damageproto abi_x86_32
-x11-proto/dri2proto abi_x86_32
-x11-proto/dri3proto abi_x86_32
-x11-proto/fixesproto abi_x86_32
-x11-proto/glproto abi_x86_32
-x11-proto/inputproto abi_x86_32
-x11-proto/kbproto abi_x86_32
-x11-proto/presentproto abi_x86_32
-x11-proto/xcb-proto abi_x86_32
-x11-proto/xextproto abi_x86_32
-x11-proto/xf86bigfontproto abi_x86_32
-x11-proto/xf86driproto abi_x86_32
-x11-proto/xf86vidmodeproto abi_x86_32
-x11-proto/xproto abi_x86_32
+# Required by app-editors/okteta
+dev-qt/qtscript:5 scripttools
 
-#NEW REQUIRMENTS
+# Required by kde-apps/akonadi
+dev-qt/qtsql:5 mysql
 
-net-libs/nghttp2 abi_x86_32
-media-libs/libglvnd abi_x86_32
-app-arch/zstd abi_x86_32
-dev-util/wayland-scanner abi_x86_32
-x11-base/xcb-proto abi_x86_32
-media-libs/alsa-lib abi_x86_32
-media-libs/libsdl2 abi_x86_32
-virtual/libintl abi_x86_32
-virtual/opengl abi_x86_32
-virtual/glu abi_x86_32
-media-libs/glu abi_x86_32
-virtual/jpeg abi_x86_32
-media-libs/libjpeg-turbo abi_x86_32
-virtual/libelf abi_x86_32
-dev-libs/elfutils abi_x86_32
-virtual/rust abi_x86_32
-dev-lang/rust abi_x86_32
+# Required by kde-apps/ktp-text-ui
+kde-apps/ktp-common-internals otr
 
-# If not using systemd add this, otherwise chances are the libudev/udev will
-# be pulled as dependencies and eudev removed from your system.
-sys-fs/eudev abi_x86_32
+# Enable by default, requires kde-frameworks/kwayland
+kde-apps/yakuake absolute-position
+
+# Required by kde-apps/libkexiv2
+media-gfx/exiv2 xmp
+
+# Required by kde-frameworks/kapidox
+media-gfx/graphviz python
+
+# Required by media-gfx/graphviz which is required by kde-apps/kcachegrind
+media-libs/gd fontconfig
+
+# Required by kde-plasma/kwin
+media-libs/mesa egl wayland
+# Not required, but makes sense in return
+x11-apps/mesa-progs egl
+
+# Required by kde-apps/kdenlive
+media-libs/mlt ffmpeg frei0r rubberband
+
+# Required by media-gfx/digikam
+media-libs/opencv contrib contribdnn
+
+# Required by kde-plasma/plasma-firewall
+# Required by net-firewall/firewalld[iptables] (default enabled)
+#net-firewall/iptables ipv6
+# Required by net-firewall/firewalld[nftables] (default enabled)
+net-firewall/nftables json python xtables
+
+# Required by dev-qt/qtwebengine:5
+sys-libs/zlib minizip
+
+#Desktop
+
+# Required by qt5
+media-gfx/gmic fftw
+
+# Lars Wendler <polynomial-c@gentoo.org> (2020-08-06)
+# USE="qt5" and USE="libnotify" are mutually exclusive in this package
+# Disable libnotify here to have a better user experience
+net-misc/dhcpcd-ui -libnotify
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2020-02-05)
+# Required by many packages, most notably Mozilla products
+dev-lang/python sqlite
+
+# Lars Wendler <polynomial-c@gentoo.org> (2019-03-20)
+# Enable client by default. Usually desktop users need the client.
+net-fs/samba client
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2018-06-09)
+# Required by app-office/libreoffice
+dev-libs/xmlsec nss
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2018-06-09)
+# Enable sensible defaults for desktop users
+dev-qt/qtwebkit:5 printsupport
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2017-11-30)
+# Not required, but makes life easier with Qt; bug #457934
+app-arch/unzip natspec
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2017-11-30)
+# Required by dev-qt/qtcore
+dev-libs/libpcre pcre16
+dev-libs/libpcre2 pcre16
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2017-11-30)
+# Required by kde-frameworks/kwayland
+dev-qt/qtgui:5 egl libinput
+
+# Required by dev-qt/qtwebengine
+media-libs/libvpx svc
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2017-11-30)
+# Avoid circular dependency when installing from scratch
+dev-util/cmake -qt5
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2017-08-04)
+# Required by flac and mp3
+kde-apps/k3b taglib
+kde-frameworks/kfilemetadata taglib
+
+# Brian Evans <grknight@gentoo.org> (2017-07-18)
+# Don't force users to enable gd on PHP due to desktop defaults
+dev-lang/php -exif -truetype
+
+# Ilya Tumaykin <itumaykin+gentoo@gmail.com> (2017-02-02)
+# Enable luajit for OSC and youtube-dl support by default.
+# Override default +sdl from desktop profile and disable sdl outputs.
+# These outputs are for systems without a proper audio/video support.
+# NOTE: Needs syncing to negate profile defaults if we decide
+# to keep this up.
+media-video/mpv lua -sdl
+media-video/mpv -lua_single_target_lua5-1 -lua_single_target_lua5-2
+media-video/mpv lua_single_target_luajit
+
+# Mike Gilbert <floppym@gentoo.org> (2017-01-04)
+# Needed by x11-misc/xdg-utils.
+app-text/xmlto text
+
+# Ben de Groot <yngwin@gentoo.org> (2015-02-18)
+# Enable sensible defaults for desktop users (bug #540046)
+dev-python/PyQt5 gui multimedia network printsupport widgets
+
+# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (2014-05-08)
+# Enable x11-libs/libxcb[xkb] as it is needed by x11-libs/libxkbcommon[X]
+# and the X flag is enabled by default in the desktop profile
+x11-libs/libxcb xkb
+
+# Samuli Suominen <ssuominen@gentoo.org> (2011-09-27)
+# Required by mozilla browsers wrt #372419
+media-libs/libpng apng
+
+# Samuli Suominen <ssuominen@gentoo.org> (2010-12-19)
+# gudev, required by freedesktop.org udev helpers like udisks and upower
+# introspection, exception, enabled from here instead of ebuild to skip extra deps for a system package
+dev-libs/libgudev introspection
+sys-fs/eudev introspection
+
+# Samuli Suominen <ssuominen@gentoo.org> (2010-12-19)
+# Support for desktop file icons
+xfce-base/xfdesktop thunar
+
+# Chris Gianelloni <wolf31o2@gentoo.org> (2008-03-26)
+# While we may need LDAP client support, who needs the server on a desktop?
+# Did I mention that this also fixes the horrible perl dependency hell, too?
+net-nds/openldap minimal
+# Copyright 1999-2014 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (2014-06-03)
+# Ensure shared-mime-info is pulled in by glib, otherwise GNOME, XFCE, and
+# numerous gtk-based applications will break, see bug #511894
+dev-libs/glib mime
+net-libs/nodejs -lto
