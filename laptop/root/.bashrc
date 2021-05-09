@@ -28,8 +28,8 @@ fi
 # rm /boot/*old
 # grub-mkconfig -o /boot/grub/grub.cfg
 
-PS1='\e[0;34m╔══<=\e[m\e[0;32m\u\e[m\e[0;34m>=\e[m \e[0;34m[\e[m\e[0;35m\w\e[m\e[0;34m]\e[m
-\e[0;34m╚══>>> \e[m\e[0;32m$\e[m'
+PS1='\e[0;34m╔══<=\e[m\e[0;31m\u\e[m\e[0;34m>=\e[m \e[0;34m[\e[m\e[0;35m\w\e[m\e[0;34m]\e[m
+\e[0;34m╚══>>> \e[m\e[0;31m#\e[m'
 
 #PATH=$PATH:/home/recompiler/.local/bin
 
