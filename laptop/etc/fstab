@@ -20,7 +20,7 @@ UUID=1825-D0B4 /boot/efi vfat defaults 0 2
 #---------------------------------------------------------------------------#
 
 #/dev/nvme0n1p6 Gentoo
-UUID=a89f8a02-9788-40f9-9ec7-5a3a3154e85e /mnt/gentoo ext4 defaults 0 1
+#UUID=a89f8a02-9788-40f9-9ec7-5a3a3154e85e /mnt/gentoo ext4 defaults 0 2
 
 #tmpfs /var/tmp/portage
 #tmpfs /var/tmp/portage tmpfs size=32G,uid=portage,gid=portage,mode=755,rw,nosuid,nodev,x-mount.mkdir=755 0 0
@@ -38,5 +38,15 @@ tmpfs /var/tmp/portage tmpfs size=32G,uid=portage,gid=portage,mode=755,rw,nosuid
 
 #tmpfs /tmp
 tmpfs /tmp tmpfs size=32G,nosuid,nodev 0 0
+
+#---------------------------------------------------------------------------#
+
+#nvme0n1p8 Kali Linux
+UUID=7669e006-5b26-4526-8af7-81400c3e7c58 /mnt/kali ext4 defaults 0 2
+
+#---------------------------------------------------------------------------#
+
+#/dev/nvme0n1p6 Windows Games
+UUID=FE8004068003C3DD /mnt/windows-games ntfs-3g defaults 0 2
 
 #---------------------------------------------------------------------------#

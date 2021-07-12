@@ -1,0 +1,19 @@
+sudo mkdir /dev/binderfs && sudo mount -t binder binder /dev/binderfs
+sudo rc-service anbox-container-manager start
+anbox session-manager
+adb install Downloads/jwlb_E.apk
+launch anbox-launch in dmenu
+
+updated:
+
+sudo rc-service/usr/share/anbox/./anbox-bridge.sh force-reload
+sudo rc-service anbox-container-manager restart
+
+sudo nmcli con add type bridge ifname anbox0 -- connection.id anbox-net ipv4.method shared ipv4.addresses 192.168.250.1/24
+
+start anbox-launch
+
+/usr/share/anbox
+~/.local/share/applications/anbox
+
+anbox is only sdk 25 android 7.1 right now

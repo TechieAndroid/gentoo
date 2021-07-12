@@ -20,6 +20,19 @@ dev-lang/mono minimal
 media-libs/opencolorio -opengl
 media-video/ffmpeg theora
 
+#python 3.9 rebuild
+dev-python/idna python_targets_python3_8
+dev-python/setuptools python_targets_python3_8
+dev-python/certifi python_targets_python3_8
+dev-python/setuptools_scm python_targets_python3_8
+dev-python/toml python_targets_python3_8
+dev-python/numpy python_targets_python3_8
+dev-python/cython python_targets_python3_8
+dev-python/requests python_targets_python3_8
+dev-python/chardet python_targets_python3_8
+dev-python/urllib3 python_targets_python3_8
+dev-python/PySocks python_targets_python3_8
+
 #KDE
 
 # Required by kde-apps/okular[pdf]
@@ -176,3 +189,10 @@ net-nds/openldap minimal
 # numerous gtk-based applications will break, see bug #511894
 dev-libs/glib mime
 net-libs/nodejs -lto
+#deluge
+net-libs/libtorrent-rasterbar python
+dev-libs/boost python
+media-libs/embree raymask
+media-video/ffmpeg vpx opus
+net-dns/avahi mdnsresponder-compat
+media-libs/freetype harfbuzz

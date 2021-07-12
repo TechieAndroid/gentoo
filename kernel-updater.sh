@@ -2,17 +2,21 @@
 
 KERNEL_VERSION=$(echo /var/db/pkg/sys-kernel/gentoo-sources* | tr -d -c {0-9.})
 
-cp /usr/src/linux/.config /usr/src/.config-pre"`date +"%d-%m-%Y"`"
-cp -avL /usr/src/linux /tmp/linux
+cp /usr/src/linux/.config /usr/src/configs/.config-pre"`date +"%d-%m-%Y"`"
+#cp -avl
+rm -rf /tmp/linux
+cp -r /usr/src/linux/. /tmp/linux
 cd /tmp/linux
 
 make clean
 make -j8
 make modules_install install
 
-cp -avL /tmp/linux /usr/src/linux
+rm -rf /usr/src/linux/*
+cp -r /tmp/linux/. /usr/src/linux
 cd /usr/src/linux
-cp /usr/src/linux/.config /usr/src/.config-post"`date +"%d-%m-%Y"`"
+rm -rf /tmp/linux
+cp /usr/src/linux/.config /usr/src/configs/.config-post"`date +"%d-%m-%Y"`"
 
 #emerge @module-rebuild
 
