@@ -1,181 +1,176 @@
-# ██████╗  █████╗  ██████╗██╗  ██╗ █████╗  ██████╗ ███████╗   ██╗   ██╗███████╗███████╗
-# ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔════╝ ██╔════╝   ██║   ██║██╔════╝██╔════╝
-# ██████╔╝███████║██║     █████╔╝ ███████║██║  ███╗█████╗     ██║   ██║███████╗█████╗
-# ██╔═══╝ ██╔══██║██║     ██╔═██╗ ██╔══██║██║   ██║██╔══╝     ██║   ██║╚════██║██╔══╝
-# ██║     ██║  ██║╚██████╗██║  ██╗██║  ██║╚██████╔╝███████╗██╗╚██████╔╝███████║███████╗
-# ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝ ╚═════╝ ╚══════╝╚══════╝
-
-	###<<==SYSTEM==>>###
-
-#<<==Kernel==>>
+app-arch/libarchive -lz4
 sys-kernel/gentoo-sources experimental
+sys-apps/busybox -static
+net-misc/curl -adns
+media-libs/tiff -webp
+dev-lang/mono minimal
+net-libs/nodejs -lto
+media-libs/mesa -gallium
+media-plugins/frei0r-plugins -facedetect
+net-dns/avahi -gtk
+sys-apps/xdg-desktop-portal screencast
+sys-boot/grub mount
+app-text/poppler cairo nss
 
-#<<==GRUB==>>
-sys-boot/grub -device-mapper efiemu fonts mount nls sdl themes truetype
+#blender
+media-libs/opencolorio -opengl
+media-video/ffmpeg theora
 
-#<<==PAM==>>
-sys-libs/pam -filecaps
+#KDE
 
-#<<==DBUS==>>
-sys-apps/dbus elogind
+# Required by kde-apps/okular[pdf]
+app-text/poppler nss
 
-sys-apps/util-linux caps ncurses nls pam python -python_targets_python3_7 python_targets_python3_8 -slang -systemd -udev
-sys-fs/eudev -introspection
-sys-libs/zlib minizip static-libs
-dev-lang/python gbdm ipv6 ncurses readline ssl xml -sqlite -bluetooth
-dev-db/sqlite -icu
-dev-qt/qtmultimedia gstreamer openal pulseaudio qml widgets
-dev-util/astyle java
-virtual/libudev -systemd
-app-arch/xz-utils threads nls extra-filters static-libs
+# Required by sys-apps/fwupd, a dependency of kde-plasma/discover
+dev-libs/libjcat gpg pkcs7
+
+# Required by sys-apps/flatpak, a dependency of kde-plasma/discover
+#dev-util/ostree curl
+
+# Required by app-editors/okteta
+dev-qt/qtscript:5 scripttools
+
+# Required by kde-apps/akonadi
+dev-qt/qtsql:5 mysql
+
+# Required by kde-apps/ktp-text-ui
+kde-apps/ktp-common-internals otr
+
+# Enable by default, requires kde-frameworks/kwayland
+kde-apps/yakuake absolute-position
+
+# Required by kde-apps/libkexiv2
+media-gfx/exiv2 xmp
+
+# Required by kde-frameworks/kapidox
+media-gfx/graphviz python
+
+# Required by media-gfx/graphviz which is required by kde-apps/kcachegrind
+media-libs/gd fontconfig
+
+# Required by kde-plasma/kwin
+media-libs/mesa -classic egl wayland gbm gallium
+# Not required, but makes sense in return
+x11-apps/mesa-progs egl
+
+# Required by kde-apps/kdenlive
+media-libs/mlt ffmpeg frei0r rubberband
+
+# Required by media-gfx/digikam
+media-libs/opencv contrib contribdnn
+
+# Required by kde-plasma/plasma-firewall
+# Required by net-firewall/firewalld[iptables] (default enabled)
+#net-firewall/iptables ipv6
+# Required by net-firewall/firewalld[nftables] (default enabled)
+net-firewall/nftables json python xtables
+
+# Required by dev-qt/qtwebengine:5
+sys-libs/zlib minizip
+
+#Desktop
+
+# Required by qt5
+media-gfx/gmic fftw
+
+# Lars Wendler <polynomial-c@gentoo.org> (2020-08-06)
+# USE="qt5" and USE="libnotify" are mutually exclusive in this package
+# Disable libnotify here to have a better user experience
+net-misc/dhcpcd-ui -libnotify
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2020-02-05)
+# Required by many packages, most notably Mozilla products
+dev-lang/python sqlite
+
+# Lars Wendler <polynomial-c@gentoo.org> (2019-03-20)
+# Enable client by default. Usually desktop users need the client.
+net-fs/samba client
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2018-06-09)
+# Required by app-office/libreoffice
+dev-libs/xmlsec nss
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2018-06-09)
+# Enable sensible defaults for desktop users
+dev-qt/qtwebkit:5 printsupport
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2017-11-30)
+# Not required, but makes life easier with Qt; bug #457934
+app-arch/unzip natspec
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2017-11-30)
+# Required by dev-qt/qtcore
+dev-libs/libpcre pcre16
+dev-libs/libpcre2 pcre16
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2017-11-30)
+# Required by kde-frameworks/kwayland
+dev-qt/qtgui:5 egl libinput
+
+# Required by dev-qt/qtwebengine
+media-libs/libvpx svc
+
+# Andreas Sturmlechner <asturm@gentoo.org> (2017-11-30)
+# Avoid circular dependency when installing from scratch
 dev-util/cmake -qt5
 
-www-client/w3m X fbcon -gdk-pixbuf gpm imlib -l10n_de l10n_ja nls -nntp ssl unicode -xface
+# Andreas Sturmlechner <asturm@gentoo.org> (2017-08-04)
+# Required by flac and mp3
+kde-apps/k3b taglib
+kde-frameworks/kfilemetadata taglib
 
-sci-libs/lapack lapacke
+# Brian Evans <grknight@gentoo.org> (2017-07-18)
+# Don't force users to enable gd on PHP due to desktop defaults
+dev-lang/php -exif -truetype
 
-#<<==Polybar==>>
-x11-misc/polybar i3wm ipc mpd network python3_9
+# Ilya Tumaykin <itumaykin+gentoo@gmail.com> (2017-02-02)
+# Enable luajit for OSC and youtube-dl support by default.
+# Override default +sdl from desktop profile and disable sdl outputs.
+# These outputs are for systems without a proper audio/video support.
+# NOTE: Needs syncing to negate profile defaults if we decide
+# to keep this up.
+media-video/mpv lua -sdl
+media-video/mpv -lua_single_target_lua5-1 -lua_single_target_lua5-2
+media-video/mpv lua_single_target_luajit
 
-#<<==i3-gaps==>>
-x11-wm/i3-gaps -doc -test
+# Mike Gilbert <floppym@gentoo.org> (2017-01-04)
+# Needed by x11-misc/xdg-utils.
+app-text/xmlto text
 
-#<<==Picom==>>
-x11-misc/picom config-file dbus doc drm opengl pcre -test
+# Ben de Groot <yngwin@gentoo.org> (2015-02-18)
+# Enable sensible defaults for desktop users (bug #540046)
+dev-python/PyQt5 gui multimedia network printsupport widgets
 
-#<<==Dmenu==>>
-x11-misc/dmenu xinerama -savedconfig
+# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (2014-05-08)
+# Enable x11-libs/libxcb[xkb] as it is needed by x11-libs/libxkbcommon[X]
+# and the X flag is enabled by default in the desktop profile
+x11-libs/libxcb xkb
 
-#<<==Bluez==>>
-net-wireless/bluez btpclient deprecated extra-tools experimental mesh -midi obex -test-programs user-session
+# Samuli Suominen <ssuominen@gentoo.org> (2011-09-27)
+# Required by mozilla browsers wrt #372419
+media-libs/libpng apng
 
+# Samuli Suominen <ssuominen@gentoo.org> (2010-12-19)
+# gudev, required by freedesktop.org udev helpers like udisks and upower
+# introspection, exception, enabled from here instead of ebuild to skip extra deps for a system package
+dev-libs/libgudev introspection
+sys-fs/eudev introspection
 
-	###<<==CRYPTO==>>###
+# Samuli Suominen <ssuominen@gentoo.org> (2010-12-19)
+# Support for desktop file icons
+xfce-base/xfdesktop thunar
 
+# Chris Gianelloni <wolf31o2@gentoo.org> (2008-03-26)
+# While we may need LDAP client support, who needs the server on a desktop?
+# Did I mention that this also fixes the horrible perl dependency hell, too?
+net-nds/openldap minimal
+# Copyright 1999-2014 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
 
-#<<==xmr stak==>>
-net-p2p/xmr-stak cuda -devfee hwloc opencl webserver
-
-
-	###<<==HACKING==>>###
-	
-
-#<<==Aircrack-ng==>>
-net-wireless/aircrack-ng airdrop-ng airgraph-ng netlink -python_targets_python3_7 python_targets_python3_8
-
-
-	###<<==MEDIA==>>###
-
-
-#<<==Deluge==>>
-net-p2p/deluge -console -webinterface
-
-#<<==PulseAudio Bluetooth==>>
-media-sound/pulseaudio-modules-bt fdk ffmpeg ldac native-headset ofono-headset
-media-sound/pulseaudio -bluetooth
-
-#<<==ALSA Bluetooth==>>
-media-sound/bluez-alsa hcitop ldac man mpg123 ofono
-
-#<<==CMUS==>>
-media-sound/cmus aac alsa -ao cddb -cdio -discid elogind ffmpeg flac libsamplerate mad mp4 opus pulseaudio -pidgin -systemd tremor
-
-#<<==Spotify==>>
-media-sound/spotify -systray -pax_kernel pulseaudio
-
-#<<==VLC==>>
-media-video/vlc aom archive aribsub bluray chromaprint chromecast dav1d dc1394 -directx dvbpsi encode faad fdk fluidsynth gcrypt gme gstreamer kate kms libplacebo libtar libtiger linsys live loudness lua -macosx-notifications matroska mpeg nfs omxil -optimisememory projectm -run-as-root sdl-image sftp shout sid skins soxr srt tremor twolame upnp vpx X x265 zeroconf zvbi
-
-#<<==FFmpeg==>>
-media-video/ffmpeg -chromium -pic cpudetection gcrypt gpl gmp hardcoded-tables libxml2 network opencl openssl postproc vulkan cdio -iec61883 ladspa libv4l libdrm amr codec2 dav1d fdk bluray gme libaribb24 -mmal libilbc librtmp ssh srt vpx zvbi -appkit bs2b -chromaprint cuda flite -frei0r fribidi libtesseract lv2 vidstab rubberband zeromq zimg libsoxr amrenc kvazaar libaom openh264 rav1e snappy twolame x265 mipsdspr1 mipsdspr2 mipsfpu
-
-media-plugins/frei0r-plugins -facedetect
-
-media-lib/opencv -ffmpeg
-
-	###<<==GRAPHICS==>>###
-
-
-#<<==Nvidia==>>
-x11-drivers/nvidia-drivers X driver kms multilib tools uvm
-
-#<<==Mesa==>>
-media-libs/mesa -classic -d3d9 dri3 egl gallium gbm -gles1 gles2 llvm lm-sensors opencl omesa unwind -vaapi vdpau vulkan vulkan-overlay -wayland xa xvmc zink zstd
-
-#<<==Vulkan==>>
-media-video/libva-utils drm
-x11-libs/libva drm utils opengl
-media-libs/vulkan-loader layers
-
-#<<==ROCm==>>
-#dev-libs/rocr-runtime
-
-	###<<==Digital Art/Video==>>###
-
-
-#<<==Blender==>>
-media-gfx/blender bullet dds elbeem -system-python -system-numpy tbb -abi6-compat abi7-compat alembic collada color-management cuda cycles ffmpeg -doc headless llvm man ndof opencl openimageio opensubdiv -openvdb osl -standalone -test -valgrind python3_8
-
-#<<==Inkscape==>>
-media-gfx/inkscape svg2 -cdr dbus -dia exif -graphicsmagick imagemagick -inkjar jpeg lcms openmp postscript -visio -wpg python3_9
-
-#<<==FontForge==>>
-media-gfx/fontforge -truetype-debugger woff2 python3_9
-
-#<<==Krita==>>
-media-gfx/krita color-management heif qtmedia vc python3_9
-
-#<<==GIMP==>>
-media-gfx/gimp aalib alsa heif jpeg2k mng openexr postscript udev unwind vector-icons webp xpm
-
-#<<==OBS Studio==>>
-media-video/obs-studio alsa fdk -imagemagick -jack -lua -lua_single_target_luajit nvenc pulseaudio python python_single_target_python3_7 speex ssl truetype v4l vlc
-
-media-libs/opencolorio opengl -doc python python_single_target_python3_8 -test
-media-libs/libaom -cpu_flags_x86_sse2
-
-media-libs/libsdl2 haptic xinerama
-media-libs/opencv ffmpeg gdal gstreamer lapack qt5 -gtk3
-media-libs/tiff jbig -webp
-media-libs/libwebp -tiff
-
-kde-frameworks/kitemmodels qml
-
-#<<==PipeWire==>>
-media-video/pipewire ffmpeg gstreamer -jack pulseaudio vulkan
-
-
-	###<<==GAMING==>>###
-
-
-#<<==Dolphin Emulator==>>
-games-emulation/dolphin -discord-presence evdev ffmpeg log lto vulkan
-
-#<<==Wine Staging==>>
-app-emulation/wine-staging capi -custom-cflags dos faudio gcrypt gecko gssapi gstreamer -mingw mono netapi opencl osmesa perl pcap pipelight prelink realtime run-exes samba sdl staging themes udev unwind usb vkd3d vulkan
-
-#<<==SAMBA==>>
-net-fs/samba winbind
-
-	###<<==UTILS==>>###
-
-
-#<<==Pronterface==>>
-x11-libs/wxGTK gstreamer
-
-
-	###<<==UNUSED==>>###
-
-
-#>=x11-libs/gtk+-2.24.32-r666 -abi_x86_32
-#x11-libs/libdrm video_cards_radeon
-#>=sys-apps/dbus-1.12.20 X elogind user-session -debug -doc -static-libs -systemd -test
-#dev-python/setuptools python_targets_python3_7
-#dev-python/setuptools_scm -python_targets_python3_7
-#dev-python/cython python_targets_python3_7
-#dev-python/numpy -python_targets_python3_7
-#dev-python/cryptography python_targets_python3_9
-#dev-python/requests python_targets_python3_9
-#dev-python/certifi python_targets_python3_9
-#dev-python/setuptools python_targets_python3_9
-#dev-python/ply python_targets_python3_9
+# Alexandre Rostovtsev <tetromino@gentoo.org> (2014-06-03)
+# Ensure shared-mime-info is pulled in by glib, otherwise GNOME, XFCE, and
+# numerous gtk-based applications will break, see bug #511894
+dev-libs/glib mime
+media-video/ffmpeg vpx opus
+net-dns/avahi mdnsresponder-compat
+media-libs/freetype harfbuzz
