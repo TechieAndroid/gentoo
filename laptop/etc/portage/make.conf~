@@ -21,7 +21,7 @@ ACCEPT_KEYWORDS="~amd64"
 GRUB_PLATFORMS="efi-64"
 LLVM_TARGETS="AMDGPU"
 INPUT_DEVICES="libinput wacom"
-VIDEO_CARDS="amdgpu radeonsi radeon"
+VIDEO_CARDS="amdgpu radeonsi radeon qxl virtualbox vmware"
 LC_MESSAGES=C
 
 USE="10bit 12bit 16k_voice 24-bit-color 24bpp 256-color 7z 7za 7zip 8bit X a52
@@ -34,13 +34,14 @@ USE="10bit 12bit 16k_voice 24-bit-color 24bpp 256-color 7z 7za 7zip 8bit X a52
      libnotify libsamplerate lm-sensors lto lz4 lzma lzo lzo2 mad matroska
      minizip mng mono mp3 mp4 mpeg mpv mtp ncurses networkmanager ogg openal
      opengl openimageio openmp otr pam pango pcre16 pda pdf pgo phonon plasma
-     plotutils png policykit ppds pulseaudio qml qt5 rar raw scanner
-     scripttools sdl semantic-desktop slang smp sound speex spell ssl
+     plotutils png policykit ppds pulseaudio qemu qml qt5 rar raw scanner
+     scripttools sdl semantic-desktop slang smp sound speex spell spice ssl
      startup-notification svc svg svg2 szip taglib text threads tiff truetype
-     udev udisks upower unicode wxwidgets xcb usb v4l v4l2 v4lutils vaapi vdpau vim-syntax vkd3d vlc
-     vorbis vulkan wavpack wayland webp widgets wifi x264 x265 xattr xinerama
-     xml xscreensaver xv xvid zip zsh-completion zstd -cuda -discord-presence
-     -nvidia -systemd -telemetry"
+     udev udisks unicode upower usb usbredir v4l v4l2 v4lutils vaapi vbox
+     vboxwebsrv vdpau vhost-net vhost-user-fs vhosts vim-syntax vkd3d vlc
+     vorbis vulkan wavpack wayland webp widgets wifi wxwidgets x264 x265 xattr
+     xcb xen xinerama xml xscreensaver xv xvid zip zsh-completion zstd -cuda
+     -discord-presence -nvidia -systemd -telemetry"
 
 PORTDIR="/var/db/repos/gentoo"
 DISTDIR="/var/cache/distfiles"

@@ -23,3 +23,5 @@ cp /usr/src/linux/.config /usr/src/configs/.config-post"`date +"%d-%m-%Y"`"
 dracut --hostonly -k /lib/modules/"$KERNEL_VERSION"-gentoo/ --kver "$KERNEL_VERSION"-gentoo -f /boot/initramfs-"$KERNEL_VERSION"-gentoo.img
 
 grub-mkconfig -o /boot/grub/grub.cfg
+
+ln -sf /usr/src/linux /lib/modules/"$KERNEL_VERSION"-gentoo/build

@@ -196,3 +196,9 @@ media-libs/embree raymask
 media-video/ffmpeg vpx opus
 net-dns/avahi mdnsresponder-compat
 media-libs/freetype harfbuzz
+dev-python/charset_normalizer python_targets_python3_8
+net-misc/spice-gtk usbredir
+net-dns/dnsmasq script
+app-emulation/virtualbox java
+x11-libs/libdrm libkms
+media-libs/mesa xa

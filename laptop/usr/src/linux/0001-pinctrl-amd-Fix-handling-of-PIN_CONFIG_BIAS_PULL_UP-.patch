@@ -1,0 +1,111 @@
+From fe4db0ecb866f37c6f8bf9a9a454edc40c020176 Mon Sep 17 00:00:00 2001
+From: Hans de Goede <hdegoede@redhat.com>
+Date: Sun, 30 May 2021 15:51:00 +0200
+Subject: [PATCH] pinctrl: amd: Fix handling of PIN_CONFIG_BIAS_PULL_UP/_DOWN
+ settings
+
+PIN_CONFIG_BIAS_PULL_UP is documented as follows:
+
+@PIN_CONFIG_BIAS_PULL_UP: the pin will be pulled up (usually with high
+impedance to VDD). If the argument is != 0 pull-up is enabled,
+if it is 0, pull-up is total, i.e. the pin is connected to VDD.
+
+This patch fixes 2 issues with how the AMD pinctrl code was handling this:
+
+1. amd_pinconf_set() was setting the PULL_UP_ENABLE bit as follows:
+    pin_reg &= ~BIT(PULL_UP_ENABLE_OFF);
+    pin_reg |= ((arg>>1) & BIT(0)) << PULL_UP_ENABLE_OFF;
+   When called from gpio_set_bias() for ACPI enumerated GPIOs arg == 1,
+   so the pull-up enable bit would be cleared instead of being set.
+   It seems unnecessary to say that this is BAD.
+
+   There is no real convention for the meaning of arg other then that
+   a value != 0 means the pull-up should be enabled (which was being
+   violated here). Looking at other drivers the Intel pinctrl drivers
+   all treat 1 (as used by gpio_set_bias()) as indictating that the
+   driver should pick the pull-up strength; and all other values are
+   interpreted as the amount of ohm with which to pull-up, with non
+   supported values being rejected with -EINVAL.
+
+   This patch changes the AMD pinctrl code to match this behavior so
+   that the behavior of all x86 pinctrl drivers is consistent.
+
+2. arg == 0 does not mean that the pull-up/-down is disabled as the
+   old code was assuming. Rather it means that the "pull-up is total,
+   i.e. the pin is connected to VDD". The correct way for
+   amd_pinconf_get() to indicate that the pull-up/-down is not enabled
+   is to return -EINVAL. I've checked a whole bunch of pinctrl drivers
+   and they all behave this way. This patch brings the AMD pinctlr driver
+   in line with this.
+
+Fixes: dbad75dd1f25 ("pinctrl: add AMD GPIO driver support.")
+BugLink: https://bugzilla.kernel.org/show_bug.cgi?id=212379
+Signed-off-by: Hans de Goede <hdegoede@redhat.com>
+---
+ drivers/pinctrl/pinctrl-amd.c | 37 +++++++++++++++++++++++++++--------
+ 1 file changed, 29 insertions(+), 8 deletions(-)
+
+diff --git a/drivers/pinctrl/pinctrl-amd.c b/drivers/pinctrl/pinctrl-amd.c
+index 2d4acf21117c..db10bd1f1ba2 100644
+--- a/drivers/pinctrl/pinctrl-amd.c
++++ b/drivers/pinctrl/pinctrl-amd.c
+@@ -683,11 +683,19 @@ static int amd_pinconf_get(struct pinctrl_dev *pctldev,
+ 		break;
+ 
+ 	case PIN_CONFIG_BIAS_PULL_DOWN:
+-		arg = (pin_reg >> PULL_DOWN_ENABLE_OFF) & BIT(0);
++		if (!(pin_reg & BIT(PULL_DOWN_ENABLE_OFF)))
++			return -EINVAL;
++		arg = 1;
+ 		break;
+ 
+ 	case PIN_CONFIG_BIAS_PULL_UP:
+-		arg = (pin_reg >> PULL_UP_SEL_OFF) & (BIT(0) | BIT(1));
++		if (!(pin_reg & BIT(PULL_UP_ENABLE_OFF)))
++			return -EINVAL;
++
++		if (pin_reg & BIT(PULL_UP_SEL_OFF))
++			arg = 8000;
++		else
++			arg = 4000;
+ 		break;
+ 
+ 	case PIN_CONFIG_DRIVE_STRENGTH:
+@@ -729,15 +737,28 @@ static int amd_pinconf_set(struct pinctrl_dev *pctldev, unsigned int pin,
+ 			break;
+ 
+ 		case PIN_CONFIG_BIAS_PULL_DOWN:
+-			pin_reg &= ~BIT(PULL_DOWN_ENABLE_OFF);
+-			pin_reg |= (arg & BIT(0)) << PULL_DOWN_ENABLE_OFF;
++			pin_reg |= BIT(PULL_DOWN_ENABLE_OFF);
+ 			break;
+ 
+ 		case PIN_CONFIG_BIAS_PULL_UP:
+-			pin_reg &= ~BIT(PULL_UP_SEL_OFF);
+-			pin_reg |= (arg & BIT(0)) << PULL_UP_SEL_OFF;
+-			pin_reg &= ~BIT(PULL_UP_ENABLE_OFF);
+-			pin_reg |= ((arg>>1) & BIT(0)) << PULL_UP_ENABLE_OFF;
++			/* Set default ohm value in case none is given */
++			if (arg == 1)
++				arg = 4000;
++
++			switch (arg) {
++			case 4000:
++				pin_reg &= ~BIT(PULL_UP_SEL_OFF);
++				pin_reg |= BIT(PULL_UP_ENABLE_OFF);
++				break;
++			case 8000:
++				pin_reg |= BIT(PULL_UP_SEL_OFF);
++				pin_reg |= BIT(PULL_UP_ENABLE_OFF);
++				break;
++			default:
++				dev_err(&gpio_dev->pdev->dev,
++					"Invalid pull-up arg %u\n", arg);
++				ret = -EINVAL;
++			}
+ 			break;
+ 
+ 		case PIN_CONFIG_DRIVE_STRENGTH:
+-- 
+2.31.1
+
