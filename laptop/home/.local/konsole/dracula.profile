@@ -6,7 +6,7 @@ Font=FiraCode Nerd Font Mono,10,-1,5,53,0,0,0,0,0,Retina
 CursorShape=2
 
 [General]
-Name=Dracula-1
+Name=dracula
 Parent=FALLBACK/
 TerminalCenter=true
 TerminalMargin=0

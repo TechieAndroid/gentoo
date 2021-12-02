@@ -28,8 +28,11 @@ fi
 # rm /boot/*old
 # grub-mkconfig -o /boot/grub/grub.cfg
 
-PS1='\e[0;34m╔══<=\e[m\e[0;32m\u\e[m\e[0;34m>=\e[m \e[0;34m[\e[m\e[0;35m\w\e[m\e[0;34m]\e[m
-\e[0;34m╚══>>> \e[m\e[0;32m$\e[m'
+#PS1='\e[0;34m╔══<=\e[m\e[0;32m\u\e[m\e[0;34m>=\e[m \e[0;34m[\e[m\e[0;35m\w\e[m\e[0;34m]\e[m
+#\e[0;34m╚══>>> \e[m\e[0;32m$\e[m'
+
+PS1='\[\e[34m\]╔══<=\[\e[m\]\[\e[32m\]\u\[\e[m\]\e[34m\]>=\[\e[m\] \[\e[34m\]\[\e[m\]\[\e[35m\][\w]\[\e[m\[\e[34m\]\[\e[m\]
+\[\e[34m\]╚══>>> \[\e[m\]\[\e[32m\]$\[\e[m\]'
 
 #PATH=$PATH:/home/recompiler/.local/bin
 
@@ -37,6 +40,6 @@ alias vimuse="sudo vim /etc/portage/package.use"
 alias vimaccept="sudo vim /etc/portage/package.accept_keywords"
 alias vimmake="sudo vim /etc/portage/make.conf"
 alias vimunmask="sudo vim /etc/portage/package.unmask"
-alias ls="ls -lahS"
+alias ls="ls -lhgSCA"
 alias ytdl="youtube-dl"
-alias gup="sudo emerge-webrsync && sudo eix-sync && sudo emerge -au1 portage && sudo emerge -uDNpv world"
+alias gup="sudo emerge --sync && sudo eix-sync && sudo emerge -au1 portage && sudo emerge -uDNpv world"

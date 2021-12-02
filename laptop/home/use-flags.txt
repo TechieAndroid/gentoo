@@ -1,0 +1,52 @@
+New flags on rog-laptop
+
+USE="10bit 12bit 24-bit-color 24bpp 256-color 7z 7za 7zip 8bit X a52 aac
+     aacplus aacs acpi activities airdrop-ng airgraph-ng airplay airspy alsa
+     alsa-plugin androiddump aptx archive asm aspell async async-connect
+     asyncns atm audio backend-X backend-fbcon backend-gtk3 backend-sdl bash
+     bash-completion bdplus bluetooth bluetooth-sound bluez bluray bmp boot
+     branding brightness-control brotli browser browser-integration cairo
+     ccdda cdaudio cdda cddb cdio cdr cdrom cjk color-management color-output
+     colord colordiff compression css cuda cudnn cue cups curl cursor cursors
+     dav1d dbus dds declarative display-manager dmenu dri dri3 drm dts dvb dvd
+     dvda dvdarchive dvdr elogind emboss encode eselect evdev exif faudio
+     ffmpegsource ffmpegthumbnailer flac fluidsynth fontconfig fontforge fonts
+     freetype frei0r gif git github gles2 gles3 glide gold gpm gtk gui haptic
+     hires icu jpeg kde kipi kwallet ladspa lame lcms libnotify lm-sensors lto
+     lz4 lzma lzo macosx-notifications mad mng mp3 mp4 mpd mpeg mpg123
+     networkmanager nvdec nvenc nvidia nvme ogg openal opencl opencv opengl
+     openh264 openimageio pango parallel-compiler passthrough pci pda pdf pgo
+     phonon plasma plugins png policykit ppds progress-meter pthread
+     pthreaded-ubik pulseaudio qemu qml qt5 sdl semantic-desktop spell spice
+     startup-notification svg threads tiff truetype udev udisks unicode unzip
+     upower usb usbredir v4l v4l2 v4lutils vaapi vainfo vbox vboxwebsrv vbr
+     vdpau vector-icons vhost-net vhost-user-fs video video-glide64mk2
+     video-rice video-thumbnails vim vim-syntax virgl virt-network virtfs
+     virtual-io virtualbox virtualkeyboard visualizer vkd3d vlc vmware vnc
+     vocoder voice vorbis vulkan vulkan-overlay wallpaper wallpapers wav
+     wavpack wayland wayland-compositor webp widgets wifi wiimote wireless
+     wireshark-plugins wxwidgets x11-backend x11vnc x264 x265 xcb xcomposite
+     xdg xen xml xrandr xrender xspice xv xvid xwayland zfs zink zip
+     zip-encryption zsh-completion zstd -discord-presence -systemd -telemetry"
+
+Old flags from lenovo-laptop
+
+USE="10bit 12bit 16k_voice 24-bit-color 24bpp 256-color 7z 7za 7zip 8bit X a52
+     aac aacplus aacs aalib acpi activities adns airdrop-ng airgraph-ng alsa
+     alsa-plugin aom asm async atm bash-completion bdplus bluetooth bluray
+     branding bzip2 cairo cdda cddb cdr cjk colord css cups curl cycles dav1d
+     dbus declarative dri dri3 drm dts dvb dvd dvdr egl elogind encode exif
+     fbcon ffmpeg flac fontconfig frei0r ftp fuse gif gimp git gles2 gold gpm
+     gtk gui gzip icu imlib io-uring ipv6 iscsi iscsi-direct jit jpeg jpeg2k
+     kde kipi kwallet lame lcms libnotify libsamplerate lm-sensors lto lxc lz4
+     lzma lzo lzo2 mad matroska minizip mng mono mp3 mp4 mpeg mpv mtp
+     multipath ncurses networkmanager numa ogg openal opengl openimageio
+     openmp otr pam pango pcre16 pda pdf pgo phonon plasma plotutils plugins
+     png policykit ppds pulseaudio qemu qml qt5 rar raw scanner scripttools
+     sdl semantic-desktop slang smp sound speex spell spice ssh ssl
+     startup-notification svc svg svg2 szip taglib text threads tiff truetype
+     udev udisks unicode upower usb usbredir v4l v4l2 v4lutils vaapi vbox
+     vboxwebsrv vdpau vhost-net vhost-user-fs vhosts vim-syntax virgl virtfs
+     virtualbox vkd3d vlc vorbis vulkan wavpack wayland webp widgets wifi
+     wxwidgets x264 x265 xattr xcb xen xinerama xml xscreensaver xv xvid zip
+     zsh-completion zstd -cuda -discord-presence -nvidia -systemd -telemetry"
