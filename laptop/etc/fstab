@@ -4,49 +4,35 @@
 #UUID=4651-4D25 vfat
 
 #/dev/nvme0n1p2 Microsoft reserved partition
-#PARTUUID=ce0ec152-bb20-4edb-b552-b89f8ba4c13a
+#PARTUUID=e108c5eb-f1ca-498c-ba0c-2dcaa52b5470
 
 #/dev/nvme0n1p3 Windows Basic data partition
-UUID=6C4E5F474E5F08EA /mnt/windows ntfs-3g defaults 0 0
+UUID=6282d722-3e7e-40d7-a7ee-35c74d7f0599 /mnt/windows ntfs-3g defaults 0 0
 
 #/dev/nvme0n1p4 Windows Recovery
-#UUID=E0B60D7EB60D5686 ntfs
+#UUID=2012FC4012FC1D0A ntfs
+
+#MyAsus
+
+#System
 
 #---------------------------------------------------------------------------#
 
 #/dev/nvme0n1p5 EFI
-UUID=1825-D0B4 /boot/efi vfat defaults 0 2
+UUID=9CFA-6F57 /boot/efi vfat defaults 0 2
 
 #---------------------------------------------------------------------------#
 
-#/dev/nvme0n1p6 Gentoo
-#UUID=a89f8a02-9788-40f9-9ec7-5a3a3154e85e /mnt/gentoo ext4 defaults 0 2
+#/dev/nvme0n1p8 Gentoo
+UUID=881cce7d-0f8d-43a9-8b0a-0689d044acb6 / ext4 defaults 0 1
+
+#swap /16G-swapfile
+#/16G-swapfile none swap sw,loop 0 0
 
 #tmpfs /var/tmp/portage
-#tmpfs /var/tmp/portage tmpfs size=32G,uid=portage,gid=portage,mode=755,rw,nosuid,nodev,x-mount.mkdir=755 0 0
+tmpfs /var/tmp/portage tmpfs size=16G,uid=portage,gid=portage,mode=755,rw,nosuid,nodev,x-mount.mkdir=755 0 0
 
 #tmpfs /tmp
-#tmpfs /tmp tmpfs size=32G,nosuid,nodev 0 0
-
-#---------------------------------------------------------------------------#
-
-#/dev/nvme0n1p8 Gentoo Optimized
-UUID=95239ef7-a66d-4554-bcdc-d6d6b74bd892 / ext4 defaults 0 1
-
-#tmpfs /var/tmp/portage
-tmpfs /var/tmp/portage tmpfs size=32G,uid=portage,gid=portage,mode=755,rw,nosuid,nodev,x-mount.mkdir=755 0 0
-
-#tmpfs /tmp
-tmpfs /tmp tmpfs size=32G,nosuid,nodev 0 0
-
-#---------------------------------------------------------------------------#
-
-#nvme0n1p8 Kali Linux
-UUID=7669e006-5b26-4526-8af7-81400c3e7c58 /mnt/kali ext4 defaults 0 2
-
-#---------------------------------------------------------------------------#
-
-#/dev/nvme0n1p6 Windows Games
-UUID=FE8004068003C3DD /mnt/windows-games ntfs-3g defaults 0 2
+tmpfs /tmp tmpfs size=16G,nosuid,nodev 0 0
 
 #---------------------------------------------------------------------------#

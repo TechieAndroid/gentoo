@@ -9,21 +9,25 @@
 # their associated values.
 
 GRUB_DISTRIBUTOR="Gentoo"
+#GRUB_CMDLINE_LINUX="zswap.enabled=1 zswap.compressor=zstd mitigations=off"
+GRUB_CMDLINE_LINUX="mitigations=off"
+GRUB_DISABLE_OS_PROBER=false
+GRUB_TIMEOUT=2
+GRUB_GFXMODE=1920x1200x24
+GRUB_GFXPAYLOAD_LINUX=keep
+GRUB_THEME="/boot/grub/themes/dracula/theme.txt"
+GRUB_BACKGROUND="/boot/grub/themes/dracula/background.png"
 
 # Default menu entry
 #GRUB_DEFAULT=0
 
-GRUB_DISABLE_OS_PROBER=false
-
 # Boot the default entry this many seconds after the menu is displayed
-GRUB_TIMEOUT=2
+#GRUB_TIMEOUT=5
 #GRUB_TIMEOUT_STYLE=menu
 
 # Append parameters to the linux kernel command line
-GRUB_CMDLINE_LINUX=""
-# GRUB_CMDLINE_LINUX="acpi_backlight=video"
-# i8042.noloop i8042.nomux i8042.nopnp i8042.reset Remove since I'm not sure I need them
-GRUB_EARLY_INITRD_LINUX_CUSTOM="amd-uc.img"
+#GRUB_CMDLINE_LINUX=""
+#
 # Examples:
 #
 # Boot with network interface renaming disabled
@@ -41,23 +45,23 @@ GRUB_EARLY_INITRD_LINUX_CUSTOM="amd-uc.img"
 # The resolution used on graphical terminal.
 # Note that you can use only modes which your graphic card supports via VBE.
 # You can see them in real GRUB with the command `vbeinfo'.
-GRUB_GFXMODE=1920x1080x24
+#GRUB_GFXMODE=640x480
 
 # Set to 'text' to force the Linux kernel to boot in normal text
 # mode, 'keep' to preserve the graphics mode set using
 # 'GRUB_GFXMODE', 'WIDTHxHEIGHT'['xDEPTH'] to set a particular
 # graphics mode, or a sequence of these separated by commas or
 # semicolons to try several modes in sequence.
-GRUB_GFXPAYLOAD_LINUX=keep
+#GRUB_GFXPAYLOAD_LINUX=
 
 # Path to theme spec txt file.
 # The starfield is by default provided with use truetype.
 # NOTE: when enabling custom theme, ensure you have required font/etc.
-GRUB_THEME="/boot/grub/themes/dracula/theme.txt"
+#GRUB_THEME="/boot/grub/themes/starfield/theme.txt"
 
 # Background image used on graphical terminal.
 # Can be in various bitmap formats.
-GRUB_BACKGROUND="/boot/grub/themes/dracula/background.png"
+#GRUB_BACKGROUND="/boot/grub/mybackground.png"
 
 # Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to kernel
 #GRUB_DISABLE_LINUX_UUID=true

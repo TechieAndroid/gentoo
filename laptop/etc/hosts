@@ -14,8 +14,8 @@
 #
 
 # IPv4 and IPv6 localhost aliases
-127.0.01	gentoo
-::1		gentoo
+127.0.0.1	localhost
+::1		localhost
 
 #
 # Imaginary network.
