@@ -14,23 +14,6 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-# cpupower frequency-set -g performance
-# eselect kernel list
-# cd /usr/src/linux
-# make clean
-# make distclean
-# cp .config ../
-# cp ../.config .
-# cp -av /usr/src/linux-5.11.11-gentoo /tmp/
-# cd /tmp/linux-5.11.11-gentoo/
-# make clean && make -j8 && make modules_install install
-# dracut --hostonly -k /lib/modules/5.11.11-gentoo/ --kver 5.11.11-gentoo -f /boot/initramfs-5.11.11-gentoo.img
-# rm /boot/*old
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-#PS1='\e[0;34m╔══<=\e[m\e[0;32m\u\e[m\e[0;34m>=\e[m \e[0;34m[\e[m\e[0;35m\w\e[m\e[0;34m]\e[m
-#\e[0;34m╚══>>> \e[m\e[0;32m$\e[m'
-
 PS1='\[\e[34m\]╔══<=\[\e[m\]\[\e[32m\]\u\[\e[m\]\e[34m\]>=\[\e[m\] \[\e[34m\]\[\e[m\]\[\e[35m\][\w]\[\e[m\[\e[34m\]\[\e[m\]
 \[\e[34m\]╚══>>> \[\e[m\]\[\e[32m\]$\[\e[m\]'
 
@@ -40,6 +23,10 @@ alias vimuse="sudo vim /etc/portage/package.use"
 alias vimaccept="sudo vim /etc/portage/package.accept_keywords"
 alias vimmake="sudo vim /etc/portage/make.conf"
 alias vimunmask="sudo vim /etc/portage/package.unmask"
-alias ls="ls -lhgSCA"
+alias ls="ls -aACghsS" #lhgSCA
 alias ytdl="youtube-dl"
 alias gup="sudo emerge --sync && sudo eix-sync && sudo emerge -au1 portage && sudo emerge -uDNpv world"
+
+# Use fish in place of bash
+# keep this line at the bottom of ~/.bashrc
+[ -x /bin/fish ] && SHELL=/bin/fish exec fish

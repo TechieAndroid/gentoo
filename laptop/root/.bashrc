@@ -14,26 +14,6 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-# cpupower frequency-set -g performance
-# eselect kernel list
-# cd /usr/src/linux
-# make clean
-# make distclean
-# cp .config ../
-# cp ../.config .
-# cp -av /usr/src/linux-5.11.11-gentoo /tmp/
-# cd /tmp/linux-5.11.11-gentoo/
-# make clean && make -j8 && make modules_install install
-# dracut --hostonly -k /lib/modules/5.11.11-gentoo/ --kver 5.11.11-gentoo -f /boot/initramfs-5.11.11-gentoo.img
-# rm /boot/*old
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-#PS1='\e[0;34m╔══<=\e[m\e[0;31m\u\e[m\e[0;34m>=\e[m \e[0;34m[\e[m\e[0;35m\w\e[m\e[0;34m]\e[m
-#\e[0;34m╚══>>> \e[m\e[0;31m#\e[m'
-
-#PS1='\e[34m╔══<=\e[m\e[31m\u\e[m\e[34m>=\e[m \e[34m[\e[m\e[35m\w\e[m\e[34m]\e[m
-#\e[34m╚══>>> \e[m\e[31m#\e[m'
-
 PS1='\[\e[34m\]╔══<=\[\e[m\]\[\e[31m\]\u\[\e[m\]\e[34m\]>=\[\e[m\] \[\e[34m\]\[\e[m\]\[\e[35m\][\w]\[\e[m\[\e[34m\]\[\e[m\]
 \[\e[34m\]╚══>>> \[\e[m\]\[\e[31m\]#\[\e[m\]'
 
@@ -43,7 +23,10 @@ alias vimuse="vim /etc/portage/package.use"
 alias vimaccept="vim /etc/portage/package.accept_keywords"
 alias vimmake="vim /etc/portage/make.conf"
 alias vimunmask="vim /etc/portage/package.unmask"
-alias ls="ls -lhgSCA"
+alias ls="ls -aACghsS"
 alias ytdl="youtube-dl"
-alias gup="emerge --sync && eix-sync && emerge -au1 portage && emerge -uDNpv world"
+alias gup="emerge --sync && emerge -au1 portage && eix-sync && emerge -uDNpv world"
 
+# Use fish in place of bash
+# keep this line at the bottom of ~/.bashrc
+[ -x /bin/fish ] && SHELL=/bin/fish exec fish

@@ -2,7 +2,7 @@ if status is-interactive
 
     function fish_prompt
         set_color blue
-        echo ╔══\<\=(set_color green)(whoami)(set_color purple)\>\=(set_color purple) [(pwd)]
+        echo ╔══\<\=(set_color green)(whoami)(set_color blue)\>\=(set_color purple) [(pwd)]
         set_color blue
         echo ╚══\>\>\>(set_color green) '$' (set_color normal)
     end
