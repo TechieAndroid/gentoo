@@ -1,0 +1,66 @@
+# ███╗   ███╗ █████╗ ██╗  ██╗███████╗    ██████╗ ██████╗ ███╗   ██╗███████╗
+# ████╗ ████║██╔══██╗██║ ██╔╝██╔════╝   ██╔════╝██╔═══██╗████╗  ██║██╔════╝
+# ██╔████╔██║███████║█████╔╝ █████╗     ██║     ██║   ██║██╔██╗ ██║█████╗
+# ██║╚██╔╝██║██╔══██║██╔═██╗ ██╔══╝     ██║     ██║   ██║██║╚██╗██║██╔══╝
+# ██║ ╚═╝ ██║██║  ██║██║  ██╗███████╗██╗╚██████╗╚██████╔╝██║ ╚████║██║
+# ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝
+
+COMMON_FLAGS="-march=native -O3 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+
+CPU_FLAGS_x86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3"
+
+MAKEOPTS="-j16"
+EMERGE_DEFAULT_OPTS=" --with-bdeps y --complete-graph y"
+FEATURES="preserve-libs candy parallel-fetch fixlafiles unmerge-orphans"
+ACCEPT_LICENSE="*"
+#ACCEPT_KEYWORDS="~amd64"
+GRUB_PLATFORMS="efi-64"
+LLVM_TARGETS="AMDGPU NVPTX X86"
+INPUT_DEVICES="libinput wacom synaptics evdev vmmouse"
+VIDEO_CARDS="amdgpu radeonsi radeon nvidia qxl virgl virtualbox vmware"
+LC_MESSAGES=C
+QEMU_SOFTMMU_TARGETS="arm x86_64 i386 aarch64"
+QEMU_USER_TARGETS="x86_64"
+
+USE="10bit 12bit 24-bit-color 24bpp 256-color 7z 7za 7zip 8bit X a52 aac
+     aacplus aacs aio airdrop-ng airgraph-ng alsa aom apm archive asm
+     bash-completion bdplus bluetooth bluez bluray cairo cg cuda cups dbus
+     declarative docker dri dri3 elogind encode git github glew gold gtk jpeg
+     jpeg2k libkms libv4l libvirt libvirtd lm-sensors lto mp3 networkmanager
+     nvdec nvenc nvidia opengl opus pgo policykit pulseaudio qemu qml qt5 rar
+     sdl spice theora threads udev udisks upower usb usbredir v4l v4l2
+     v4lutils vaapi vainfo vbox vboxwebsrv vdpau vhost-net vhost-user-fs
+     vhosts vim vim-syntax virgl virt-network virtfs virtualbox visualizer
+     vkd3d vlc vmware vnc vnc-client vocoder vorbis vpx vulkan vulkan-overlay
+     wavpack webcam widgets x264 x265 xa xfs xml xorg xrandr xvid yaml zip
+     zip-encryption zsh-completion zstd -discord-presence -systemd -telemetry"
+
+#USE="10bit 12bit 16k_voice 24-bit-color 24bpp 256-color 7z 7za 7zip 8bit X a52
+#     aac aacplus aacs aalib acpi activities adns airdrop-ng airgraph-ng alsa
+#     alsa-plugin aom asm async atm bash-completion bdplus bluetooth bluray
+#     branding bzip2 cairo cdda cddb cdr cjk colord css cuda cups curl cycles
+#     dav1d dbus declarative dri dri3 drm dts dvb dvd dvdr egl elogind encode
+#     exif fbcon ffmpeg flac fontconfig frei0r ftp fuse gif gimp git gles2 gold
+#     gpm gtk gui gzip icu imlib io-uring ipv6 iscsi iscsi-direct jit jpeg
+#     jpeg2k kde kipi kwallet lame lcms libnotify libsamplerate lm-sensors lto
+#     lxc lz4 lzma lzo lzo2 mad matroska minizip mng mono mp3 mp4 mpeg mpv mtp
+#     multipath ncurses networkmanager numa nvidia ogg openal opengl
+#     openimageio openmp otr pam pango pcre16 pda pdf pgo phonon plasma
+#     plotutils plugins png policykit ppds pulseaudio qemu qml qt5 rar raw
+#     scanner scripttools sdl semantic-desktop slang smp sound speex spell
+#     spice ssh ssl startup-notification svc svg svg2 szip taglib text threads
+#     tiff truetype udev udisks unicode upower usb usbredir v4l v4l2 v4lutils
+#     vaapi vbox vboxwebsrv vdpau vhost-net vhost-user-fs vhosts vim-syntax
+#     virgl virtfs virtualbox vkd3d vlc vorbis vulkan wavpack wayland webp
+#     widgets wifi wxwidgets x264 x265 xattr xcb xen xinerama xml xscreensaver
+#     xv xvid zip zsh-completion zstd -discord-presence -systemd -telemetry"
+
+PORTDIR="/var/db/repos/gentoo"
+DISTDIR="/var/cache/distfiles"
+PKGDIR="/var/cache/binpkgs"
+
+GENTOO_MIRRORS="https://gentoo.osuosl.org/"

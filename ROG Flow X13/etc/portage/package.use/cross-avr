@@ -1,0 +1,3 @@
+cross-avr/binutils cxx multilib
+cross-avr/avr-libc -selinux -libraries multilib
+cross-avr/gcc -fortran -go -sanitize -vtv -pie nopie -ssp nossp -selinux -boundschecking -d -gcj -gtk -libffi -mudflap -objc -objc++ -objc-gc -sanitize multilib

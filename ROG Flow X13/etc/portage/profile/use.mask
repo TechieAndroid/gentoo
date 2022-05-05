@@ -1,0 +1,3 @@
+-nvenc
+-cuda
+-video_cards_nvidia
