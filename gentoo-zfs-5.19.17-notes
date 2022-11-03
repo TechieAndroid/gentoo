@@ -1,0 +1,50 @@
+umount /mnt/cdrom
+ip add
+dhcpcd enp11s0f4u1
+ping
+/etc/init.d/sshd
+passwd
+screen -S admincd
+screen -x admincd
+
+zpool import rpool -R /mnt/gentoo
+
+mount /dev/nvme0n1p1 /mnt/gentoo/boot
+
+mount --types proc /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --make-rslave /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev
+mount --bind /run /mnt/gentoo/run
+mount --make-slave /mnt/gentoo/run
+
+chroot /mnt/gentoo /bin/bash
+source /etc/profile
+export PS1="(chroot) ${PS1}"
+
+blkid >> /etc/fstab
+nano /etc/fstab
+
+CTRL+6 (start sel)
+CTRL+K (cut)
+CTRL+U (paste)
+ALT+6  (copy)
+
+UUID=9E40-2218                              /efi            vfat            noauto,defaults    1 2
+UUID=fac87c68-50ef-424b-9673-dfd0a9890aff   none            swap            sw                 0 0
+
+rc-update add zfs-import boot
+rc-update add zfs-mount boot
+rc-update add zfs-share default
+rc-update add zfs-zed default
+rc-update add zfs-load-key default
+
+zgenhostid
+file /etc/hostid
+
+cp arch/x86/boot/bzImage /boot/efi/gentoo/bzImage-5.19.17.efi
+
+efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Gentoo ZFS 5.19.17" --loader "\efi\gentoo\bzImage-5.19.17.efi" --unicode 'root=PARTUUID=da09f936-9b1e-466f-8286-99deae079b8e resume=PARTUUID=da09f936-9b1e-466f-8286-99deae079b8e'
+
+efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Gentoo ZFS 5.19.17-dist" --loader "efi\gentoo\vmlinuz-5.19.17-gentoo-dist.efi" --unicode 'root=ZFS=rpool/ROOT/gentoo ro initrd=\efi\gentoo\initrd-dist-5.19.17.img'
