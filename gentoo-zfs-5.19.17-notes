@@ -4,12 +4,17 @@ dhcpcd enp11s0f4u1
 wpa_supplicant -i wlp10s0f4u2 -B -c <(wpa_passphrase <ssid> <password>)
 dhcpcd wlp10s0f4u2
 ping
+ntpdate -u pool.ntp.org 
 /etc/init.d/sshd
 passwd
 screen -S admincd
 screen -x admincd
 
 zpool import rpool -R /mnt/gentoo
+rm -f /etc/hostid && zgenhostid
+zpool set cachefile=none rpool
+rm /etc/zfs/zpool.cache && zpool set cachefile=/etc/zfs/zpool.cache rpool
+umount -R /mnt/gentoo && zpool export rpool
 
 mount /dev/nvme0n1p1 /mnt/gentoo/boot
 
