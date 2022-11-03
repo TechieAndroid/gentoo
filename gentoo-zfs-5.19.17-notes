@@ -76,6 +76,13 @@ zgenhostid
 file /etc/hostid
 
 cp arch/x86/boot/bzImage /boot/efi/gentoo/bzImage-5.19.17.efi
+cp /boot/vmlinuz /boot/efi/vmlinuz.efi
+
+dracut --hostonly -k /lib/modules/5.19.17-gentoo-dist/ --kver 5.19.17-gentoo-dist -f /boot/initramfs-5.19.17-gentoo-dist.img
+cp /boot/initramfsimg /boot/efi/gentoo/initramfs.img
+
+efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Gentoo ZFS 5.19.17" --loader "efi\gentoo\vmlinuz-5.19.17-gentoo-dist.efi" --unicode 'root=ZFS=rpool/ROOT/gentoo ro initrd=\efi\gentoo\initramfs-5.19.17-gentoo-dist.img'
+
 
 efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Gentoo ZFS 5.19.17" --loader "\efi\gentoo\bzImage-5.19.17.efi" --unicode 'root=PARTUUID=da09f936-9b1e-466f-8286-99deae079b8e resume=PARTUUID=da09f936-9b1e-466f-8286-99deae079b8e'
 
