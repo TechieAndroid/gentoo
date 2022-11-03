@@ -41,6 +41,31 @@ ALT+6  (copy)
 UUID=9E40-2218                              /efi            vfat            noauto,defaults    1 2
 UUID=fac87c68-50ef-424b-9673-dfd0a9890aff   none            swap            sw                 0 0
 
+emerge --sync
+emerge -a portage
+emerge dev-vcs/git
+eselect news read
+vim /etc/portage/repos.conf/gentoo
+set to git
+rm -rf /var/db/repos/gentoo
+emerge --sync
+vim /etc/portage/make.conf
+
+vim package.accept_keywords
+<=sys-kernel/gentoo-sources-5.19.17 ~amd64
+<=sys-kernel/gentoo-kernel-5.19.17 ~amd64
+<=virtual/dist-kernel-5.19.17 ~am64
+vim package.use
+sys-kernel/gentoo-sources experimental
+
+emerge sys-kernel/
+eselect kernel list
+eselect kernel set #
+cd /usr/src/linux
+make x86_64_defconfig
+make menuconfig
+make clean && make -j17 && make modules_install install
+
 rc-update add zfs-import boot
 rc-update add zfs-mount boot
 rc-update add zfs-share default
