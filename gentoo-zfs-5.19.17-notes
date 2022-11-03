@@ -1,6 +1,8 @@
 umount /mnt/cdrom
 ip add
 dhcpcd enp11s0f4u1
+wpa_supplicant -i wlp10s0f4u2 -B -c <(wpa_passphrase <ssid> <password>)
+dhcpcd wlp10s0f4u2
 ping
 /etc/init.d/sshd
 passwd
