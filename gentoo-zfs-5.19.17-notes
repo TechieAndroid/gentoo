@@ -70,7 +70,7 @@ rc-update add zfs-import boot
 rc-update add zfs-mount boot
 rc-update add zfs-share default
 rc-update add zfs-zed default
-rc-update add zfs-load-key default
+rc-update add zfs-load-key boot
 
 zgenhostid
 file /etc/hostid
