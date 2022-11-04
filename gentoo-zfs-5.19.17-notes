@@ -105,4 +105,5 @@ cp /boot/initramfs-5.19.17-gentoo-dist.img /efi/efi/gentoo/initramfs-5.19.17-gen
 
 efibootmgr --delete-bootnum --bootnum 0
 
+cp /boot/vmlinuz-5.19.17-gentoo-dist /efi/efi/gentoo/vmlinuz-5.19.17-gentoo-dist.efi
 efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Gentoo ZFS 5.19.17-bin" --loader "efi\gentoo\vmlinuz-5.19.17-gentoo-dist.efi" --unicode 'root=ZFS=rpool/ROOT/gentoo ro initrd=\efi\gentoo\initramfs-5.19.17-gentoo-dist.img'
