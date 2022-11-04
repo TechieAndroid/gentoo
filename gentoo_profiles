@@ -1,0 +1,3 @@
+located at /var/db/repos/gentoo/profiles/targets
+Using nomultilib tarball one can still have the "profile" for plasma use flags by doing: 
+cp /var/db/repos/gentoo/profiles/targets/desktop/plasma/package.use /etc/portage/package.use/plasma.use
