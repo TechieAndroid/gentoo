@@ -43,7 +43,7 @@ ALT+6  (copy)
 UUID=9E40-2218                              /efi            vfat            noauto,defaults    1 2
 UUID=fac87c68-50ef-424b-9673-dfd0a9890aff   none            swap            sw                 0 0
 
-eix-sync && emerge --sync && emerge -a portage && emerge -uDNpv world
+eix-sync && emerge --sync && emerge -u portage && emerge -uDNpv world
 
 emerge --sync
 emerge -a portage
