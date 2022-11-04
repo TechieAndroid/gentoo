@@ -10,6 +10,8 @@ passwd
 screen -S admincd
 screen -x admincd
 
+zpool import -f rpool
+zpool export rpool
 zpool import rpool -R /mnt/gentoo
 rm -f /etc/hostid && zgenhostid
 zpool set cachefile=none rpool
