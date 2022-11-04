@@ -32,6 +32,8 @@ chroot /mnt/gentoo /bin/bash
 source /etc/profile
 export PS1="(chroot) ${PS1}"
 
+mount -t tmpfs portage-tmpfs /var/tmp/portage -o size=32G,uid=portage,gid=portage,mode=775,noatime
+
 blkid >> /etc/fstab
 nano /etc/fstab
 
