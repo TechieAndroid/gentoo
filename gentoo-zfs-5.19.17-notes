@@ -64,6 +64,10 @@ vim package.accept_keywords
 vim package.use
 sys-kernel/gentoo-sources experimental
 
+rm -rf /boot/*5*
+rm -rf /boot/efi/gentoo/*5*
+rm -rf /lib/modules/*5*
+
 emerge --deselect sys-kernel/gentoo-kernel
 emerge --deselect sys-kernel/gentoo-sources
 emerge --deselect sys-kernel/gentoo-kernel-bin
@@ -86,10 +90,6 @@ rc-update add zfs-load-key boot
 
 zgenhostid
 file /etc/hostid
-
-rm -rf /boot/*5*
-rm -rf /boot/efi/gentoo/*5*
-rm -rf /lib/modules/*5*
 
 cp arch/x86/boot/bzImage /boot/efi/gentoo/bzImage-5.19.17.efi
 cp /boot/vmlinuz /boot/efi/vmlinuz.efi
