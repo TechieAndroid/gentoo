@@ -66,6 +66,7 @@ sys-kernel/gentoo-sources experimental
 
 rm -rf /boot/*5*
 rm -rf /boot/efi/gentoo/*5*
+rm -rf /usr/src/linux-5*
 rm -rf /lib/modules/*5*
 
 emerge --deselect sys-kernel/gentoo-kernel
