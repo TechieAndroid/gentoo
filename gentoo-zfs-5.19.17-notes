@@ -62,6 +62,12 @@ vim package.accept_keywords
 vim package.use
 sys-kernel/gentoo-sources experimental
 
+emerge --deselect sys-kernel/gentoo-kernel
+emerge --deselect sys-kernel/gentoo-sources
+emerge --deselect sys-kernel/gentoo-kernel-bin
+emerge -cpv
+emerge -c
+
 emerge sys-kernel/
 eselect kernel list
 eselect kernel set #
