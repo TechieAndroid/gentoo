@@ -60,6 +60,7 @@ vim /etc/portage/make.conf
 vim package.accept_keywords
 <=sys-kernel/gentoo-sources-5.19.17 ~amd64
 <=sys-kernel/gentoo-kernel-5.19.17 ~amd64
+<=sys-kernel/gentoo-kernel-bin-5.19.17 ~amd64
 <=virtual/dist-kernel-5.19.17 ~am64
 vim package.use
 sys-kernel/gentoo-sources experimental
@@ -96,7 +97,11 @@ cp arch/x86/boot/bzImage /boot/efi/gentoo/bzImage-5.19.17.efi
 cp /boot/vmlinuz /boot/efi/vmlinuz.efi
 
 dracut --hostonly -k /lib/modules/5.19.17-gentoo-dist/ --kver 5.19.17-gentoo-dist -f /boot/initramfs-5.19.17-gentoo-dist.img
+
+dracut --hostonly -k /lib/modules/5.19.17-gentoo-dist/ --kver 5.19.17-gentoo-dist -f /boot/initramfs-5.19.17-gentoo-dist.img
 cp /boot/initramfsimg /boot/efi/gentoo/initramfs.img
+
+efibootmgr --delete-bootnum --bootnum 0
 
 efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Gentoo ZFS 5.19.17" --loader "efi\gentoo\vmlinuz-5.19.17-gentoo-dist.efi" --unicode 'root=ZFS=rpool/ROOT/gentoo ro initrd=\efi\gentoo\initramfs-5.19.17-gentoo-dist.img'
 
