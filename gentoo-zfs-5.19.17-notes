@@ -59,6 +59,8 @@ rm -rf /var/db/repos/gentoo
 emerge --sync
 vim /etc/portage/make.conf
 
+emerge dracut bash-completion eix gentoolkit efibootmgr dosfstools linux-firmware cronie parted neofetch openssh networkmanager app-misc/screen
+
 vim package.accept_keywords
 <=sys-kernel/gentoo-sources-5.19.17 ~amd64
 <=sys-kernel/gentoo-kernel-5.19.17 ~amd64
@@ -78,9 +80,10 @@ emerge --deselect sys-kernel/gentoo-kernel-bin
 emerge -cpv
 emerge -c
 
-emerge sys-kernel/
+emerge gentoo-kernel-bin
 eselect kernel list
 eselect kernel set #
+
 cd /usr/src/linux
 make x86_64_defconfig
 make menuconfig
