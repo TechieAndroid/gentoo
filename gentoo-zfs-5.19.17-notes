@@ -16,9 +16,9 @@ zpool import -f rpool
 zpool export rpool
 zpool import rpool -R /mnt/gentoo
 
-mkdir -p /mnt/gentoo/boot/efi
-mount /dev/nvme0n1p1 /mnt/gentoo/boot/efi
-mkdir -p /mnt/gentoo/boot/efi/efi/gentoo
+mkdir -p /mnt/gentoo/efi
+mount /dev/nvme0n1p1 /mnt/gentoo/efi
+mkdir -p /mnt/gentoo/efi/efi/gentoo
 
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
@@ -44,8 +44,8 @@ CTRL+U (paste)
 ALT+6  (copy)
 ```
 
-UUID=9E40-2218 /efi            vfat            noauto,defaults    1 2
-UUID=fac87c68-50ef-424b-9673-dfd0a9890aff   none            swap            sw                 0 0
+UUID=9E40-2218 /efi vfat noauto,defaults 1 2
+UUID=fac87c68-50ef-424b-9673-dfd0a9890aff none swap sw 0 0
 
 eix-sync && emerge --sync && emerge -u portage && emerge -uDNpv world
 
@@ -68,7 +68,7 @@ vim package.use
 sys-kernel/gentoo-sources experimental
 
 rm -rf /boot/*5*
-rm -rf /boot/efi/gentoo/*5*
+rm -rf /efi/efi/gentoo/*5*
 rm -rf /usr/src/linux-5*
 rm -rf /lib/modules/*5*
 
@@ -101,7 +101,7 @@ rc-update add zfs-zed default
 rc-update add zfs-load-key boot
 
 dracut --hostonly -k /lib/modules/5.19.17-gentoo-dist/ --kver 5.19.17-gentoo-dist -f /boot/initramfs-5.19.17-gentoo-dist.img
-cp /boot/initramfs-5.19.17-gentoo-dist.img /boot/efi/efi/gentoo/initramfs-5.19.17-gentoo-dist.img
+cp /boot/initramfs-5.19.17-gentoo-dist.img /efi/efi/gentoo/initramfs-5.19.17-gentoo-dist.img
 
 efibootmgr --delete-bootnum --bootnum 0
 
