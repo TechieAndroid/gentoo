@@ -1,4 +1,6 @@
+boot gentoo (cached)
 umount /mnt/cdrom
+remove usb
 ip add
 dhcpcd enp11s0f4u1
 wpa_supplicant -i wlp10s0f4u2 -B -c <(wpa_passphrase <ssid> <password>)
@@ -14,7 +16,9 @@ zpool import -f rpool
 zpool export rpool
 zpool import rpool -R /mnt/gentoo
 
-mount /dev/nvme0n1p1 /mnt/gentoo/boot
+mkdir -p /mnt/gentoo/boot/efi
+mount /dev/nvme0n1p1 /mnt/gentoo/boot/efi
+mkdir -p /mnt/gentoo/boot/efi/efi/gentoo
 
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
@@ -33,12 +37,14 @@ mount -t tmpfs portage-tmpfs /var/tmp/portage -o size=32G,uid=portage,gid=portag
 blkid >> /etc/fstab
 nano /etc/fstab
 
+```
 CTRL+6 (start sel)
 CTRL+K (cut)
 CTRL+U (paste)
 ALT+6  (copy)
+```
 
-UUID=9E40-2218                              /efi            vfat            noauto,defaults    1 2
+UUID=9E40-2218 /efi            vfat            noauto,defaults    1 2
 UUID=fac87c68-50ef-424b-9673-dfd0a9890aff   none            swap            sw                 0 0
 
 eix-sync && emerge --sync && emerge -u portage && emerge -uDNpv world
@@ -94,12 +100,8 @@ rc-update add zfs-share default
 rc-update add zfs-zed default
 rc-update add zfs-load-key boot
 
-cp arch/x86/boot/bzImage /boot/efi/gentoo/bzImage-5.19.17.efi
-cp /boot/vmlinuz /boot/efi/vmlinuz.efi
-
 dracut --hostonly -k /lib/modules/5.19.17-gentoo-dist/ --kver 5.19.17-gentoo-dist -f /boot/initramfs-5.19.17-gentoo-dist.img
-
-cp /boot/initramfs-5.19.17-gentoo-dist.img /boot/efi/gentoo/initramfs-5.19.17-gentoo-dist.img
+cp /boot/initramfs-5.19.17-gentoo-dist.img /boot/efi/efi/gentoo/initramfs-5.19.17-gentoo-dist.img
 
 efibootmgr --delete-bootnum --bootnum 0
 
